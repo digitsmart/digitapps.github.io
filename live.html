@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+	<meta charset="utf-8" />
+	<title>Cross Browser Styled Video Player - Mozilla</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="index.css">
+	<script>src="omega.js"</script>
+	<meta http-equiv="Refresh" content="5; live.html">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv-printshiv.min.js" type="text/javascript"></script><![endif]-->
+	<style type="text/css">
+		html, body {
+		margin:0;
+		padding:0;
+		width:100%;
+		height:100%;
+		}
+		body {
+		color:#666;
+		background-color:#fffff;
+		font-family:"Lucida Grande","Lucida Sans Unicode","DejaVu Sans",Lucida,Arial,Helvetica,sans-serif;
+		}
+		h1 {
+		color:#666;
+		font-size:20px;
+		font-size:1.25rem;
+		text-align:center;
+		margin:0;
+		padding:0.5rem 0;
+		}
+		a {
+		color:#0095dd;
+		text-decoration:none;
+		}
+		a:hover, a:focus {
+		color:#2255aa;
+		text-decoration:underline;
+		}
+		figure {
+		max-width:1024px;
+		max-width:64rem;
+		width:100%;
+		height:100%;
+		max-height:494px;
+		max-height:30.875rem;
+		margin:20px auto;
+		margin:1.25rem auto;
+		padding:20px;
+		padding:1.051%;
+		background-color:#fffff;
+		}
+		figcaption {
+		display:block;
+		font-size:12px;
+		font-size:0.75rem;
+		color:#fff;
+		}
+		video {
+		width:100%;
+		}
+		
+		/* controls */
+		.controls, .controls > * {
+		padding:0;
+		margin:0;
+		}
+		.controls {
+		overflow:hidden;
+		background:transparent;
+		width:100%;
+		height:8.0971659919028340080971659919028%; /* of figure's height */
+		position:relative;
+		}
+		.controls[data-state=hidden] {
+		display:none;
+		}
+		.controls[data-state=visible] {
+		display:block;
+		}
+		.controls > * {
+		float:left;
+		width:3.90625%;
+		height:100%;
+		margin-left:0.1953125%;
+		display:block;
+		}
+		.controls > *:first-child {
+		margin-left:0;
+		}
+		.controls .progress {
+		cursor:pointer;
+		width:75.390625%;
+		}
+		.controls button {
+		text-align:center;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		border:none;
+		cursor:pointer;
+		text-indent:-99999px;
+		background:transparent;
+		background-size:contain;
+		background-repeat:no-repeat;
+		}
+		.controls button:hover, .controls button:focus {
+		opacity:0.5;
+		}
+		.controls button[data-state="play"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNkU0NTY5NkE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNkU0NTY5NUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+kBUJ9AAAAXFJREFUeNrsmLtOAkEUhneQyiAdDTExGlYMBaW9oq/ge8jlUbwkthTY2EGBLehbKK0UxsQgVK7/SWbMZo3j3mbmxPAnXyi2+fIzZ3dmRBAEHucUPO6hBhUyNXAH3umxJRZgCBo/nCKCe+DVoliUN5LUCd46lFOMwk4iPCRCiDl+Ko5X3RJOm99OEcGAyVyIrFO8lEPE9jXTBNvgRq4ba6+ZuAs5nFMwy3NQdFOcRpBSBtfgk6ugykkebZoUpGyBqyxtmhZUaYFnzoKqzcukbdoUVDkGT5wFKSVwEadNV4IqR3+16VrQkxuSVRxBVzvqKija+tQl/fafyx00u7/YBxOOU0yttcEHx9fMPphy/JJQa50krdkUrIMHjruZDdBN25ppwYOsrZkSpNZ68hDFast/Bg7Bo4nDu+7g/m/Oxc6u3+YMnBY6wTEDwXvdbmYXvDi82aKrP183xZQd0LcsSktrIC9PvV+neH1HvRZ0kC8BBgADq2RhyZa7BQAAAABJRU5ErkJggg==');
+		}
+		.controls button[data-state="pause"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzE0QzJGQUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzAxODM5QUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+r7sqzQAAANdJREFUeNrs2MEKwjAMBuDGswd9C/UdPHvy6Ft6UTyKr6RDcceawDpKHZsE2kb4Az87GOiHNLCFvPfOcs2c9ZJ/MKSrDefCaeXnQmm7M9dfpgQoDY+CsDRy9moMeKqICznGJoqHhIie/JhXvnUNmxa9KQF6I3NBfzPFANYC7uTKRtkqeyZLOyQ0dLcVPRgSAAEEEEAAAQQQwJ9ftzQ92YAHzjLKXtmT7YUVX3UA5gK+DJiaMeDNAPCaToyl9dvdTazfpMIC810QJmed3cACk7CjBrByfQQYAHwMIXlfZRgfAAAAAElFTkSuQmCC');
+		}
+		.controls button[data-state="stop"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzAxODM5M0E0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzAxODM5MkE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KkF/7gAAAOFJREFUeNrsmMsKwjAQRTNdu/ELpAUR/AVdC/6nu66kK/0hFXyBj22cQCohQqDUJFO4A4cusphDmFvaIa21klyFkl7mBltszZgt8zTHiXgzDTP/cfIEp8wtoZjP3UiGBOuMci2N60RuSIjoyo9x5ql7sdPo6+QJaiG5oMGkGIKpBddmVHuy7NKwa0gK+yronYNYIdGYQQhCEIIQhCAEIThoQZIuuPpDz0XMD1b81SHFsQUvApweIcGdAMG9nxh3u1UyJ5Vvs3VmqtD6zdSE2TCHhGJH27P0L42wo4Zg5voIMAB0bCBXvSa7VQAAAABJRU5ErkJggg==');
+		}
+		.controls button[data-state="mute"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMzYxQThBMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMzYxQThBMEE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ohJkMQAAAjNJREFUeNrsmM8rRFEUx8ePxo8YokmJpMiGkIWU8mNJIZRkKcWGnfwDNgoh2ZB/gWzsKXakiSaUskP5LaMxz/fWmTqd3rx5Y96dod6pT3r33td83HPfvee9DMMwPH85MlxBV9AVjBNKkJNEzInrcpCbtI9DguMgIn8LfINrsA16QXY6BPtAmISkoETJjqmllSrBbvDJBHjcgFAM0X3g1y3YDJ7ED8tQKW0DC+BBjL0E1boEa8Cdyczw6AJV7LoYrNBa5ZKlTgtW0Foy4ghG287BLMij9hHwwfp3nRQsAmcx5OI9JFegkfr6xUwOOyGYD44s5OTNB+BZ9Ks120D9K2KWM+0KroGvOCJ2BFV4wQR4YWMuQA5l45G1d9oVDP9Szmr6VWpf2bhpal9mbet2BQ0Ngipm2LhTautkbSfpFixgm3qEUuxj976bCWamsC55o/XnoaOunNbmG3sI8+RNqRR0rNzSleJCkWLfX0vxOG0vHtrsVXpbWH/Q7CYzwYgGuSYwz6436e8Aazuym+KNJPZCGWrGJsUeGN2oi8VG3eHEUXecgOChOEEMEqqn/lXWHkjkqLMKfxLFgpq5OpZaXiwMOl1u3SYgGKBTxMsqGV5u7egoWGttFKzqGKsUJ8mSScFaoqvkb7VR8quHoR0sgnsxNij+AW0vTaEYgncWa3VPlvo6XzuHEnjtVCkdTceL+1QMwTBJbYEekJWuLwtmnz7K2NH269rA/brlCrqC/13wR4ABACa7olAORNxuAAAAAElFTkSuQmCC');	
+		}
+		.controls button[data-state="unmute"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMzk2MTA2OUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMzk2MTA2OEE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+LD0czAAAARZJREFUeNrsly8LAkEQxW/lksUgGMxWs8VgEdRgEMwmv4Lfw2TwawgaxGI2WQ0Gm0WDBv+db3SFK4K3nnMjzIMfF/exzHs7Z4Ig8CQr5QmXGlSDf2fQGONKz8kh1UwUHNUBt6hnPc5jMNgEl+ddyDNYAQcy52rQRD2U5ulDFcEcZELjZKSkuACmYXOSaiYPxiAnsQfpxib2BsUVdRqM7Owl+pL0wemVzBCU1nLc8+KS4jM+vuOjwJJi32OUbjNqUA3+wOBVusGB3e9YFOe6RU/dDJSSLup3OoIaWEoOyQ40wFpyijegCraSa2YF6mAvuQcXoGVXM7FFTaluf9WdTD/uXdcfd67dbgiyLEWty4IaVIPCdBdgAJkkaR2v57S0AAAAAElFTkSuQmCC');	
+		}
+		.controls button[data-state="volup"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzU1OEJFREE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzU1OEJFQ0E0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1Pk2GwAAAQ9JREFUeNrsmL0KwjAQgHMOiogIPoLSQR9CcdDRxclXLIrg2mdSsYK41HjBVEJsM6XNld7BR6GF9mu4y8+BlFJQjo6gHmoEc3REyAG5qcc1cUViZPrnZAnOahazuSATl+A5oFxObDqBWSQA8MRLP3DWpeg0+jlZgpJIXUBjqrg1gmuVIRY7Hy/2lYNQ8vMZ5Rx8cw6yYNsENwVTCZRUsFndOQNkrNlXMc2A54HJKC91Peo52PUt+KBeJENk4fG7SwprsdA7ZN4PsiALVrny+BJcFdzbUtry87GzMYIvAk6pSzAhIJjYCWl2t+YibPtN9QkjV/tNheoRnvRQ1yV2R47i2zwVpe03rmIWDBAfAQYAByYx7rBsQ/AAAAAASUVORK5CYII=');	
+		}
+		.controls button[data-state="voldown"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzU1OEJGMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzU1OEJGMEE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+B37OGAAAANpJREFUeNrs2MEKwjAMBuDGk0efwSGCr6FXfU/FHeZV30hQ50U8dSmsMiLUCV0b5Q/87DDYPspCRshaazTXyGgvd4I+bc05e87V3U6UC2fLKd5MArhIDJM5c6Yh4CEjzmfXNVG3SYjowZdx5q+uZtPkZRJAq6Qv6Ge6GEAAAQQQwP61csMmUpZ9X/rNqKPYEw2j7p+BNARwHek7dM/YDNEk+B9EkwAIIIAAfgY+FZjuIeBJAfAo555cv91Mvs2W2xMWofWbR1btUaeC1ZySM5OHRthRA5i5GgEGAJmoHqaNWADvAAAAAElFTkSuQmCC');	
+		}
+		.controls button[data-state="go-fullscreen"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0M2OUNCREE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCM0M2OUNCQ0E0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+cU+iTAAAAZBJREFUeNrs2D9OwzAUBvC6iMMgBgYGpLIxIqYS0cPQKkOIuBErZ2DiDnQoHVBpaQnPEpUs13+e/T5LHfKkb6mr+BfHbh2rrusGx1yqB0pLA83ojyKpBd09xa5/4EkE1oAxaUoBa+CDa7jAIfOCv5R3IPCVskXPQX3BBwDuhvKFesRrMNKF2+UC9Zy7onw6kBMQTg/ArTknuUBzQSCQXpzRb8MFularBBkaObvvhgP0VQ4yiHMtUgkwFRnFlQCGkFUqrhTQhZxTLoz2e8omhisJNJE2zkZ6cRzgwXZLKZWK/Ka8edo1ckV5CQGT9oOJQMh2L1TDwZGXFDimXAbazykj9I6aW9X/Ilh4kBr3QVlSrnMXSS6wsn5GbOQet2/3IksAbZwLMGZ8pwhQ4344HTNvBAr04UaS0c4BtiAcC2n1/cjdsLYgXBRp9DtN3fK3IBxnJKe5L007EC6EXKFe3JfifwU/UgzcgHAmcos8WTil3AGBZ5STEqdbzwDcrOTplhQ5Sz1+609Ye2APjNSfAAMAv4p3Pa/O/tsAAAAASUVORK5CYII=');	
+		}
+		.controls button[data-state="cancel-fullscreen"] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNDZDNDg2MEEzMjFFMjExOTBEQkQ4OEMzRUMyQjhERCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0M2OUNCOUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMzlFNDkzMUE0MDcxMUUyQjgwQkYzQzhCMDZBRTU1NCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzQ0QwNDBBMDJBNEUyMTFCOTZEQzYyRDgyRUVBOUZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU0NkM0ODYwQTMyMUUyMTE5MERCRDg4QzNFQzJCOEREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1VELOwAAAadJREFUeNrs2EtOwzAQBuAEOAEIKsQluAAbGqSGHRIrEKveoQEWNOF0SFyGZ6GkwowlWwpm7IwdT8kiI/2LWk39yY4faiqESPpcG0nPq/fARE5xM0btrIGw7fQ4gJeQJ8gRI24MeYac+wIvICv5fcgrE1Li3lUftUZSgAeQhXpQMCGbOJ03yC51BM8gSyYkhpN95b7voA+yQtpukLbMgjsNWSRUZKXa/2wQBjJzjVwosA1ZNdowoMwtFRcKtCHNzzagsDybk/ZlItCGpAJJuK5AjVx1ANYuHAb0PYsPIZsdtpgt9RvRzuIEWa1dp1hYtqBOU3zf0qEvUK/uVmBqotI0/ffb1XBhHYBIlQyL5Dr2NlNGBBZcJ0kZAVhwniQP6qgLrS/II9dJMoF8RhhBee06jj3FGK72ANYIchwLiOFkByeQOQFYqCv9koL0BeYOnK65AzgzfgtDZqFACk7XHdI2Q9pakVTgxAPnW7lruinAfcgHE86FfIHsUUdwCvlmwmFIubde+b6DU/V3BAeuiVxoXMgqHq3hwjLyulEP98EBOAB/148AAwA7RI/R8UopbwAAAABJRU5ErkJggg==');	
+		}
+		.controls progress {
+		display:block;
+		width:100%;
+		height:81%;
+		margin-top:2px;
+		margin-top:0.125rem;
+		border:none;
+		overflow:hidden;
+		-moz-border-radius:2px;
+		-webkit-border-radius:2px;
+		border-radius:2px;
+		color:#0095dd; /* Internet Explorer uses this value as the progress bar's value colour */
+		}
+		.controls progress[data-state="fake"] {
+		background:#e6e6e6;
+		height:65%;
+		}
+		.controls progress span {
+		width:0%;
+		height:100%;
+		display:inline-block;
+		background-color:#2a84cd;	
+		}
+		
+		.controls progress::-moz-progress-bar {
+		background-color:#0095dd;
+		}
+		/* Chrome requires its own rule for this, otherwise it ignores it */
+		.controls progress::-webkit-progress-value {
+		background-color:#0095dd;
+		}
+		
+		/* fullscreen */
+		html:-ms-fullscreen {
+		width:100%;
+		}
+		:-webkit-full-screen {
+		background-color:transparent;
+		}
+		video:-webkit-full-screen + .controls {
+		background:#ccc; /* required for Chrome which doesn't heed the transparent value set above */
+		}
+		video:-webkit-full-screen + .controls progress {
+		margin-top:0.5rem;
+		}
+		
+		/* hide controls on fullscreen with WebKit */
+		figure[data-fullscreen=true] video::-webkit-media-controls {
+		display:none !important;
+		}
+		figure[data-fullscreen=true] {
+		max-width:100%;
+		width:100%;
+		margin:0;
+		padding:0;
+		max-height:100%;
+		}
+		figure[data-fullscreen=true] video {
+		height:auto;
+		}
+		figure[data-fullscreen=true] figcaption {
+		display:none;
+		}
+		figure[data-fullscreen=true] .controls {
+		position:absolute;
+		bottom:2%;
+		width:100%;
+		z-index:2147483647;
+		}
+		figure[data-fullscreen=true] .controls li {
+		width:5%;
+		}
+		figure[data-fullscreen=true] .controls .progress {
+		width:68%;
+		}
+		
+		/* Media Queries */
+		@media screen and (max-width:1024px) {
+		figure {
+		padding-left:0;
+		padding-right:0;
+		height:auto;
+		}
+		.controls {
+		/* we want the buttons to be proportionally bigger, so give their parent a set height */
+		height:30px;
+		height:1.876rem;
+		}
+		}
+		@media screen and (max-width:42.5em) {
+		.controls {
+		height:auto;
+		}
+		.controls > * {
+		display:block;
+		width:16.6667%;
+		margin-left:0;
+		height:40px;
+		height:2.5rem;
+		margin-top:2.5rem;
+		}
+		.controls .progress {
+		/*display:table-caption;*/ /* this trick doesn't work as elements are floated and the layout doesn't work */
+		position:absolute;
+		top:0;
+		width:100%;
+		float:none;
+		margin-top:0;
+		}
+		.controls .progress progress {
+		width:98%;
+		margin:0 auto;
+		}
+		.controls button {
+		background-position:center center;
+		}
+		figcaption {
+		text-align:center;
+		margin-top:0.5rem;
+		}
+		}
+		
+		footer{
+		background-color:blue;
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		}
+		#video{
+			border:2px solid blue;
+			width: 99%;
+		}
+		#videoContainer{
+			border: 2px solid;
+			margin-top: -0.3em;
+			width: 98%;
+			margin: 0.2em;
+		}
+		.section{
+			width: 99%;
+			overflow: hidden;
+			overflow: auto;
+			padding: em;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+            <div id="omega" style="background: blue; border-radius: 0px;">
+                    <a href="#" id="logo" style="text-decoration: none;">Digit Smart</a>
+                <div id="omega-content">
+                
+                    <nav>
+                        <ul>
+                            <li class="li"><img src="icons/akey.png"><a href="index.html">Accueil / Lakay</a></li><hr />
+                            <li class="li"><img src="icons/apk.png"><a href="#">Applications crack</a></li><hr />
+                            <li class="li"><img src="icons/atik.png"><a href="#">Crack logiciel</a></li><hr />
+                            <li class="li"><img src="icons/cours.png"><a href="liste/liste.html">Documents informatiques</a></li><hr />
+                            <li class="li"><img src="icons/note.png"><a href="#">Nous Contactez</a></li><hr />
+                        </ul>
+                    </nav>
+                    <div class="omega-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.mylifepro.com" class="button">Version Disponible</a>
+                        <a href="https://chat.whatsapp.com/C1TTMpADoM18Pu6kwWVHka" class="button button-outline ">Groupe whatsapp</a>
+                    </div>
+                    
+                </div>
+                <button id="omega-button"><img src="icons/menu.png"></button>
+                <div id="omega-sidebar">
+                    <div id="omega-sidebar-header"></div>
+                    <div id="omega-sidebar-body"></div>
+                </div>
+                <div id="omega-overlay"></div>
+            </div>
+    </div>
+</header>
+<div class="section">
+<div class="h1" style="margin: 0.3em;font-size: 12px; border: 2px solid; padding: 0.3em; width: 96%;">
+	<p style="text-align: justify;">
+		<strong style="text-align: center;">Comment heberger votre site web</strong><br>
+		Heberger votre site web avec goog drive gratuitement
+	</p>
+</div>
+	<figure id="videoContainer" data-fullscreen="false">
+		<video id="video" controls preload="metadata" poster="data:image/jpeg;base64,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">
+			<source src="https://firebasestorage.googleapis.com/v0/b/users-4e0a5.appspot.com/o/videos%20du%20jours%2Fheberger%20sur%20drive_720p.mp4?alt=media&token=71b07b21-5eea-464d-8688-c2992c63272c" type="video/mp4">
+			<source src="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.webm" type="video/webm">
+			<source src="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.ogg" type="video/ogg">
+			<!-- Flash fallback -->
+			<object type="application/x-shockwave-flash" data="flash-player.swf?videoUrl=https://firebasestorage.googleapis.com/v0/b/users-4e0a5.appspot.com/o/creer%20liste_540p.mp4?alt=media&token=9ce81041-30d4-45e9-b220-cf1ec62b3f65" width="100%" height="576">
+				<param name="movie" value="flash-player.swf?videoUrl=https://firebasestorage.googleapis.com/v0/b/users-4e0a5.appspot.com/o/creer%20liste_540p.mp4?alt=media&token=9ce81041-30d4-45e9-b220-cf1ec62b3f65" />
+				<param name="allowfullscreen" value="true" />
+				<param name="wmode" value="transparent" />
+				<param name="flashvars" value="controlbar=over&amp;image=img/poster.jpg&amp;file=flash-player.swf?https://firebasestorage.googleapis.com/v0/b/users-4e0a5.appspot.com/o/videos%20du%20jours%2Fheberger%20sur%20drive_720p.mp4?alt=media&token=71b07b21-5eea-464d-8688-c2992c63272c" />
+				<img alt="Tears of Steel poster image" src="images/bleu.jpg" width="100%" height="100%" title="No video playback possible, please download the video from the link below" />
+			</object>
+		
+		</video>
+		<div id="video-controls" class="controls" data-state="hidden">
+			<button id="playpause" type="button" data-state="play">Play/Pause</button>
+			<button id="stop" type="button" data-state="stop">Stop</button>
+			<div class="progress">
+				<progress id="progress" value="0" min="0">
+					<span id="progress-bar"></span>
+				</progress>
+			</div>
+			<button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+			<button id="volinc" type="button" data-state="volup">Vol+</button>
+			<button id="voldec" type="button" data-state="voldown">Vol-</button>
+			<button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+		</div>
+		<p style="background:blue; color:white; font-size: 12px; width: 150px; padding: 0.2em; border-radius: 10px; text-align: center; margin: auto;">
+			<a href="https://firebasestorage.googleapis.com/v0/b/users-4e0a5.appspot.com/o/videos%20du%20jours%2Fheberger%20sur%20drive_720p.mp4?alt=media&token=71b07b21-5eea-464d-8688-c2992c63272c">Lire en grand plan</a>
+		</p>
+	</figure>
+	</div>
+	<script src="omega.js"></script>
+	<script type="text/javascript">
+		(function () {
+		'use strict';
+		
+		// Does the browser actually support the video element?
+		var supportsVideo = !!document.createElement('video').canPlayType;
+		
+		if (supportsVideo) {
+		// Obtain handles to main elements
+		var videoContainer = document.getElementById('videoContainer');
+		var video = document.getElementById('video');
+		var videoControls = document.getElementById('video-controls');
+		
+		// Hide the default controls
+		video.controls = false;
+		
+		// Display the user defined video controls
+		videoControls.setAttribute('data-state', 'visible');
+		
+		// Obtain handles to buttons and other elements
+		var playpause = document.getElementById('playpause');
+		var stop = document.getElementById('stop');
+		var mute = document.getElementById('mute');
+		var volinc = document.getElementById('volinc');
+		var voldec = document.getElementById('voldec');
+		var progress = document.getElementById('progress');
+		var progressBar = document.getElementById('progress-bar');
+		var fullscreen = document.getElementById('fs');
+		
+		// If the browser doesn't support the progress element, set its state for some different styling
+		var supportsProgress = (document.createElement('progress').max !== undefined);
+		if (!supportsProgress) progress.setAttribute('data-state', 'fake');
+		
+		// Check if the browser supports the Fullscreen API
+		var fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen);
+		// If the browser doesn't support the Fulscreen API then hide the fullscreen button
+		if (!fullScreenEnabled) {
+		fullscreen.style.display = 'none';
+		}
+		
+		// Check the volume
+		var checkVolume = function(dir) {
+		if (dir) {
+		var currentVolume = Math.floor(video.volume * 10) / 10;
+		if (dir === '+') {
+		if (currentVolume < 1) video.volume += 0.1;
+		}
+		else if (dir === '-') {
+		if (currentVolume > 0) video.volume -= 0.1;
+		}
+		// If the volume has been turned off, also set it as muted
+		// Note: can only do this with the custom control set as when the 'volumechange' event is raised, there is no way to know if it was via a volume or a mute change
+		if (currentVolume <= 0) video.muted = true;
+		else video.muted = false;
+		}
+		changeButtonState('mute');
+		}
+		
+		// Change the volume
+		var alterVolume = function(dir) {
+		checkVolume(dir);
+		}
+		
+		// Set the video container's fullscreen state
+		var setFullscreenData = function(state) {
+		videoContainer.setAttribute('data-fullscreen', !!state);
+		// Set the fullscreen button's 'data-state' which allows the correct button image to be set via CSS
+		fullscreen.setAttribute('data-state', !!state ? 'cancel-fullscreen' : 'go-fullscreen');
+		}
+		
+		// Checks if the document is currently in fullscreen mode
+		var isFullScreen = function() {
+		return !!(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
+		}
+		
+		// Fullscreen
+		var handleFullscreen = function() {
+		// If fullscreen mode is active...	
+		if (isFullScreen()) {
+		// ...exit fullscreen mode
+		// (Note: this can only be called on document)
+		if (document.exitFullscreen) document.exitFullscreen();
+		else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+		else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+		else if (document.msExitFullscreen) document.msExitFullscreen();
+		setFullscreenData(false);
+		}
+		else {
+		// ...otherwise enter fullscreen mode
+		// (Note: can be called on document, but here the specific element is used as it will also ensure that the element's children, e.g. the custom controls, go fullscreen also)
+		if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
+		else if (videoContainer.mozRequestFullScreen) videoContainer.mozRequestFullScreen();
+		else if (videoContainer.webkitRequestFullScreen) {
+		// Safari 5.1 only allows proper fullscreen on the video element. This also works fine on other WebKit browsers as the following CSS (set in styles.css) hides the default controls that appear again, and 
+		// ensures that our custom controls are visible:
+		// figure[data-fullscreen=true] video::-webkit-media-controls { display:none !important; }
+		// figure[data-fullscreen=true] .controls { z-index:2147483647; }
+		video.webkitRequestFullScreen();
+		}
+		else if (videoContainer.msRequestFullscreen) videoContainer.msRequestFullscreen();
+		setFullscreenData(true);
+		}
+		}
+		
+		// Only add the events if addEventListener is supported (IE8 and less don't support it, but that will use Flash anyway)
+		if (document.addEventListener) {
+		// Wait for the video's meta data to be loaded, then set the progress bar's max value to the duration of the video
+		video.addEventListener('loadedmetadata', function() {
+		progress.setAttribute('max', video.duration);
+		});
+		
+		// Changes the button state of certain button's so the correct visuals can be displayed with CSS
+		var changeButtonState = function(type) {
+		// Play/Pause button
+		if (type == 'playpause') {
+		if (video.paused || video.ended) {
+		playpause.setAttribute('data-state', 'play');
+		}
+		else {
+		playpause.setAttribute('data-state', 'pause');
+		}
+		}
+		// Mute button
+		else if (type == 'mute') {
+		mute.setAttribute('data-state', video.muted ? 'unmute' : 'mute');
+		}
+		}
+		
+		// Add event listeners for video specific events
+		video.addEventListener('play', function() {
+		changeButtonState('playpause');
+		}, false);
+		video.addEventListener('pause', function() {
+		changeButtonState('playpause');
+		}, false);
+		video.addEventListener('volumechange', function() {
+		checkVolume();
+		}, false);
+		
+		// Add events for all buttons			
+		playpause.addEventListener('click', function(e) {
+		if (video.paused || video.ended) video.play();
+		else video.pause();
+		});			
+		
+		// The Media API has no 'stop()' function, so pause the video and reset its time and the progress bar
+		stop.addEventListener('click', function(e) {
+		video.pause();
+		video.currentTime = 0;
+		progress.value = 0;
+		// Update the play/pause button's 'data-state' which allows the correct button image to be set via CSS
+		changeButtonState('playpause');
+		});
+		mute.addEventListener('click', function(e) {
+		video.muted = !video.muted;
+		changeButtonState('mute');
+		});
+		volinc.addEventListener('click', function(e) {
+		alterVolume('+');
+		});
+		voldec.addEventListener('click', function(e) {
+		alterVolume('-');
+		});
+		fs.addEventListener('click', function(e) {
+		handleFullscreen();
+		});
+		
+		// As the video is playing, update the progress bar
+		video.addEventListener('timeupdate', function() {
+		// For mobile browsers, ensure that the progress element's max attribute is set
+		if (!progress.getAttribute('max')) progress.setAttribute('max', video.duration);
+		progress.value = video.currentTime;
+		progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
+		});
+		
+		// React to the user clicking within the progress bar
+		progress.addEventListener('click', function(e) {
+		//var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth; // Also need to take the parent into account here as .controls now has position:relative
+		var pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
+		video.currentTime = pos * video.duration;
+		});
+		
+		// Listen for fullscreen change events (from other controls, e.g. right clicking on the video itself)
+		document.addEventListener('fullscreenchange', function(e) {
+		setFullscreenData(!!(document.fullScreen || document.fullscreenElement));
+		});
+		document.addEventListener('webkitfullscreenchange', function() {
+		setFullscreenData(!!document.webkitIsFullScreen);
+		});
+		document.addEventListener('mozfullscreenchange', function() {
+		setFullscreenData(!!document.mozFullScreen);
+		});
+		document.addEventListener('msfullscreenchange', function() {
+		setFullscreenData(!!document.msFullscreenElement);
+		});
+		}
+		}
+		
+		})();
+	</script>
+</body>
+</html>

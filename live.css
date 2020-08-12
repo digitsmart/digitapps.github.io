@@ -1,0 +1,59 @@
+#video{
+	width: 98.50%;
+	height: 100%;
+	border: 2px solid;
+	overflow: auto;
+	overflow: hidden;
+}
+video{
+	width: 100%;
+	height: 100%;
+}
+#video div{
+	display: flex;
+	justify-content: space-around;
+	padding: -0.5em;
+}
+#video div p{
+	margin-top: 0.2em;
+	margin-bottom: 0.1em;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	color: blue;
+	font-size: 12px;
+}
+#video div strong {
+	color: blue;
+}
+#video div em{
+	color: red;
+}
+iframe{
+	border:2px solid;
+	width: 99%;
+}
+button {
+	background: blue;
+}
+#lirelasuite{
+	display: none;
+}
+#btn{
+	border-top-left-radius:15px;
+	border-bottom-right-radius:15px;
+	padding: 0.3em;
+	border: none;
+	color: #FFF;
+}
+
+#hide{
+	border-top-left-radius:15px;
+	border-bottom-right-radius:15px;
+	padding: 0.3em;
+	border: none;
+	color: #FFF;
+}
+
+
+

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Digit Smart</title>
+<style type="text/css">
+#omega{
+    padding:0 0.1em;
+}
+#omega-button{
+    display:none;
+    margin-top: 0.2em;
+}
+#omega-content nav ul {
+    display:inline-block;
+    margin-right:1em;
+}
+#omega-content nav li{
+    font-size: 14px;
+}
+#omega-content nav ul li a{
+    padding:0 0.5em;
+    color: blue;
+}
+#omega-content nav ul li, #omega-content #logo, #omega-content nav {
+    display: inline-block;
+}
+.omega-links{
+    display:inline-block;
+}
+#omega-content{
+    float: right;
+}
+#omega-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+#omega-sidebar{
+    display:none;
+    position: fixed;
+    width:80%;
+    z-index: 20;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: #ffffff;
+    transform: translateX(-100%);
+    transition: transform .2s ease-in-out;
+}
+#omega-sidebar-header{
+    background-image: url(https://i.ytimg.com/vi/6xeceo5BaSk/hqdefault.jpg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    height:180px;
+}
+#omega-sidebar-body{
+    padding:0.1em;
+}
+#omega-sidebar-body nav ul li{
+    list-style: none;
+    display: block;
+}
+#omega-sidebar-body nav ul li:before{
+    content: ' ';
+    
+    display: inline-block;
+    vertical-align: middle;
+    width:24px;
+    height:24px;
+    margin-right:5px;
+    margin-bottom: -1.5em;
+}
+
+#omega-sidebar-body nav ul li a{
+    display: inline-block;
+    text-transform: none;
+    font-weight:700;
+    padding:0.1em;
+    text-decoration: none;
+    font-style: normal; 
+    color: black; 
+    font-size: 14px; 
+    text-decoration: none;
+    margin-bottom: -0.5em;
+}
+#omega-sidebar-body nav ul li a:hover{
+    color:#9b4dca;
+}
+#omega-sidebar-body .omega-links a{
+    display:block;
+    margin-bottom:1em;
+    margin-right: 0.5em;
+}
+
+ hr{
+    margin-top: -0.2em;
+    border: 1px solid;
+}
+
+@media only screen and (max-width: 850px){
+
+    #omega-content{
+        display:none;
+    }
+    #omega-button{
+        float: right;
+        cursor: pointer;
+    }
+    .omega-links{
+        display: block;
+        margin-top:2em;
+    }
+    #omega-button, #omega-sidebar, .omega-activated #omega-overlay{
+        display:block;
+    }
+    .omega-activated #omega-sidebar{
+        transform: translateX(0);
+    }
+}
+
+body{
+    margin:0;
+}
+header {
+    background-color: blue;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+    
+}
+.container {
+    margin-top: 0px; 
+    display: block;
+    
+  }
+  .phone {
+    background-color: none;
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .content {
+    border-radius: 2px;
+    width: 100%;
+    height: 91%;
+    background-color: #F5F6FA;
+    overflow: hidden;
+  }
+ul {
+    margin:0;
+    padding:0;
+}
+.small-text{
+    display:block;
+    font-style: italic;
+    font-size:0.9em;
+    margin-top:0.3em;
+}
+h1.title{
+    text-transform: uppercase;
+    font-size:1.2em;
+    font-weight:700;
+}
+.button, button{
+    margin-bottom:0;
+}
+#logo{
+    display:inline-block;
+    margin-right:2em;
+    color:#FFF;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+section{
+    background-color: #faf9f9;
+    padding:4em;
+    text-align:center;
+    margin-bottom:0.1em;
+}
+section h1{
+    font-weight: 500;
+}
+.bloc{
+    margin-bottom:0.1em;
+    padding:1em;
+    border-radius:8px 8px 8px 8px;
+    border:1px solid #f5f5f5;
+}
+.bloc.primary{
+    background-color:#9b4dca;
+    color:#ffffff;
+    border-color:#9b4dca;
+}
+.chapter{
+    display:inline-block;
+    margin-right:0.5em;
+    font-weight:600;
+    color:#9b4dca;
+}
+footer{
+    background-color:#f2f2f2;
+    text-align: center;
+    padding:0.5em 0;
+    margin-top:0.2em;
+    
+}
+.button{
+    background-color: blue;
+    border: blue;
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    color: blue;
+}
+
+#app{
+   
+    padding: 0px;
+}
+
+.content{
+    width: 99%;
+    border: 0px solid;
+    display: block;
+    overflow: hidden;
+    overflow: auto;
+}
+
+@media only screen and (min-width: 850px){
+    #coutenue{
+        width: 94%;
+        padding-left: 0.5em;
+        padding-right: 1em;
+        box-shadow: 0px 4px 2px 1px black;
+        border: 2px solid;
+        margin-right: 1em;
+    }
+
+}
+
+
+
+#lirelasuite {
+display:none;
+}
+#horaire{
+	display: none;
+}
+#btn{
+	border: 2px solid;
+	margin: auto;
+}
+#btn a{
+ 	border: 2px solid red;
+ 	background-color: red;
+ 	padding: 0.3em;
+ 	text-decoration: none;
+ 	color: #FFF;
+ 	box-shadow: 1px 2px 0px 2px black;
+}
+.coutenue{
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	margin-bottom: 0.4em;
+}
+.flex{
+	display: flex;
+}
+.flex img{
+	width: 100%;
+	
+}
+.flex p{
+	font-size: 12px;
+	text-align: justify;
+	
+}
+#bar{
+	display: flex;
+	justify-content: space-around;
+	
+}
+#bar p{
+	margin-left: 0.1em;
+	margin-top: -0.2em;
+	font-size:12px;
+}
+
+.li{
+	display: flex;
+	margin-bottom: 0.2em;
+}
+
+.li img{
+	width: 20px;
+	margin-bottom: -4px;
+	margin-left: -1.3em;
+}
+
+</style>
+</head>
+<body id="app">
+<header>
+    <div class="container">
+            <div id="omega">
+                    <a href="#" id="logo" style="text-decoration: none;">Digit Smart</a>
+                <div id="omega-content">
+                    <nav>
+                    <ul>
+                    <li class="li"><img src="icons/akey.png"><a href="index.html">Accueil / Lakay</a></li><hr />
+                    <li class="li"><img src="icons/apk.png"><a href="applications">Applications crack</a></li><hr />
+                    <li class="li"><img src="icons/atik.png"><a href="cracklogiciel">Crack logiciel</a></li><hr />
+                    <li class="li"><img src="icons/cours.png"><a href="cours_informatique.html">Documents informatiques</a></li><hr />
+                    <li class="li"><img src="icons/note.png"><a href="contact.html">Nous Contactez</a></li><hr />
+                    </ul>
+                    </nav>
+                    <div class="omega-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.mylifepro.com" class="button">Version Disponible</a>
+                        <a href="https://chat.whatsapp.com/C1TTMpADoM18Pu6kwWVHka" class="button button-outline ">Groupe whatsapp</a>
+                    </div>
+                    
+                </div>
+                <button id="omega-button">&#9776;</button>
+                <div id="omega-sidebar">
+                    <div id="omega-sidebar-header"></div>
+                    <div id="omega-sidebar-body"></div>
+                </div>
+                <div id="omega-overlay"></div>
+            </div>
+    </div>
+</header>
+        <div id="container">
+            <div class="phone">
+                <div class="content">
+                <!-- cours html et css explication-->
+                    <div class="coutenue">
+                    	<div class="flex">
+                    		<div>
+                    			<img src="icons/note.png">
+                    		</div>
+                    		<div>
+                    			<p>
+                    				<strong>Cours html et css pour débutant</strong><br>
+                    				Il n'est jamais trop tart pour devenue developper
+                    				web, dans cette formation on vous donne des cours
+                    				html et css bien detaillé et facile a comprendre.
+                    				
+                    			</p>
+                    		</div>
+                    
+                    	</div><hr />
+                    	<div id="bar">
+                    	<p style="color: blue; font-weight: bolder;">Cours : Disipo</p>-<p style="color: green; font-weight: bolder;">vidéo : Oui</p>-<p style="color: orange; font-weight: bolder;">Audio: oui</p>-<p style="color: red; font-weight: bolder;"><a href="cours_html/definition_web.html" style="text-decoration: none;" >>>></a></p>
+                    	</div>
+                    </div>
+                    
+                    <!-- Astuces imformatique bureautique-->
+                    <div class="coutenue">
+                    	<div class="flex">
+                   			 <div>
+                  				  <img src="icons/note.png">
+                  		     </div>
+                 		     <div>
+                    			 <p>
+                   					 <strong>Cours informatique bureautique</strong><br>
+                  							  Apprendre l'informatique bureautique sans
+                  							  sortir de chez-vous, des articles, des videos
+                  							  et des audios sont disponible?pour vous apprendre.
+                    
+                  			 	 </p>
+                   				 </div>
+                    
+                    </div><hr />
+                    <div id="bar">
+                    <p style="color: blue; font-weight: bolder;">Cours : Non Disipo</p>-<p style="color: green; font-weight: bolder;">vidéo : Oui</p>-<p style="color: orange; font-weight: bolder;">Audio: oui</p>-<p style="color: red; font-weight: bolder;">>>></p>
+                    </div>
+                    </div>
+					
+					
+					<!-- Astuces android-->
+					<div class="coutenue">
+					<div class="flex">
+					<div>
+					<img src="icons/note.png">
+					</div>
+					<div>
+					<p>
+					<strong>Formation sur smartphone et tablette</strong><br>
+					Apprendre les bases d'Android grace à nos formations,nous vous offrons
+					des formations gratuit pour mieux gérer votre smartphone
+					ou votre tablette
+					
+					</p>
+					</div>
+					
+					</div><hr />
+					<div id="bar">
+					<p style="color: blue; font-weight: bolder;">Cours : Non Dispo</p>-<p style="color: green; font-weight: bolder;">vidéo : Oui</p>-<p style="color: orange; font-weight: bolder;">Audio: oui</p>-<p style="color: red; font-weight: bolder;">>>></p>
+					</div>
+					</div>
+					
+					<!-- formation blogger-->
+					<div class="coutenue">
+					<div class="flex">
+					<div>
+					<img src="icons/note.png">
+					</div>
+					<div>
+					<p>
+					<strong>Formation sur smartphone et tablette</strong><br>
+					Créer un blog gratuit et sans de la publicité,
+					blogger est une plateforme qui vous permet de créer
+					un blog sans competence en html et css ou d'autres.
+					
+					</p>
+					</div>
+					
+					</div><hr />
+					<div id="bar">
+					<p style="color: blue; font-weight: bolder;">Cours : Non Dispo</p>-<p style="color: green; font-weight: bolder;">vidéo : Oui</p>-<p style="color: orange; font-weight: bolder;">Audio: oui</p>-<p style="color: red; font-weight: bolder;">>>></p>
+					</div>
+					</div>
+					
+                </div>
+            </div>
+        </div>
+            
+<footer>
+    2020 <strong>Digit Smart</strong> - <a href="http://digitsmartplus.rf.gd">Mon site web</a>
+</footer>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+<script src="omega.js"></script>
+
+</body>
+</html>
