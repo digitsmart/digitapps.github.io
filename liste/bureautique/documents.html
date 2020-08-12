@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Digit Smart</title>
+  <style type="text/css">
+  #omega{
+  padding:0 0.1em;
+  }
+  #omega-button{
+  display:none;
+  }
+  #omega-content nav ul {
+  display:inline-block;
+  margin-right:1em;
+  }
+  #omega-content nav li{
+  font-size: 14px;
+  display: flex;
+  }
+  #omega-content nav ul li a{
+  padding:0 0.5em;
+  color: blue;
+  }
+  #omega-content nav ul li, #omega-content #logo, #omega-content nav {
+  display: inline-block;
+  }
+  .omega-links{
+  display:inline-block;
+  }
+  #omega-content{
+  float: right;
+  }
+  #omega-overlay {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, .5);
+  }
+  #omega-sidebar{
+  display:none;
+  position: fixed;
+  width:80%;
+  z-index: 20;
+  height:100%;
+  top:0;
+  left:0;
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  transition: transform .2s ease-in-out;
+  }
+  #omega-sidebar-header{
+  background-image: url(https://i.ytimg.com/vi/6xeceo5BaSk/hqdefault.jpg);
+  background-size: 100%;
+  background-repeat:no-repeat;
+  height:180px;
+  }
+  #omega-sidebar-body{
+  padding:0.1em;
+  }
+  #omega-sidebar-body nav ul li{
+  list-style: none;
+  display: block;
+  }
+  #omega-sidebar-body nav ul li:before{
+  content: ' ';
+  
+  display: inline-block;
+  vertical-align: middle;
+  width:24px;
+  height:24px;
+  margin-right:5px;
+  margin-bottom: -1.5em;
+  }
+  
+  #omega-sidebar-body nav ul li a{
+  display: inline-block;
+  text-transform: none;
+  font-weight:700;
+  padding:0.1em;
+  text-decoration: none;
+  font-style: normal; 
+  color: black; 
+  font-size: 14px; 
+  text-decoration: none;
+  margin-bottom: -0.5em;
+  }
+  #omega-sidebar-body nav ul li a:hover{
+  color:#9b4dca;
+  }
+  #omega-sidebar-body .omega-links a{
+  display:block;
+  margin-bottom:1em;
+  margin-right: 0.5em;
+  }
+  
+  hr{
+  margin-top: -0.2em;
+  border: 1px solid;
+  }
+  
+  @media only screen and (max-width: 850px){
+  
+  #omega-content{
+  display:none;
+  }
+  #omega-button{
+  float: right;
+  cursor: pointer;
+  }
+  .omega-links{
+  display: block;
+  margin-top:2em;
+  }
+  #omega-button, #omega-sidebar, .omega-activated #omega-overlay{
+  display:block;
+  }
+  .omega-activated #omega-sidebar{
+  transform: translateX(0);
+  }
+  }
+  
+  body{
+  margin:0;
+  }
+  header {
+  background-color: blue;
+  overflow: hidden;
+  margin-bottom: -0.1em;
+  
+  }
+  .container {
+  margin-top: 0px; 
+  display: block;
+  margin: 0px;
+  
+  }
+  .phone {
+  background-color: none;
+  border-radius: 0px;
+  width: 100%;
+  height: auto;
+  Display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  .content {
+  border-radius: 2px;
+  width: 100%;
+  height: 91%;
+  background-color: #F5F6FA;
+  overflow: hidden;
+  }
+  ul {
+  margin:0;
+  padding:0;
+  }
+  .small-text{
+  display:block;
+  font-style: italic;
+  font-size:0.9em;
+  margin-top:0.3em;
+  }
+  h1.title{
+  text-transform: uppercase;
+  font-size:1.2em;
+  font-weight:700;
+  }
+  .button, button{
+  margin-bottom:0;
+  }
+  #logo{
+  display:inline-block;
+  margin-right:2em;
+  color:#FFF;
+  font-weight: 400;
+  font-size: 1.5em;
+  }
+  section{
+  background-color: #faf9f9;
+  padding:4em;
+  text-align:center;
+  margin-bottom:0.1em;
+  }
+  section h1{
+  font-weight: 500;
+  }
+  .bloc{
+  margin-bottom:0.1em;
+  padding:1em;
+  border-radius:8px 8px 8px 8px;
+  border:1px solid #f5f5f5;
+  }
+  .bloc.primary{
+  background-color:#9b4dca;
+  color:#ffffff;
+  border-color:#9b4dca;
+  }
+  .chapter{
+  display:inline-block;
+  margin-right:0.5em;
+  font-weight:600;
+  color:#9b4dca;
+  }
+  footer{
+  background-color:#f2f2f2;
+  text-align: center;
+  padding:0.5em 0;
+  margin-top:0.2em;
+  
+  }
+  .button{
+  background-color: blue;
+  border: blue;
+  padding: 0.3em;
+  border-radius: 5px;
+  color: #FFF;
+  text-align: center;
+  box-shadow: 1px 1px 1px 1px black;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+  nav{
+  color: blue;
+  }
+  
+  
+  #app{
+  
+  padding: 0px;
+  }
+  #coutenue{
+  width: 99%;
+  margin: 0px;
+  margin: 0.2em;
+  border: 0px solid;
+  margin: auto;
+  margin-top: -0.8em;
+  margin-bottom: 1.4em;
+  box-shadow: 1px 1px 1px 1px black;
+  }
+  #coutenue h1{
+  font-size: 18px;
+  text-align: center;
+  color: #FFF;
+  margin-top: 0.1em;
+  background-color: blue;
+  }
+  #coutenue p{
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  margin-top: -0.4em;
+  }
+  .content{
+  width: 99%;
+  border: 0px solid;
+  display: block;
+  overflow: hidden;
+  overflow: auto;
+  }
+  #akey h1{
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #FFF;
+  text-shadow: 4px 2px 2px black;
+  }
+  #akey h2{
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #FFF;
+  text-shadow: 4px 2px 2px black;
+  }
+  #akey p{
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-decoration: none;
+  
+  }
+  #akey a{
+  text-decoration: none;
+  }
+  
+  @media only screen and (min-width: 850px){
+  #coutenue{
+  width: 99%;
+  padding-left: 0.5em;
+  padding-right: 0px;
+  box-shadow: 0px 4px 2px 1px black;
+  border: 2px solid;
+  margin-right: 0px;
+  }
+  
+  }
+  
+  
+  
+  #lirelasuite {
+  display:none;
+  }
+  #horaire{
+  display: none;
+  }
+  #btn{
+  border: 2px solid;
+  margin: auto;
+  }
+  #btn a{
+  border: 2px solid red;
+  background-color: red;
+  padding: 0.3em;
+  text-decoration: none;
+  color: #FFF;
+  box-shadow: 1px 2px 0px 2px black;
+  }
+  .li{
+  display: flex;
+  margin-bottom: 0.2em;
+  }
+  
+  .li img{
+  width: 20px;
+  margin-bottom: -4px;
+  margin-left: -1.3em;
+  }
+  #coutenue1{
+  margin-top: -0.9em;
+  margin-bottom: 1em;
+  }
+  
+  #l{
+  display:flex;
+  margin-top: -0.1em;
+  overflow: hidden;
+  
+  }
+  #l div:hover{
+  overflow: visible;
+  }
+  #l div{
+  
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0.4em;
+  margin-bottom: 0.1em;
+  margin-right: 0.1em;
+  margin-left: 0.2em;
+  padding: 0.1em;
+  font-size: 12px;
+  color: black;
+  opacity: 0.7;
+  background-color: #f5f5f5;
+  text-align: justify;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  }
+  #l #comp{
+  width: 75%;
+  margin-right: 0.2em;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  }
+  #akey{
+  border: 2px solid;
+  margin-bottom: 1em;
+  display: block;
+  background-image: url(images/accueil.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  #l p{
+  opacity: none;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Times New Roman', Times, serif;
+  
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  font-display: block;
+  display: block;
+  margin-top: 0.1em;
+  margin-bottom: 1em;
+  
+  }
+  #l a{
+  margin-top: 1em;
+  }
+  iframe{
+  border: 2px solid blue;
+  background-color: black;
+  }
+  
+  .liste{
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow:inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  display: flex;
+  margin-top: 0.2em;
+  padding: 0.3em;
+  overflow: auto;
+  overflow: hidden;
+  }
+  .liste .img{
+  width: 70px;
+  overflow: auto;
+  overflow: hidden;
+  margin:auto;
+  margin-top: 0.2em;
+  }
+  .img img{
+  width: 50px;
+  height: 70px;
+  border: 2px solid orange;
+  margin: auto;
+  }
+  .liste .des{
+  width: 100%;
+  border: 2px solid orange;
+  height: 70px;
+  margin: auto;
+  
+  }
+  .liste .bt{
+  width: 20px;
+  height:100%;
+  background: blue;
+  margin: auto;
+  padding-top: 1.3em;
+  padding-bottom: 1.5em;
+  
+  border: 2px solid;
+  border-color: blue;
+  
+  
+  }
+  .bt button{
+  margin-top: 0em;
+  
+  height: 100%;
+  width: 10px;
+  border-radius: 25px;
+  background: blue;
+  color: #FFF;
+  
+  }
+  
+  .bt button a{
+  text-decoration: none;
+  color: #FFF;
+  
+  }
+  #home{
+  position: fixed;
+  height: 7%;
+  bottom: 1%;
+  float: right;
+  border-radius: 55px;
+  background: gray;
+  padding: 0.3em;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+  #home img{
+  width: 45px;
+  height: 40px;	
+  }
+  #scroll_to_top { 
+  position: fixed; 
+  width: 35px; 
+  height: 20px; 
+  bottom: 6px; 
+  right: 10px; 
+  border:2px solid;
+  border-radius: 30px;
+  padding: 0.3em;
+  } 
+  #scroll_to_top img { 
+  width: 35px; 
+  height: 100%;
+  }
+  </style>
+</head>
+<body id="app">
+<header>
+    <div class="container">
+            <div id="omega">
+                    <a href="#" id="logo" style="text-decoration: none;">Digit Smart</a>
+                <div id="omega-content">
+                    <nav>
+                        <ul>
+                            <li class="li"><img src="icons/akey.png"><a href="index.html">Accueil / Lakay</a></li><hr />
+                            <li class="li"><img src="icons/apk.png"><a href="applications">Applications crack</a></li><hr />
+                            <li class="li"><img src="icons/atik.png"><a href="cracklogiciel">Crack logiciel</a></li><hr />
+                            <li class="li"><img src="icons/cours.png"><a href="cours_informatique.html">Documents informatiques</a></li><hr />
+                            <li class="li"><img src="icons/note.png"><a href="contact.html">Nous Contactez</a></li><hr />
+                        </ul>
+                    </nav>
+                    <div class="omega-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.mylifepro.com" class="button">Version Disponible</a>
+                        <a href="https://chat.whatsapp.com/C1TTMpADoM18Pu6kwWVHka" class="button button-outline ">Groupe whatsapp</a>
+                    </div>
+                    
+                </div>
+                <button id="omega-button">&#9776;</button>
+                <div id="omega-sidebar">
+                    <div id="omega-sidebar-header"></div>
+                    <div id="omega-sidebar-body"></div>
+                </div>
+                <div id="omega-overlay"></div>
+            </div>
+    </div>
+</header>
+        <div id="container">
+            <div class="phone">
+                <div class="content">
+                <!--Premier livre powerpoint-->
+                <div class="liste">
+                <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFEjOTJOlmDhEt3w3YQNOylBmxl8_diCEK8es2aJ4eB9ut_Xus&s"></div>
+                <div class="des">
+                <h1 style="font-size: 16px; margin-top: 0.1em;">
+                cours powerpoint 2010 en pdf </h1>
+                <p style="font-size: 12px; margin-top: -0.5em;">
+                PowerPoint sert à créer des diapositives (c’est-à-dire des images destinées à être 
+                projetées sur écran), à les organiser, pour ensuite les visionner.
+                </p>	
+                </div>
+                <div class="bt">
+                <button><a href="powerpoint.html" >↓</a></button>
+                </div>
+                </div>
+                <!--fin-->
+                
+                
+                <!--Premier livre exel-->
+                    <div class="liste">
+                        <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Microsoft_Office_Excel_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Excel_%282018%E2%80%93present%29.svg.png"></div>
+                        <div class="des">
+                            <h1 style="font-size: 16px; margin-top: 0.1em;">
+                            cours exel en pdf </h1>
+                            <p style="font-size: 12px; margin-top: -0.5em;">
+                             Excel est un tableur. Il est une application conçue pour créer et utiliser des tableaux, 
+                             appelés ici « feuilles de calcul ».
+                            </p>	
+                        </div>
+                        <div class="bt">
+                            <button><a href="exel.html" >↓</a></button>
+                        </div>
+                    </div>
+              <!--fin-->
+              
+              <!--Premier livre access-->
+              <div class="liste">
+              <div class="img"><img src="data:image/png;base64,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"></div>
+              <div class="des">
+              <h1 style="font-size: 16px; margin-top: 0.1em;">
+              cours access en pdf </h1>
+              <p style="font-size: 12px; margin-top: -0.5em;">
+              Une base de données est un ensemble structuré d’informations. Les exemples de bases de 
+              données ne manquent pas :
+              </p>	
+              </div>
+              <div class="bt">
+              <button><a href="access.html" >↓</a></button>
+              </div>
+              </div>
+              <!--fin-->
+              <div id="scroll_to_top"> 
+              <a href="../liste.html"><img src="../img/back.png" alt="Retourner en haut" /></a> 
+              </div>
+                </div>
+            </div>
+        </div>
+            
+<footer>
+    2020 <strong>Digit Smart</strong> - <a href="http://digitsmartplus.rf.gd">Mon site web</a>
+</footer>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+<script src="omega.js"></script>
+
+</body>
+</html>

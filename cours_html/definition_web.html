@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Digit Smart</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>src="../omega.js"</script>
+<style type="text/css">
+#omega{
+    padding:0 0.1em;
+}
+#omega-button{
+    display:none;
+}
+#omega-content nav ul {
+    display:inline-block;
+    margin-right:1em;
+}
+#omega-content nav li{
+    font-size: 14px;
+}
+#omega-content nav ul li a{
+    padding:0 0.5em;
+    color: blue;
+}
+#omega-content nav ul li, #omega-content #logo, #omega-content nav {
+    display: inline-block;
+}
+.omega-links{
+    display:inline-block;
+}
+#omega-content{
+    float: right;
+}
+#omega-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+#omega-sidebar{
+    display:none;
+    position: fixed;
+    width:80%;
+    z-index: 20;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: #ffffff;
+    transform: translateX(-100%);
+    transition: transform .2s ease-in-out;
+}
+#omega-sidebar-header{
+    background-image: url(https://i.ytimg.com/vi/6xeceo5BaSk/hqdefault.jpg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    height:180px;
+}
+#omega-sidebar-body{
+    padding:0.1em;
+}
+#omega-sidebar-body nav ul li{
+    list-style: none;
+    display: block;
+}
+#omega-sidebar-body nav ul li:before{
+    content: ' ';
+    
+    display: inline-block;
+    vertical-align: middle;
+    width:24px;
+    height:24px;
+    margin-right:5px;
+    margin-bottom: -1.5em;
+}
+#omega-sidebar-body nav ul li:first-child:before {
+    content: "\f015";
+    
+    font-weight: 900;
+}
+#omega-sidebar-body nav ul li:nth-child(2):before {
+    content: "\f15c";
+    
+    font-weight: 900;
+}
+#omega-sidebar-body nav ul li:nth-child(3):before {
+    content: "\f15c";
+   
+    font-weight: 900;
+}
+#omega-sidebar-body nav ul li:nth-child(4):before {
+    content: "\f2bb";
+    
+    font-weight: 900;
+}
+#omega-sidebar-body nav ul li a{
+    display: inline-block;
+    text-transform: none;
+    font-weight:700;
+    padding:0.1em;
+    text-decoration: none;
+    font-style: normal; 
+    color: black; 
+    font-size: 14px; 
+    text-decoration: none;
+    margin-bottom: -0.5em;
+}
+#omega-sidebar-body nav ul li a:hover{
+    color:#9b4dca;
+}
+#omega-sidebar-body .omega-links a{
+    display:block;
+    margin-bottom:1em;
+    margin-right: 0.5em;
+}
+
+ hr{
+    margin-top: -0.2em;
+    border: 1px solid;
+}
+
+@media only screen and (max-width: 850px){
+
+    #omega-content{
+        display:none;
+    }
+    #omega-button{
+        float: right;
+        cursor: pointer;
+    }
+    .omega-links{
+        display: block;
+        margin-top:2em;
+    }
+    #omega-button, #omega-sidebar, .omega-activated #omega-overlay{
+        display:block;
+    }
+    .omega-activated #omega-sidebar{
+        transform: translateX(0);
+    }
+}
+
+body{
+    margin:0;
+}
+header {
+    background-color: blue;
+    overflow: hidden;
+    margin-bottom: -0.1em;
+    
+}
+.container {
+    margin-top: 0px; 
+    display: block;
+    
+  }
+  .phone {
+    background-color: none;
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .content {
+    border-radius: 2px;
+    width: 100%;
+    height: 91%;
+    background-color: #F5F6FA;
+    overflow: hidden;
+  }
+ul {
+    margin:0;
+    padding:0;
+}
+.small-text{
+    display:block;
+    font-style: italic;
+    font-size:0.9em;
+    margin-top:0.3em;
+}
+h1.title{
+    text-transform: uppercase;
+    font-size:1.2em;
+    font-weight:700;
+}
+.button, button{
+    margin-bottom:0;
+}
+#logo{
+    display:inline-block;
+    margin-right:2em;
+    color:#FFF;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+section{
+	width: 100%;
+    background-color: #faf9f9;
+    padding:4em;
+    text-align:center;
+    margin-bottom:0.1em;
+}
+section h1{
+    font-weight: 500;
+}
+.bloc{
+    margin-bottom:0.1em;
+    padding:1em;
+    border-radius:8px 8px 8px 8px;
+    border:1px solid #f5f5f5;
+}
+.bloc.primary{
+    background-color:#9b4dca;
+    color:#ffffff;
+    border-color:#9b4dca;
+}
+.chapter{
+    display:inline-block;
+    margin-right:0.5em;
+    font-weight:600;
+    color:#9b4dca;
+}
+footer{
+    background-color:#f2f2f2;
+    text-align: center;
+    padding:0.5em 0;
+    margin-top:0.2em;
+    
+}
+.button{
+    background-color: blue;
+    border: blue;
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    color: blue;
+}
+
+#akey{
+    background-image: url('../images/accueil.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    margin: 0px;
+    margin-top: -1.4em;
+}
+#app{
+   
+    padding: 0px;
+}
+section{
+    width: 99%;
+    margin: 0px;
+    margin: 0.2em;
+    border: 0px solid;
+    margin: auto;
+    margin-top: 0.9em;
+    margin-bottom: 1.4em;
+    box-shadow: 1px 1px 1px 1px black;
+}
+#coutenue h1{
+    font-size: 18px;
+    text-align: center;
+    color: #FFF;
+    margin-top: 0.1em;
+    background-color: blue;
+}
+#coutenue p{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+    margin-top: -0.4em;
+}
+.content{
+    width: 99%;
+    border: 2px solid;
+    display: block;
+    overflow: hidden;
+    overflow: auto;
+}
+#akey h1{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #FFF;
+    text-shadow: 4px 2px 2px black;
+}
+#akey h2{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #FFF;
+    text-shadow: 4px 2px 2px black;
+}
+#akey p{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 4px 2px 2px black;
+}
+#akey a{
+	text-decoration: none;
+}
+
+@media only screen and (min-width: 850px){
+    #coutenue{
+        width: 94%;
+        padding-left: 0.5em;
+        padding-right: 1em;
+        box-shadow: 0px 4px 2px 1px black;
+        border: 2px solid;
+        margin-right: 1em;
+    }
+
+}
+
+
+
+#lirelasuite {
+display:none;
+}
+#horaire{
+	display: none;
+}
+#btn{
+	border: 2px solid;
+	margin: auto;
+}
+#btn a{
+ 	border: 2px solid red;
+ 	background-color: red;
+ 	padding: 0.3em;
+ 	text-decoration: none;
+ 	color: #FFF;
+ 	box-shadow: 1px 2px 0px 2px black;
+}
+section{
+	width: 100%;
+	display: block;
+	overflow: auto;
+	overflow: hidden;
+	border: 2px solid;
+}
+article{
+	width: 99%;
+	display: block;
+	overflow: auto;
+	overflow: hidden;
+	border: 2px solid;
+}
+article h1{
+	font-size: 20px;
+	text-align: center;
+	color: blue;
+}
+
+article img{
+	width: 100%;
+	margin: auto;
+}
+.btn{
+	color: black;
+	border: 2px solid;
+	padding: 0.2em;
+}
+.btn a{
+	text-decoration: none;
+}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=email], select {
+  width: 49%;
+  font-size:12px;
+  padding: 1px 2px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.common_btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 2px 5px;
+  margin: 2px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.li{
+	display: flex;
+	margin-bottom: 0.2em;
+}
+
+.li img{
+	width: 20px;
+	margin-bottom: -4px;
+	margin-left: -1.3em;
+}
+</style>
+</head>
+<body id="app">
+<header>
+    <div class="container">
+            <div id="omega">
+                    <a href="#" id="logo" style="text-decoration: none;">Digit Smart</a>
+                <div id="omega-content">
+                    <nav>
+                        <ul>
+                            <li class="li"><img src="../icons/akey.png"><a href="../index.html">Accueil / Lakay</a></li><hr />
+                            <li class="li"><img src="../icons/ordinateur.png"><a href="#">Applications crack</a></li><hr />
+                            <li class="li"><img src="../icons/editeur.png"><a href="#">Crack logiciel</a></li><hr />
+                            <li class="li"><img src="../icons/html.png"><a href="#">Cours informatique</a></li><hr />
+                            <li class="li"><img src="../icons/note.png"><a href="#">Nous Contactez</a></li><hr />
+                        </ul>
+                    </nav>
+                    <div class="omega-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.mylifepro.com" class="button">Version Disponible</a>
+                        <a href="https://chat.whatsapp.com/C1TTMpADoM18Pu6kwWVHka" class="button button-outline ">Groupe whatsapp</a>
+                    </div>
+                    
+                </div>
+                <button id="omega-button">&#9776;</button>
+                <div id="omega-sidebar">
+                    <div id="omega-sidebar-header"></div>
+                    <div id="omega-sidebar-body"></div>
+                </div>
+                <div id="omega-overlay"></div>
+            </div>
+    </div>
+</header>
+        <div id="container">
+            <div class="phone">
+                <div class="content">
+                  	
+                  		<article>
+                  			<h1>definition quelques mots informatique</h1>
+                  			<img src="../images/a.jpg">
+                  			<p>
+                  				Apprendre les definitions pour bien comprendre	
+                  				avant de vous lancer dans la programation html
+                  				et css, deux language pour creer votre site web.
+                  				<br><br>
+                 				les definitions a decouvrir :
+                 				<ol>
+                 					<li>C'est quoi un site ?</li>
+                 					<li>Difference entre site web et une page web</li>
+                 					<li>Comment appelle-t-on une page internet ?</li>
+                 					<li>Comment est constituée une page web ?</li>
+                 					<li>Differentes types de sites internet</li>
+                 					<li>Comment savoir quel est le navigateur par defaut?</li>
+                 					<li>Comment s'appelle la première page d'un site web ?</li>
+                 					<li><a href="premier_cours.html">Comment créer une page web html ?</p></li>
+                 				</ol>
+                  			</p>
+                              <p><a href="premier_cours.html">Premier cours html</a></p>                  			<p>
+                  				Remplir le formulaire pour télécharger le livre gratuitement
+                  				<a href="">Cliquer ici si vous avez des diffcultelés</a>
+                  			</p>
+                  			<form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off"> 
+                  			<input id="nameField" name="entry.541522024" placeholder="Votre mail" type="email" required> 
+                  			<input id="emailField" name="entry.36355862" placeholder="Numero" type="text" required>
+                  			<button id="send" type="submit" class="common_btn">Télécharger</button>
+                  			</form>
+                  		</article>
+                  	
+                    
+                </div>
+            </div>
+        </div>
+            
+<footer>
+    2020 <strong>Digit Smart</strong> - <a href="http://digitsmartplus.rf.gd">Mon site web</a>
+</footer>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+<script src="../omega.js"></script>
+<script>
+function postToGoogle() {
+                var field1 = $("#nameField").val();
+                var field2 = $("#emailField").val();
+ 				
+				if(field1 == ""){
+					alert('Please Fill Your email');
+					document.getElementById("nameField").focus();
+					return false;
+				}
+				if(field2 == ""){
+					alert('Please Fill Your number');
+					document.getElementById("emailField").focus();
+					return false;
+				}
+
+
+				
+	
+                $.ajax({
+                    url: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSepMiaXKI6a4-Aw7KUPvk-z4ie0jAOjmj3XrEBuXAIq71UUtg/formResponse",
+					data: {"entry.541522024": field1, "entry.36355862": field2},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{
+
+							$('#success-msg').show();
+							$('#success').show();
+							$('#form').hide();
+							self.location.href="http://gestyy.com/e0G1wj?ts="+new Date()
+							
+						}
+                });
+				return false;
+            }
+</script>
+</body>
+</html>

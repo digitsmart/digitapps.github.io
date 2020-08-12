@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acme Web Design</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="contactform.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Acme</span> Web Design</h1>
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>Acme Web Design</h3>
+        <ul>
+          <li><i class="fa fa-road"></i> 44 Something st</li>
+          <li><i class="fa fa-phone"></i> (555) 555-5555</li>
+          <li><i class="fa fa-envelope"></i> test@acme.test</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>Email Us</h3>
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/7.15.4/firebase-app.js"></script>
+	
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="/__/firebase/7.15.4/firebase-analytics.js"></script>
+	
+	<!-- Initialize Firebase -->
+	<script src="/__/firebase/init.js"></script>
+  <script src="contactform.js"></script>
+  <script type="text/javascript">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+  
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+  
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+  apiKey: "AIzaSyB4sPvsp-bQpIQYjCztvRbt64H2gNC2skY",
+  authDomain: "inscriptions-9b2f0.firebaseapp.com",
+  databaseURL: "https://inscriptions-9b2f0.firebaseio.com",
+  projectId: "inscriptions-9b2f0",
+  storageBucket: "inscriptions-9b2f0.appspot.com",
+  messagingSenderId: "867999048329",
+  appId: "1:867999048329:web:bed1522bd813936a931c58",
+  measurementId: "G-2E94QDPKVQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+ 
+  
+  firebase.initializeApp(config);
+  
+  // Reference messages collection
+  var messagesRef = firebase.database().ref('messages');
+  
+  // Listen for form submit
+  document.getElementById('contactForm').addEventListener('submit', submitForm);
+  
+  // Submit form
+  function submitForm(e){
+  e.preventDefault();
+  
+  // Get values
+  var name = getInputVal('name');
+  var company = getInputVal('company');
+  var email = getInputVal('email');
+  var phone = getInputVal('phone');
+  var message = getInputVal('message');
+  
+  // Save message
+  saveMessage(name, company, email, phone, message);
+  
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+  
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+  document.querySelector('.alert').style.display = 'none';
+  },3000);
+  
+  // Clear form
+  document.getElementById('contactForm').reset();
+  }
+  
+  // Function to get get form values
+  function getInputVal(id){
+  return document.getElementById(id).value;
+  }
+  
+  // Save message to firebase
+  function saveMessage(name, company, email, phone, message){
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+  name: name,
+  company:company,
+  email:email,
+  phone:phone,
+  message:message
+  });
+  }
+  </script>
+</body>
+</html>
