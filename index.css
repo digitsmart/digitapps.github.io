@@ -1,3 +1,73 @@
+
+a:link,
+  a:visited{
+   text-decoration: none;
+  }
+
+  .modal{
+   width:100%;
+   height: 100vh;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .5s;
+   display: block;
+  }
+
+  .modal__content{
+   width: 75%;
+   height: auto;
+   background-color: black;
+   display: auto;
+   color: #FFF;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 0.4em;
+   border-radius: 1em;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .5s;
+  }
+
+  #modal:target{
+   opacity: 1;
+   visibility: visible;
+  }
+
+  #modal:target .modal__content{
+   opacity: 1;
+   visibility: visible;
+  }
+
+  .modal__close{
+   color: orange;
+   font-size: 2.5em;
+   position: absolute;
+   top: .5em;
+   right: 1em;
+  }
+
+  .modal__heading{
+   color: dodgerblue;
+   margin-bottom: 0.1em;
+   background: blue;
+   width: 100%;
+  }
+
+  .modal__paragraph{
+   line-height: 1.5em;
+  }
+
+.modal-open{
+ display: inline-block;
+ color: dodgerblue;
+ margin: 2em;
+}
 #omega{
 
     padding: 0px;
@@ -426,7 +496,7 @@ form input{
  margin: 0.2em;
  opacity: 23px;
  background: white;
- color: #FFF;
+ color: black;
 }
 form select{
 	width: 100px;
@@ -503,4 +573,53 @@ div h1 {
 	-moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
 	box-shadow:inset 0px 0px 5px 0px rgba(0,0,0,0.75);
 	
+}
+
+#article img {
+	width:100%;
+	height:150px;
+
+}
+#article{
+	min-height: 100%;
+	border: 2px solid;
+	display: flex;
+	border: 0px solid
+	margin-top: -0.9em;
+	margin-bottom: 0.8em;
+	overflow-x: auto;
+	
+}
+.btn{
+	background: blue;
+	border: 2px solid orange;
+	width: 100%;
+	margin-rignt: 0.2em;
+	border-radius: 15px;
+	color: white;
+}
+
+#article ::webkit-scrollbar{
+	width:0;
+	
+}
+#article{
+	min-width: 210px;
+	height: 100%;
+	line-height: 100%;
+	text-box: 5px 4px 1px 0px black;
+	
+}
+#article .article {
+	min-width:40%;
+	height: 100%;
+	
+	border: 2px solid blue;
+	border-radius: 7px;
+	margin-top:0.2em;
+	margin-bottom: 0.3em;
+	overflow: hidden;
+	margin-right: 0.2em;
+	
+
 }
