@@ -453,20 +453,52 @@ article p{
 	margin-top: -0.1em;
 
 }
-.w3-section{
-	background: blue;
-	overflow: hidden;
-	padding: 0.3em;
-}
-.w3-section input{
+/*formulaire d'inscription*/
+
+form{
 	width:70%;
-	margin-left: 3em;
+	margin:auto;
+	padding: 0.5em;
 	border: 2px solid orange;
+	background: black;
+	display:auto;
 }
-.w3-section label{
-	margin-left: 2.5em;
-	color: #FFF;
+form input{
+ width:92%;
+ height: auto;
+ margin-bottom:;
+ margin-right: 0.5em;
+ opacity: 23px;
+ background: white;
+ color: black;
 }
+form, label{
+	color:#FFF;
+}
+
+form #code, input{
+	width: 60px;
+	margin-right:0.9em;
+	display: block;
+}
+form #phone{
+	width: 90%;
+	margin-right:1em;
+	display: block;
+}
+form select{
+	width: 100px;
+	height: 24px;
+	margin: 0.3em;
+}
+form button{
+	width: 99%;
+	border-radius:15px;
+	margin: 0.5em;
+}
+
+/*fin formulaire d'inscription*/
+
 
 
 </style>
@@ -475,7 +507,7 @@ article p{
 <header>
     <div class="container">
             <div id="omega">
-                    <a href="#" id="logo" style="text-decoration: none;">Astuces pour windows</a>
+                    <a href="#" id="logo" style="text-decoration: none;">Gagner votre vie en pyjama</a>
                 <div id="omega-content">
                     <nav>
                         <ul>
@@ -492,7 +524,7 @@ article p{
                     </div>
                     
                 </div>
-    
+                <button id="omega-button">&#9776;</button>
                 <div id="omega-sidebar">
                     <div id="omega-sidebar-header"></div>
                     <div id="omega-sidebar-body"></div>
@@ -504,41 +536,9 @@ article p{
         <div id="container">
             <div class="phone">
                 <div class="content">
-                    <div id="akey" style="margin-bottom: 1em; display: block;">
-                       <div class="cat">
-                       	<img src="images/livre5.png" style="width:20px; height: 25px; margin-right: 0.4em;">
-                       	<h1 style="font-size: 20px;">Astuces pour windows</h1>
-                       	<p style="border:2px solid blue;border-radius:25px; margin:auto; width: 50px; color: black;">
-                       	<a href="listelivres.html" >Back</a></p>
-                       </div>
-                       <div id="article"> 
-                       	 <article>
-                        	<img src="images/livre5.jpg">
-                        	<p>
-                        		<strong>Quelques astuces a vous...</strong><br><br>
-                        		Voici quelques atuces interessant sur windows qui peuvent
-                        		bien vous aider avec votre windows.<br><br>
-                        		
-                        	</p>
-          
-                        	<!--Update the URL for thank you page on form submit -->
-                        	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
-                        	onload="if(submitted) {window.location='http://gestyy.com/ewJt75';}"></iframe> 
-                        	
-                        	<!-- Update the Google forms URL in action-->
-                        	<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXiph2WjcIpxaxIxHSrRk9JTglvMVEh6DZBVsfUoKzBrKldQ/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
-                        	<div class="w3-section">
-                        	<label>Astuces pour windows</label><br>
-                        	<input class="w3-input w3-border" type="text" placeholder="Email" id="email" required name="entry.647156603">
-                        	</div>
-                        	
-                        	<div class="w3-section">
-                        	<button class="btn" class="w3-button w3-block w3-black w3-margin-bottom" type="submit">SEND</button>
-                        	</div>
-                        	</form>
-                    	 </article>
-                    	
-                    </div>
+                   
+        
+                       	 
                     
                 </div>
             </div>
@@ -548,5 +548,49 @@ article p{
 </footer>   
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 <script src="omega.js"></script>
+
+<script>
+function postToGoogle() {
+                var field1 = $("#nameField").val();
+                var field2 = $("#emailField").val();
+                var field3 = $("#codeField").val();
+                var field4 = $("#mobField").val();
+				var field6 = $("#villeField").val(); 
+				var field7 = $("#adresseField").val();               
+ 				
+				if(field1 == ""){
+					alert('Please Fill Your Name');
+					document.getElementById("nameField").focus();
+					return false;
+				}
+				if(field2 == ""){
+					alert('Please Fill Your Email');
+					document.getElementById("emailField").focus();
+					return false;
+				}
+				
+
+
+				
+	
+                $.ajax({
+                    url: "https://docs.google.com/forms/u/3/d/e/1FAIpQLSc2qsWgpgcuNaDX2Fi5rMJbFSKIMoPVRamufU7d64_8MIdneg/formResponse",
+					data: {"entry.100172710": field1, "entry.774187405": field2, "entry.1020359105": field3, "entry.1674936516": field4, "entry.641652919": field6, "entry.218870431": field7},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{
+
+							$('#success-msg').show();
+							$('#form').hide();
+							
+						}
+                });
+				return false;
+            }
+</script>
 </body>
 </html>

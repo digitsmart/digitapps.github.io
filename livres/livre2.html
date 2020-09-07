@@ -453,6 +453,20 @@ article p{
 	margin-top: -0.1em;
 
 }
+.w3-section{
+	background: blue;
+	overflow: hidden;
+	padding: 0.3em;
+}
+.w3-section input{
+	width:70%;
+	margin-left: 3em;
+	border: 2px solid orange;
+}
+.w3-section label{
+	margin-left: 2.5em;
+	color: #FFF;
+}
 
 
 </style>
@@ -461,7 +475,7 @@ article p{
 <header>
     <div class="container">
             <div id="omega">
-                    <a href="#" id="logo" style="text-decoration: none;">Comment gagner de l'argent ?</a>
+                    <a href="#" id="logo" style="text-decoration: none; font-size: 18px;">Comment gagner de l'argent ?</a>
                 <div id="omega-content">
                     <nav>
                         <ul>
@@ -478,7 +492,7 @@ article p{
                     </div>
                     
                 </div>
-                <button id="omega-button">&#9776;</button>
+      
                 <div id="omega-sidebar">
                     <div id="omega-sidebar-header"></div>
                     <div id="omega-sidebar-body"></div>
@@ -516,7 +530,22 @@ article p{
                         		ligne, et par quoi le remplacer.
                         
                         	</p>
-                        	<a href="http://gestyy.com/ewDyrp" ><input type="button" value="Télécharger" class="btn"></a>
+            
+                        	<!--Update the URL for thank you page on form submit -->
+                        	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
+                        	onload="if(submitted) {window.location='http://gestyy.com/ewDyrp';}"></iframe> 
+                        	
+                        	<!-- Update the Google forms URL in action-->
+                        	<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXiph2WjcIpxaxIxHSrRk9JTglvMVEh6DZBVsfUoKzBrKldQ/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+                        	<div class="w3-section">
+                        	<label>Comment gagner votre vie</label><br>
+                        	<input class="w3-input w3-border" type="text" placeholder="Email" id="email" required name="entry.647156603">
+                        	</div>
+                        	
+                        	<div class="w3-section">
+                        	<button class="btn" class="w3-button w3-block w3-black w3-margin-bottom" type="submit">SEND</button>
+                        	</div>
+                        	</form>
                     	 </article>
                     	
                     </div>
@@ -524,9 +553,7 @@ article p{
                 </div>
             </div>
         </div>
-<footer>
-    2020 <strong>Digit Smart</strong> - <a href="http://digitsmartplus.rf.gd">Mon site web</a>
-</footer>   
+
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 <script src="omega.js"></script>
 </body>

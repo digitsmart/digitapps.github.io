@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Digit Smart</title>
+  <title>Digit Smart</title
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style type="text/css">
 #omega{
@@ -395,8 +395,10 @@ form textarea{
 	position: relative;
 	Bottom: 0px; left: 0px;
 }
-article {
-	width:100%;
+#article article {
+	min-width:40%;
+	height: 100%;
+	
 	border: 2px solid blue;
 	border-radius: 7px;
 	margin-top:0.2em;
@@ -417,15 +419,15 @@ article img {
 
 }
 #article{
-	width: 98.7%;
+	min-height: 100%;
 	border: 2px solid;
 	display: flex;
-	overflow: auto;
+
 	border: 0px solid
 	margin-top: -0.9em;
 	margin-bottom: 0.8em;
-	overflow-x: scroll;
-	overflow-y: hidden;
+	overflow-x: auto;
+	
 }
 .btn{
 	background: blue;
@@ -440,8 +442,18 @@ article img {
 	margin-top: -0.6em;
 	padding: -0.1em;
 	border:2px solid red;
-	overflow: hidden;
 	margin-bottom: 0.1em;
+}
+#article ::webkit-scrollbar{
+	width:0;
+	
+}
+#article{
+	min-width: 210px;
+	height: 100%;
+	line-height: 100%;
+	text-box: 5px 4px 1px 0px black;
+	
 }
 .cat h1{
 	margin-top: -0.6em;
@@ -492,6 +504,7 @@ article li, strong{
             <div class="phone">
                 <div class="content">
                     <div id="akey" style="margin-bottom: 1em; display: block;">
+                       <!--Livre partie 1-->
                        <div class="cat">
                        	<img src="images/livre1.png" style="width:10px; height: 20px;">
                        	<h1>Comment gagner votre vie</h1>
@@ -531,7 +544,7 @@ article li, strong{
                     	 </article>
                     </div>
                     
-                    
+                    <!--Livre partie 2-->
                     <div class="cat">
                     <img src="images/livre4.png" style="width:10px; height: 20px;">
                     <h1>Astuces informatique en pdf</h1>

@@ -453,6 +453,20 @@ article p{
 	margin-top: -0.1em;
 
 }
+.w3-section{
+	background: blue;
+	overflow: hidden;
+	padding: 0.3em;
+}
+.w3-section input{
+	width:70%;
+	margin-left: 3em;
+	border: 2px solid orange;
+}
+.w3-section label{
+	margin-left: 2.5em;
+	color: #FFF;
+}
 
 
 </style>
@@ -478,7 +492,7 @@ article p{
                     </div>
                     
                 </div>
-                <button id="omega-button">&#9776;</button>
+
                 <div id="omega-sidebar">
                     <div id="omega-sidebar-header"></div>
                     <div id="omega-sidebar-body"></div>
@@ -510,7 +524,22 @@ article p{
                         	Bonne Lecture
                         
                         	</p>
-                        	<a href="http://gestyy.com/ewD25j" ><input type="button" value="Télécharger" class="btn"></a>
+          
+                        	<!--Update the URL for thank you page on form submit -->
+                        	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
+                        	onload="if(submitted) {window.location='http://gestyy.com/ewD25j';}"></iframe> 
+                        	
+                        	<!-- Update the Google forms URL in action-->
+                        	<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXiph2WjcIpxaxIxHSrRk9JTglvMVEh6DZBVsfUoKzBrKldQ/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+                        	<div class="w3-section">
+                        	<label>Gagner votre vie en pyjama</label><br>
+                        	<input class="w3-input w3-border" type="text" placeholder="Email" id="email" required name="entry.647156603">
+                        	</div>
+                        	
+                        	<div class="w3-section">
+                        	<button class="btn" class="w3-button w3-block w3-black w3-margin-bottom" type="submit">SEND</button>
+                        	</div>
+                        	</form>
                     	 </article>
                     	
                     </div>

@@ -1,0 +1,262 @@
+
+.container {
+    margin-top: 0px; 
+    display: block;
+    margin: 0px;
+    overflow: hidden;
+   
+  }
+  .phone {
+    background-color: none;
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
+  }
+  .content {
+    border-radius: 2px;
+    width: 100%;
+    height: auto;
+    background-color: #F5F6FA;
+    overflow: hidden;
+  }
+  #container{
+  	height: auto;
+      margin-top: -0.2em;
+      overflow: hidden;
+      display: block;
+      
+  }
+  
+ul {
+    margin:0;
+    padding:0;
+}
+.small-text{
+    display:block;
+    font-style: italic;
+    font-size:0.9em;
+    margin-top:0.3em;
+}
+h1.title{
+    text-transform: uppercase;
+    font-size:1.2em;
+    font-weight:700;
+}
+.button, button{
+    margin-bottom:0;
+}
+#logo{
+    display:inline-block;
+    margin-right:2em;
+    color:#FFF;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.bloc{
+    margin-bottom:0.1em;
+    padding:1em;
+    border-radius:8px 8px 8px 8px;
+    border:1px solid #f5f5f5;
+}
+.bloc.primary{
+    background-color:#9b4dca;
+    color:#ffffff;
+    border-color:#9b4dca;
+}
+.chapter{
+    display:inline-block;
+    margin-right:0.5em;
+    font-weight:600;
+    color:#9b4dca;
+}
+footer{
+    background-color:#f2f2f2;
+    text-align: center;
+   
+    
+}
+button{
+    background-color: blue;
+    border: blue;
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button, a{
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app{
+    margin: 0p;
+    padding: 0px;
+}
+.content{
+    width: 100%;
+    border: 0px solid;
+    display: block;
+    overflow: hidden; 
+}  
+
+form{
+	margin:auto;
+	padding-right: 0.5em;
+}
+form input{
+ width:99%;
+ margin: 0.2em;
+ opacity: 23px;
+ background: rgb(66, 62, 62);
+ color: #FFF;
+}
+form select{
+	width: 30px;
+}
+form button{
+	width: 99%;
+	border-radius:15px;
+	margin: 0.5em;
+}
+
+#section{
+    border: 2px solid blue;
+    margin-left: 0.1px;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    background-image: url('../images/accueil.jpg');
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    
+}
+section div{
+    background-color: #FFF;
+    
+}
+.section{
+    border: 2px solid blue;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+}
+h1{
+    font-size: 20px;
+    text-align: center;
+}
+p{
+    font-size: 14px;
+    text-align: center;
+}
+
+#presentation{
+    border: 2px solid blue;
+    margin-top: 0.2em;
+    margin-left: 0.1px;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;  
+}
+
+#presentation div{
+    border: 2px solid orange;
+    background: #FFF;
+    margin: 0.2em;
+    overflow: hidden;
+    box-shadow: 0px 2px 7px 3px rgba (0,0,0,0,75);
+    -webkit-box-shadow: encart 0px 2px 7px 3px rgba (0,0,0,0,75);
+    -moz-box-shadow: encart 0px 2px 7px 3px rgba (0,0,0,0,75);
+
+}
+#presentation p{
+    font-size: 14px;
+}
+#presentation h1{
+    font-size: 14px;
+    margin-bottom: -0.8em;
+}
+#presentation a{
+    font-size: 14px;
+}
+#presentation .l1{
+    margin-bottom: -0.4em;
+    height: 60px;
+    border: 2px solid;
+    background-image: url('../images/Slide1.JPG');
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+}
+#presentation .l2{
+    margin-bottom: -0.4em;
+    height: 60px;
+    border: 2px solid;
+    background-image: url('../images/Slide2.JPG');
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+}
+#presentation .l3{
+    margin-bottom: -0.4em;
+    margin-right: 0.3em;
+    height: 60px;
+    width: 95%;
+    border: 2px solid;
+    background-image: url('../images/Slide3.JPG');
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+}
+.section, strong{
+    text-align: center;
+    margin-bottom: 0.1em;
+
+}
+.section p{
+    font-size: 14px;
+    margin-top: 0.2em;
+}
+#rech{
+	background: blue;
+	height: 30px;
+	padding: 0.2em;
+}
+#rech{
+	display: flex;
+
+}
+#search{
+	border-radius: 15px;
+	width: 100;
+}
+#button{
+	border-radius: 15px;
+}
+#rech .r{
+	width: 25px;
+	height: 25px;
+	border-radius:25px;
+	border: 2px solid;
+	margin-bottom: 0.3em;
+	margin-left: 0.2em;
+	background: orange;
+}
