@@ -172,6 +172,7 @@ header {
    
   }
   .content {
+  	background-image: url('images/accueil.jpg');
     border-radius: 2px;
     width: 100%;
     height: 91%;
@@ -323,7 +324,7 @@ article img {
 	border-radius:25px;
 	box-shadow: 2px 2px 2px 0px black;
 	width: 70%;
-	margin-rignt: 1em;
+	
 	margin-left: 3.5em;
 	margin-bottom: 0.3em;
 	padding: 0.5em;
@@ -343,7 +344,7 @@ article img {
 	text-align: left;
 	margin-top: 0.1em;
 	margin-bottom: -0.1em;
-	font-size: 48px;
+	font-size: 18px;
 }
 article p{
 	margin-top: -0.1em;
@@ -358,11 +359,11 @@ form{
 	border: 2px solid orange;
 	background: black;
 	display:auto;
+	margin-bottom: 2em;
 }
 form input{
  width:92%;
  height: auto;
- margin-bottom:;
  margin-right: 0.5em;
  opacity: 23px;
  background: white;
@@ -392,11 +393,50 @@ form button{
 	border-radius:15px;
 	margin: 0.5em;
 }
-img{
+#img{
 	width:100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-right: 0.2em;
+	overflow: hidden;
+	background: white;
+	box-shadow: 2px 2px 1px 2px black;
+	border: 0px solid;
 }
 
+#img img{
+	width:100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+#info{
+	display: flex;
+	border: 2px solid orange;
+	background: white;
+	margin-right: 1em;
+	margin-left: 1em;
+	height: 100%;
+}
+#info #img{
+	width: 50%;
+	height: 100%;
+}
+#info #texte{
+	width: 100%;
+}
 /*fin formulaire d'inscription*/
+li{
+	font-size: 12px;
+	margin-left: -0.6em;
+	margin-top: -0.1em;
+}
+ul{
+	font-size: 12px;
+	margin-left: -0.6em;
+	margin-top: -1em;
+}
+
 
 
 
@@ -410,8 +450,22 @@ img{
         
              
                        	 </p>
-                       	 <center><h1 style="color:black">Formation google drive</h1></center>
-                       	 <center><h2 style="color:black">Date de la for,ation 27, 28, 29 aout 2020</h2></center>
+                       	<div id="info">
+                       		<div id="img">
+                       			<img src="images/in.jpg">
+                       		</div>
+                       		<div id="texte">
+                     	  	    <center><h1 style="color:black; font-size: 18px; margin-bottom:-0.3em">Formation google drive</h1></center>
+                    	    	 <center><p style="color:black; font-size: 12px;">Date de la for,ation 27, 28, 29 aout 2020</p></center>
+                    	    	<ul>
+                    	    	 <li>Google docs</li>
+                    	    	 <li>Google sheets</li>
+                    	    	 <li>Google slide</li>
+                    	    	 <li>Google forms</li>
+                    	    	</ul>
+                    	    	<p style="font-size: 12px;">Video - Audio - Ebook - certificat</p>
+                    	   	 </div>
+                       	 </div>
                        	 
                        	 <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off"> 
                        	 <input class="w3-input w3-border" type="text" placeholder="EXP: Joseph Ruban" id="nameField" required name="entry.100172710">
