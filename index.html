@@ -188,7 +188,8 @@
 
       <div id="video_controls">
         <span id="play">
-          <img src="images/mon logo.png">
+          <div id="imgs" style="display: block;"><img id="imgs" src="images/mon logo.png"></div>
+          
         </span>
         <span id="pause">
           <img src="pause.png">
@@ -203,11 +204,8 @@
         </div>
 
         <div id="links">
-          <a href="https://ftechplusapp.netlify.app/">Page d'acceuil</a>
+          <a href="https://ftechplusapp.netlify.app/" href="home.html">Page d'acceuil</a>
           <button onclick="myFunction()">Document N.2</button>
-        
-  
-          http://gestyy.com/ern1UU
       <div id="myDIV" style="display: none;">
         <button onclick="myFunction()">&times;</button>
         <h2 class="modal__heading">Document Niveau 2</h2>
@@ -229,12 +227,17 @@
     <script>
         function myFunction() {
         var x = document.getElementById("myDIV");
+        var y = document.getElementById("imgs");
         if (x.style.display === "none") {
           x.style.display = "block";
+          y.style.display = "none";
         } else {
           x.style.display = "none";
+          y.style.display = "block";
         }
       }
     </script>
+
+  
   </body>
 </html
