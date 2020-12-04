@@ -203,6 +203,14 @@
           <p class="info">Programmation web en html et css sur mobile, Creation blog en ligne sur mobile,Comment gagner de l'argent en ligne </p>
         </div>
 
+        <p class="info">
+          Cliquer sur le boutton orange pour copier le lien de la formation
+        </p>
+
+        <input style="width: 0px; height: 0px;" type="text" value=" https://meet.google.com/nhr-fyyb-ahp" id="myInput"><br>
+        <button style="background: orange;" onclick="mycopie()">Copier le lien de la réunion ici</button>
+
+
         <div id="links">
           <a href="https://ftechplusapp.netlify.app/" href="home.html">Page d'acceuil</a>
           <button onclick="myFunction()">Document N.2</button>
@@ -237,6 +245,16 @@
         }
       }
     </script>
+
+<script> https://meet.google.com/nhr-fyyb-ahp
+  function mycopie() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+  }
+  </script>
 
   
   </body>
