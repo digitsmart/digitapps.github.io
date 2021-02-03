@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Easy Fullscreen HTML5 Background Video</title>
     <meta name="keywords" content="css3, html5, js, background video, fullscreen video">
     <meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
     <link rel="stylesheet" href="popupform/stylepopupform.css">
@@ -27,20 +26,16 @@
 
       #background_video {
         position: absolute;
-
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);
-
         object-fit: cover;
         height: 100%; width: 100%;
       }
 
       #video_cover {
         position: absolute;
-
         width: 100%; height: 100%;
-
-        background: url('images/background.jpg') no-repeat;
+        background: url('images/Presentation2.gif') no-repeat;
         background-size: cover;
         background-position: center;
       }
@@ -53,10 +48,10 @@
 
       #play img {
         width: 150px;
-        margin-top:4.5em;
+        margin-top:8em;
       }
       #pause img {
-        width: 90px;
+        width: 9px;
       }
       #pause {
         display: none;
@@ -64,7 +59,7 @@
 
       @media (min-width: 768px) {
         #video_controls {
-          display: none;
+          display: block;
         }
       }
 
@@ -86,13 +81,8 @@
       }
 
       #main_content {
-        z-index: 2;
-        position: relative;
-        display: inline-block;
-
-        /* Vertical center */
-        top: 50%;
-        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
       }
 
       #main_content h1 {
@@ -108,23 +98,28 @@
         font-size: 16px;
       }
 
-      #main_content .info {
-        color: rgba(255,255,255,0.5);
-        font-size: 12px;
-        margin-top: 10px;
+    .main{
+      position: absolute;
+      top: 25%;
+      left: 7%;
+    }
+      .imgs{
+        width: 150px;
+        margin: 1em auto;
       }
-
-      #links {
-        margin-top: 50px;
+      img{
+        width: 100%;
       }
       button{
         background-color:rgba(3, 24, 41, 0.897);
       }
 
-      #links a, button {
+      .main a, button {
         border: 2px solid rgba(255,255,255,0.20);
         border-radius: 61px;
         font-size: 12px;
+        font-weight: bolder;
+        font-family: 'Times New Roman', Times, serif;
         color: #FFFFFF;
         letter-spacing: 1px;
         text-decoration: none;
@@ -132,30 +127,6 @@
         padding: 10px 25px;
         display: inline-block;
         margin-right: 10px;
-      }
-      #myDIV{
-        border: 2px solid rgba(255,255,255,0.20);
-        border-radius: 61px;
-        font-size: 12px;
-        color: #FFFFFF;
-        letter-spacing: 1px;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 10px 25px;
-        display: inline-block;
-        margin-right: 1px;
-
-      }
-      #myDIV input{
-        width: 100%;
-        padding: 0.5em;
-        margin: auto;
-        margin-bottom: 0.4em;
-        border-radius: 25px;
-
-      }
-      #myDIV .btn{
-        width: 50%;
       }
 
 
@@ -182,67 +153,14 @@
   </head>
   <body>
     <div id="container">
-      <video id="background_video" loop muted></video>
-      <div id="video_cover"></div>
-      <div id="overlay"></div>
-
-      <div id="video_controls">
-        <span id="play">
-          <div id="imgs" style="display: block;"><img id="imgs" src="images/mon logo.png"></div>
-          
-        </span>
-        <span id="pause">
-          <img src="pause.png">
-        </span>
-      </div>
-
-      <section id="main_content">
-        <div id="head">
-          <h1><span style="color: blue; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">FTECH</span> <span style="color: orange; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">PLUS</span></h1>
-          <p class="sub_head">Suivez des formation en ligne en imformatique,grâce a votre smartphone/tablette</p>
-          <p class="info">Programmation web en html et css sur mobile, Creation blog en ligne sur mobile,Comment gagner de l'argent en ligne </p>
+      <div id="video_cover">
+        <div class="main">
+          <div class="imgs"><img src="images/mon logo.png"></div>
+          <div class="boutton">
+            <a href="home.html">Page d'accueil</a>
+            <a href="home.html">Page d'accueil</a>
+          </div>
         </div>
-
-        <p class="info">
-          Cliquer sur le boutton orange ou selectionner le code au-dessous<br><br>
-          <strong style="color: red; font-size: 16px; border: 2px solid gray; padding: 0.4em; margin-top: 2em;">nhr-fyyb-ahp</strong>
-        </p>
-        <div id="links">
-          <a href="https://ftechplusapp.netlify.app/" href="home.html">Page d'acceuil</a>
-          <button onclick="myFunction()">Document N.2</button>
-      <div id="myDIV" style="display: none;">
-        <button onclick="myFunction()">&times;</button>
-        <h2 class="modal__heading">Document Niveau 2</h2>
-        <p>Remplir le formulaire pour télécharger le document</p>
-        <p class="modal__paragraph"><!-- Static- Please don't do anything here-->
-          <script type="text/javascript">var submitted=false;</script>
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='http://gestyy.com/ern1UU';}"></iframe>
-          <!--My Form-->
-          <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWCryQSD8DlAiFX5Vwpl1yybtwsu1q4Su5jnTfLrj5U8PeMA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true" class="myform">
-              <input type="text" placeholder="Your Name" name="entry.1678085320"><br/>
-              <input type="text" placeholder="Email ID" name="entry.1318168670"><br/>
-              <input class="btn" type="submit" value="Submit">
-          </form>
-          </p>
       </div>
-        </div>
-      </section>
-    </div>
-    <script>
-        function myFunction() {
-        var x = document.getElementById("myDIV");
-        var y = document.getElementById("imgs");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-          y.style.display = "none";
-        } else {
-          x.style.display = "none";
-          y.style.display = "block";
-        }
-      }
-    </script>
-
-
-  
   </body>
 </html
