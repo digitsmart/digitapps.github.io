@@ -43,6 +43,8 @@
         padding: 10px 25px;
         display: inline-block;
         margin-right: 10px;
+        animation-name: boutton;
+        animation-duration: 3s;
       }
 
 
@@ -72,8 +74,19 @@
         bottom: 50%;
         width: 100%;
         height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
         background-color: black;
         background-image: url('images/backgift.gif');
+      }
+      @keyframes boutton{
+        from {background-color: blue;}
+        to {background-color: orangered;}
+      }
+      .boutton{
+        margin: auto;
+        width: fit-content;
+
       }
     </style>
 
@@ -86,12 +99,12 @@
         <div class="main">
           <div class="imgs"><img src="images/mon logo.png"></div>
           <div id="video">
-            <video controls muted poster="images/astuces.png">
+            <video controls autoplay preload="auto" poster="images/astuces.png">
               <source src="videos/video.mp4" type="video/mp4">
                 Le fichier video ne peut pas etre lu sur ftech plus pour le moment...
             </video>
-            <a href="videos/video.mp4" download>
-            <button>Télécrager</button>
+            <a href="videos/video.mp4" download style="display: none;">
+            Télécrager
             </a>
           </div>
           <div class="boutton">
