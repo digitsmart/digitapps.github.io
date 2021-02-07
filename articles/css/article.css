@@ -1,0 +1,123 @@
+body{
+    margin: 0px;
+}
+.container{
+    width: 100%;
+    margin: 0px;
+}
+.main{
+    width: 98%;
+    margin:32px 0.4em;
+}
+article{
+    width: 100%;
+}
+article img{
+    width: 100%;
+    margin: 3px;
+    margin-right: 3px;
+}
+article h1{
+    margin: 1px;
+    font-size: 17px;
+    color: blue;
+    text-align: center;
+}
+article h2{
+    margin: 2px;
+    font-size: 14px;
+    color: orangered;
+    text-align: center;
+}
+article h3{
+    margin: 5px 1px;
+    font-size: 14px;
+    color: orange;
+    text-align: left;
+}
+article p{
+    font-size: 12px;
+    color: black;
+    text-align: justify;
+}
+article li{
+    font-size: 12px;
+}
+#bb, #cc, #dd, #ee{
+    display: none;
+    overflow: hidden;
+    padding-right: 3px;
+}
+.bar{
+    background-color: cornsilk;
+    height: 25px;
+    box-shadow: 1px 1px 1px black;
+    margin-top: 0px;
+    border: 1px solid rgb(4, 69, 248);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+.bar button{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    margin-top: 0.1em;
+    margin-left: 3px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid rgb(8, 86, 231);
+}
+.bar button:active{
+    background-color: blue;
+}
+.bar button:focus{
+    background-color: cornflowerblue;
+}
+.bar div{
+    margin:0px auto;
+    width: 60%;
+}
+.bar .back{
+    position: absolute;
+    background-color: blue;
+    padding: 3px auto;
+    margin: 1px;
+    width: 32px;
+    height: 26px;
+    
+}
+.bar .back a{
+    border: 2px solid rgba(255,255,255,0.20);
+    border-radius: 61px;
+    font-size: 12px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 1px;
+    display: inline-block;
+}
+.article-s{
+    display: flex;
+}
+.article-s ol{
+    width: 100px;
+    border: 1px solid;
+    margin-right: 0.5em;
+}
+.article-s ol li{
+    text-decoration: none;
+    list-style: none;
+    margin-left: -2.5em;
+    margin-right: 1px;
+}
+@media (max-width : 640px)
+{
+    .container, .main, article{
+        width: 98.60%;
+    }
+}
