@@ -1,0 +1,227 @@
+
+.myform input{
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px 0px;
+}
+a:link,
+a:visited{
+text-decoration: none;
+}
+
+.modal{
+background-color: rgba(0,0,0, .8);
+width:100%;
+height: 100vh;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 10;
+opacity: 0;
+visibility: hidden;
+transition: all .5s;
+}
+
+.modal__content{
+width: 75%;
+height: 65%;
+background-color: #fff;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 2em;
+border-radius: 1em;
+opacity: 0;
+visibility: hidden;
+transition: all .5s;
+}
+
+#modal:target{
+opacity: 1;
+visibility: visible;
+}
+
+#modal:target .modal__content{
+opacity: 1;
+visibility: visible;
+}
+
+.modal__close{
+color: #363636;
+font-size: 2em;
+position: absolute;
+top: .5em;
+right: 1em;
+}
+
+.modal__heading{
+color: dodgerblue;
+margin-bottom: 1em;
+}
+
+.modal__paragraph{
+line-height: 1.5em;
+}
+
+.modal-open{
+display: inline-block;
+color: white;
+margin: 0.1em;
+}
+
+hr{
+    margin-top: -0.2em;
+    border: 1px solid;
+}
+
+
+body{
+    margin:0;
+}
+
+.container {
+    margin-top: 0px; 
+    display: block;
+    
+  }
+  .phone {
+    background-color: none;
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .content {
+    border-radius: 2px;
+    width: 100%;
+    height: 91%;
+    background-color: #F5F6FA;
+    overflow: hidden;
+  }
+button{
+    background-color: blue;
+    border: blue;
+    padding: 0.3em;
+    border-radius: 5px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#coutenue{
+    width: 99%;
+    margin: 0px;
+    margin: 0.2em;
+    border: 0px solid;
+    margin: auto;
+    margin-top: -0.8em;
+    margin-bottom: 1.4em;
+    box-shadow: 1px 1px 1px 1px black;
+}
+#coutenue h1{
+    font-size: 18px;
+    text-align: center;
+    color: #FFF;
+    margin-top: 0.1em;
+    background-color: blue;
+}
+#coutenue p{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+    margin-top: -0.4em;
+}
+.content{
+    width: 99%;
+    border: 0px solid;
+    display: block;
+    overflow: hidden;
+    overflow: auto;
+    overflow: hidden;
+}
+
+
+@media only screen and (min-width: 850px){
+    #coutenue{
+        width: 94%;
+        padding-left: 0.5em;
+        padding-right: 1em;
+        box-shadow: 0px 4px 2px 1px black;
+        border: 2px solid;
+        margin-right: 1em;
+        overflow: hidden;
+    }
+
+}
+
+
+#lirelasuite {
+display:none;
+}
+
+button{
+	border: 2px solid;
+    margin: auto;
+    width: 100%;
+}
+button a{
+ 	border: 2px solid red;
+ 	background-color: red;
+ 	padding: 0.3em;
+ 	text-decoration: none;
+ 	color: #FFF;
+ 	box-shadow: 1px 2px 0px 2px black;
+}
+
+article {
+	width:98.80%;
+	border: 2px solid blue;
+	border-radius: 7px;
+	margin-top:0.2em;
+	margin-bottom: 0.3em;
+	overflow: hidden;
+	margin-right: 0.2em;
+	
+
+}
+section{
+    display: block;
+}
+
+article h1{
+    font-size: 20px;
+    color: blue;
+    text-align: center;
+    margin: 0px;
+}
+article p{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    font-weight: normal;
+}
+.image img{
+    width: 100%;
+}
+.p {
+    display: flex;
+}
+.p span{
+    border: 1px solid blue;
+    color: black;
+    width: 100%;
+    margin: 0.2em;
+}
+h2{
+    margin: 0.1em;
+    text-align: center;
+}
+
