@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="cssjs/control.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Meta Description" />
+        <link rel="stylesheet"  href="cssjs/bootstrap.css" type="text/css" media="screen"/>
+        <link rel="stylesheet"  href="cssjs/style.css" type="text/css" media="screen"/>
+        <link rel="stylesheet"  href="cssjs/paiment.css" type="text/css" media="screen"/>
+    </head>
+    <body class="model">
+        <div id="ttr_page" class="container">
+            <div id="ttr_content_and_sidebar_container">
+                <div id="ttr_content">
+                    <div id="ttr_html_content_margin" class="container-fluid">
+                        <div id="detail">
+                            <div class="ttr_model_html_row0 row" >
+                                <div class="post_column col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                    <div class="ttr_model_html_column00">
+                                        <div class="html_content" class="details">
+                                            <p>
+                                                <span class="ttr_image" style="float:none;display:block;overflow:hidden;margin:0px 0px 0px 0px;"><span><a href="{x:Null}" target="_self">
+                                                    <img class="ttr_uniform ttr_animation" style="max-height:576px;max-width:480px;margin:0px 0px 0px 0px;" src="../images/Slide3.png" alt="slide1" data-animation="Fade" data-animation-to="0.7" data-animation-dur="0.5" /></a></span></span>
+                                            </p>
+                                            <h1 style="text-align:Center;line-height:1.41em;">
+                                                <span style="font-size:19px">
+                                                    Gagner votre vie en pijama
+                                                </span>
+                                            </h1>
+                                            <hr/>
+                                            <p>
+                                                <span style="font-size: 14px;">
+                                                    Gagner de l'argent gratuitement avec :
+                                                </span>
+                                                <ul>
+                                                    <li>Google drive</li>
+                                                    <li>Whatsapp</li>
+                                                    <li>Facebook</li>
+                                                    <li>Telegram</li>
+                                                    <li>Youtube</li>
+                                                    <li>Twitter</li>
+                                                </ul>
+                                            </p><hr />
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ttr_model_html_row1 row" >
+                                <div class="post_column col-xl-6 col-lg-6 col-md-6 col-sm-7 col-xs-7 col-7">
+                                    <div class="ttr_model_html_column10">
+                                        <div class="html_content">
+                                            <p>
+                                                <span>
+                                                    <button class="btn btn-md btn-primary" id="produit" onclick="produit()">
+                                                        Achter ce produit
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post_column col-xl-6 col-lg-6 col-md-6 col-sm-5 col-xs-5 col-5">
+                                    <div class="ttr_model_html_column11">
+                                        <div class="html_content">
+                                            <p style="line-height:1.69em;">
+                                                <span style="font-style:italic;font-weight:700;font-size:1.143em;color:rgba(255,0,0,1); text-align: right;">
+                                                    100.99
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                             <!---------------------Formulaire de paiement en ftp----------------------------------->
+                            <div id="b">
+                                <div class="block">
+                                    <div class="form">
+                                            <!--pour le code d'acces-->
+                                            <div class="groupe">
+                                                <h1>Votre paiement avec FTP</h1>
+                                                <div class="prix">
+                                                    <input type="text" value="le prix est :" class="prix1" disabled>
+                                                    <input type="text" value="100" id="prix" disabled>
+                                                    <input type="text" value="FTP" class="prix1" disabled>
+                                                </div>
+                                                <hr/>
+                                                <p id="msg"></p>
+                                                <div class="input">
+                                                <input type="text" id="number">
+                                                </div>
+                                                <div class="input" style="display: flex; color: blue;">
+                                                    <div><p>Vous avez</p></div>
+                                                    <input type="montant" id="montant" disabled>
+                                                    <div><p>FTP</p></div>
+                                                </div>
+                                            </div>
+                                            <div class="bar-btn">
+                                                <button id="select" onclick="select()"><img src="mon logo.png">Payer ce produit</button>
+                                                <button id="insert"><img src="mon logo.png"> Confirmer le paiment</button>
+                                            </div>
+                                            <button id="clean" onclick="document.getElementById('montant').value = ''">Nettoyer les champs</button>
+                                    </div>
+                                </div>
+                            </div>
+        <!--------------------- Fin Formulaire de paiement en ftp----------------------------->
+                    </div><!--content_margin-->
+                </div><!--content-->
+            </div><!--container-->
+        </div><!--page-->
+    </body>
+</html>
