@@ -1,16 +1,22 @@
-function drive(){
+function smartphone(){
   var maliste = document.getElementById('liste-item');
   var barliste = document.getElementById('bar');
-  var corliste = document.getElementById('maindrive');
+  var corliste = document.getElementById('mainsmartphone');
+  var corlistedrive = document.getElementById('maindrive');
   var corlisteargent = document.getElementById('mainargent');
+  var corlistesecurite = document.getElementById('mainsecurite');
   if(corliste.style.display === "none"){
     corliste.style.display = "block";
     corlisteargent.style.display = "none";
+    corlistesecurite.style.display = "none";
+    corlistedrive.style.display = "none";
     maliste.style.display = "none";
     barliste.style.display = "block";
   } else{
     corliste.style.display = "block";
     corlisteargent.style.display = "none";
+    corlistesecurite.style.display = "none";
+    corlistedrive.style.display = "none";
     maliste.style.display = "none";
     barliste.style.display = "block";
   }
@@ -19,20 +25,26 @@ function drive(){
 function argent(){
   var maliste = document.getElementById('liste-item');
   var barliste = document.getElementById('bar');
-  var corliste = document.getElementById('maindrive');
+  var corliste = document.getElementById('mainsmartphone');
+  var corlistedrive = document.getElementById('maindrive');
   var corlisteargent = document.getElementById('mainargent');
   var barargent = document.getElementById('barargent');
+  var corlistesecurite = document.getElementById('mainsecurite');
   var boutton = document.getElementById('btn');
   if(corlisteargent.style.display === "none"){
     corlisteargent.style.display = "block";
+    corlistesecurite.style.display = "none";
     corliste.style.display = "none";
+    corlistedrive.style.display = "none";
     maliste.style.display = "none";
     boutton.style.display = "none";
     barliste.style.display = "none";
     barargent.style.display = "block";
   } else{
     corlisteargent.style.display = "block";
+    corlistesecurite.style.display = "none";
     corliste.style.display = "none";
+    corlistedrive.style.display = "none";
     maliste.style.display = "none";
     boutton.style.display = "none";
     barliste.style.display = "none";
@@ -40,10 +52,71 @@ function argent(){
   }
 }
 
+function securite(){
+  var maliste = document.getElementById('liste-item');
+  var barliste = document.getElementById('bar');
+  var corliste = document.getElementById('mainsmartphone');
+  var corlistedrive = document.getElementById('maindrive');
+  var corlisteargent = document.getElementById('mainargent');
+  var corlistesecurite = document.getElementById('mainsecurite');
+  var barargent = document.getElementById('barargent');
+  var boutton = document.getElementById('btn');
+  if(corlistesecurite.style.display === "none"){
+    corlistesecurite.style.display = "block";
+    corlisteargent.style.display = "none";
+    corliste.style.display = "none";
+    corlistedrive.style.display = "none";
+    maliste.style.display = "none";
+    boutton.style.display = "none";
+    barliste.style.display = "none";
+    barargent.style.display = "block";
+  } else{
+    corlistesecurite.style.display = "block";
+    corlisteargent.style.display = "none";
+    corliste.style.display = "none";
+    corlistedrive.style.display = "none";
+    maliste.style.display = "none";
+    boutton.style.display = "none";
+    barliste.style.display = "none";
+    barargent.style.display = "block";
+  }
+}
+
+function drive(){
+  var maliste = document.getElementById('liste-item');
+  var barliste = document.getElementById('bar');
+  var corliste = document.getElementById('mainsmartphone');
+  var corlistedrive = document.getElementById('maindrive');
+  var corlisteargent = document.getElementById('mainargent');
+  var corlistesecurite = document.getElementById('mainsecurite');
+  var barargent = document.getElementById('barargent');
+  var boutton = document.getElementById('btn');
+  if(corlistedrive.style.display === "none"){
+    corlistesecurite.style.display = "none";
+    corlisteargent.style.display = "none";
+    corliste.style.display = "none";
+    corlistedrive.style.display = "block";
+    maliste.style.display = "none";
+    boutton.style.display = "none";
+    barliste.style.display = "none";
+    barargent.style.display = "block";
+  } else{
+    corlistesecurite.style.display = "none";
+    corlisteargent.style.display = "none";
+    corliste.style.display = "none";
+    corlistedrive.style.display = "block";
+    maliste.style.display = "none";
+    boutton.style.display = "none";
+    barliste.style.display = "none";
+    barargent.style.display = "block";
+  }
+}
+
+
 function btnliste(){
   var maliste = document.getElementById('liste-item');
   var barliste = document.getElementById('bar');
-  var corliste = document.getElementById('maindrive');
+  var corliste = document.getElementById('smartphone');
   if(maliste.style.display === "none"){
     corliste.style.display = "none";
     maliste.style.display = "block";

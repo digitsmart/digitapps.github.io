@@ -122,7 +122,7 @@ a{
     text-decoration: none;
     color: black;
     margin-top: 0.1em;
-    margin-left: 1px;
+    margin-left: 2px;
     padding: 2px;
     padding-left: 5px;
     padding-right: 5px;
@@ -137,18 +137,21 @@ a{
 .bar div{
     margin:1px auto;
     width: 85%;
-    margin-left: 2.5em;
+    margin-left: 3em;
 }
 .bar .back{
     position: absolute;
-    background-color: blue;
-    padding: 3px auto;
-    margin: 1px;
-    width: 32px;
-    height: 26px;
+    background-color: black;
+    padding: 0px auto;
+    margin: 0px;
+    margin-right: 5em;
+    width: 35px;
+    height: 25px;
     
 }
 .bar .back a{
+    background-color: orangered;
+    margin: 2px auto;
     border: 2px solid rgba(255,255,255,0.20);
     border-radius: 61px;
     font-size: 12px;
@@ -158,8 +161,40 @@ a{
     letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 5px 1px;
+    padding: 1px 1px;
     display: inline-block;
+}
+.back-liste{
+    background-color: orangered;
+    position: fixed;
+    bottom: 0%;
+    width: 35px;
+    height: 35px;
+    padding: 0.3em;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+.back-liste p{
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background: orange;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 0.5em;
+    margin-top: 0.1em;
+    margin-bottom: 8px;
+    margin-left: 1px;
+    margin-right: 1px;
+
+}
+#barargent #btn{
+    display: none;
+    margin-left: 5em;
+    border: 2px solid black;
 }
 .article-s{
     display: flex;
