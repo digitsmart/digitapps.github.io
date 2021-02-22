@@ -1139,7 +1139,7 @@ background:none;
 }
  .slideshowforeground01
 {
-background: url(images/slideshowforeground001.png)  ;
+background: url(images/slideshowforeground00.png)  ;
 }
  .slideshowforeground01
 {
@@ -1161,7 +1161,7 @@ transform:rotate(0deg);
 }
  .slideshowforeground02
 {
-background: url(images/slideshowforeground002.png)  ;
+background: url(images/slideshowforeground00.png)  ;
 }
  .slideshowforeground02
 {
@@ -1183,7 +1183,7 @@ transform:rotate(0deg);
 }
  .slideshowforeground11
 {
-background: url(images/slideshowforeground011.png)  ;
+background: url(images/slideshowforeground01.png)  ;
 }
  .slideshowforeground11
 {
@@ -1205,7 +1205,7 @@ transform:rotate(0deg);
 }
  .slideshowforeground21
 {
-background: url(images/slideshowforeground021.png)  ;
+background: url(images/slideshowforeground02.png)  ;
 }
  .slideshowforeground21
 {
@@ -1804,15 +1804,15 @@ width:auto;
 }
  #Slide0
 {
-background:url(images/homeDesktopSlide0.jpg);
+background:url(images/1.jpg);
 background-color:transparent;background-repeat:no-repeat;
-background-size:auto auto;
+background-size:100% 100%;
 background-position:Center Center;
 background-clip:padding-box;
 }
  #Slide1
 {
-background:url(images/homeDesktopSlide1.jpg);
+background:url(images/2.jpg);
 background-color:#FFFFFF;
 background-repeat:no-repeat;
 background-size:100% 100%;
@@ -1821,9 +1821,9 @@ background-clip:padding-box;
 }
  #Slide2
 {
-background:url(images/homeDesktopSlide2.jpg);
+background:url(images/3.jpg);
 background-color:transparent;background-repeat:no-repeat;
-background-size:auto auto;
+background-size:100% 100%;
 background-position:Center Center;
 background-clip:padding-box;
 }
