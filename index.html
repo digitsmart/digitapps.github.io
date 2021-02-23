@@ -6,13 +6,31 @@
     <meta name="keywords" content="css3, html5, js, background video, fullscreen video">
     <meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
     <link rel="stylesheet" href="popupform/stylepopupform.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Orbitron:700&display=swap" rel="stylesheet">
     <link rel="stylesheet"  href="popupform/stylepopupform.css"  type="text/css" media="screen"/>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
     <style>
-      * {
-        margin: 0; padding: 0;
-      }
+      /* RESET : */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: 
+    linear-gradient(to bottom, rgba(10,10,10,0.2)0%, rgba(10,10,10,0.2)100%),
+    url('background.png');
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
     .main{
@@ -69,7 +87,7 @@
       #container{
         width: 100%;
         height: 100%;
-        background-image: url('images/backgift.gif');
+        background-image: url('images/backgift.gi');
       }
       #video_cover{
         position: absolute;
@@ -79,7 +97,7 @@
         height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url('images/backgift.gif');
+        background-image: url('images/backgift.gi');
       }
       @keyframes boutton{
         from {background-color: blue;}
@@ -151,7 +169,51 @@
         display: flex;
        
       }
+      .akey{
+        background-color: white;
+        width: 95%;
+        margin:5px auto;
+        margin-left: 0.4em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        padding: 0.2em;
+        text-align: center;
+        border-radius: 15px;
+      }
+      .akey h1{
+        margin-bottom: 0.5em;
+        font-size: 26px;
+        font-weight: bolder;
+        height: auto;
+      }
+      .akey p{
+        margin-bottom: 0.4em;
+      }
 
+      .horloge{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 2px 50px rgba(10,10,10,0.5);
+}
+
+.heures{
+    width: 500px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(10,10,10,0.2);
+}
+
+.date{
+    font-size: 25px;
+    font-family: 'Nunito Sans', sans-serif;
+    padding-top: 10px;
+}
     </style>
 
     <script src="https://use.typekit.net/nlq1kdt.js"></script>
@@ -171,6 +233,18 @@
             <a href="videos/e2.mp4" download style="display: none;">
             Télécrager
             </a>
+          </div>
+          <div class="horloge">
+            <div class="heures"></div>
+            <div class="date"></div>
+          </div>
+          <div class="akey">
+            <h1>Je vous souhaite la bien venue</h1>
+            <p>
+              <span>
+                Une formulaire d'inscription est disponible pour l'inscription des cours en ligne et physique
+              </span>
+            </p>
           </div>
           <div class="boutton" style="display: flex; margin: 5px">
             <a href="home.html">Page d'accueil</a>
@@ -237,6 +311,65 @@
           formulaire.style.display = "none";
         }
       }
+    </script>
+
+    <script>
+      //Tuto réalisé le 29 février (pour les valeurs exemples en commentaire)
+
+var heuresDiv = document.querySelector('.heures');
+var dateDiv = document.querySelector('.date');
+
+var affichageHeure = function(){
+    // Déclaration des variables qui seront utilisées : 
+    var today, annee, listeMois, mois, listeJours, jourNUmero, jourNom, heures, minutes, secondes, deuxChiffres;
+
+    // Récupérer la date actuelle : 
+    today = new Date();
+
+    // Récupérer l'année : 
+    annee = today.getFullYear();
+
+    //Récupérer le mois : 
+    listeMois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    mois = listeMois[today.getMonth()]; //getMonth() donne l'index 1 comme on est en Février, ce qui donne la valeur "Février" depuis notre liste
+
+    // Récupérer le numéro du jour du mois : 
+    jourNUmero = today.getDate(); //donne 29
+
+    // Récupérer le jour. Attention la semaine commence un dimanche en Javascript : 
+    listeJours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    jourNom = listeJours[today.getDay()]; // getDay() donne index 6, donc samedi
+
+
+    //Afficher les heures, minutes et secondes toujours avec deux chiffres : 
+    deuxChiffres = function(element){
+        if(element < 10){
+            return element = "0" + element;
+        } else {
+            return element;
+        }
+    }
+
+    // Récupérer les heures : 
+    heures = deuxChiffres(today.getHours());
+
+    // Récupérer les minutes : 
+    minutes = deuxChiffres(today.getMinutes());
+
+    // Récupérer les secondes : 
+    secondes = deuxChiffres(today.getSeconds());
+
+    //Affichage dans nos DIV du HTML : 
+    heuresDiv.textContent = heures + ":" + minutes + ":" + secondes;
+    dateDiv.textContent = jourNom + ", " + jourNUmero + " " + mois + " " + annee;
+
+    // Lancer la fonction affichage heure toutes les 1000 ms, soit toute les secondes : 
+    setTimeout(affichageHeure, 1000);
+}
+
+//Lancer la fonction une fois au début : 
+affichageHeure();
+
     </script>
   </body>
 </html>
