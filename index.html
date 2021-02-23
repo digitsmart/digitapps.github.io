@@ -7,6 +7,8 @@
     <meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
     <link rel="stylesheet" href="popupform/stylepopupform.css">
     <link rel="stylesheet"  href="popupform/stylepopupform.css"  type="text/css" media="screen"/>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
     <style>
       * {
         margin: 0; padding: 0;
@@ -89,10 +91,67 @@
 
       }
       .boutton a{
-        position: absolute;
-        left: 27%;
-
+        margin: auto;
       }
+
+      #formulaire{
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 1.80%;
+        background-color: black;
+        width: 96%;
+        margin: 3px auto;
+      }
+      #formulaire form{
+        width: 90%;
+        margin: 5px auto;
+        border: 1px solid;
+      }
+      #formulaire form h1{
+        color: white;
+        font-size: 27px;
+        text-align: center;
+      }
+      #formulaire form p{
+        color: white;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      #formulaire form input{
+        width: 95%;
+        height: 30px;
+        margin: 5px;
+        border: 1px solid;
+      }
+      #formulaire form .select{
+        display: flex;
+      }
+      #formulaire form .select select{
+        width: 90%;
+        height: 30px;
+        margin: 5px;
+      }
+      #formulaire form .select label{
+        color: blue;
+        font-weight: bolder;
+        margin: 5px;
+      }
+      #formulaire form .bt button{
+        margin: 2px auto;
+        background-color: orangered;
+        border-radius: 10px;
+        border: 1px solid black;
+        color: white;
+      }
+
+      #formulaire form .bt{
+        margin: 3px auto;
+        display: flex;
+       
+      }
+
     </style>
 
     <script src="https://use.typekit.net/nlq1kdt.js"></script>
@@ -113,11 +172,71 @@
             Télécrager
             </a>
           </div>
-          <div class="boutton">
+          <div class="boutton" style="display: flex; margin: 5px">
             <a href="home.html">Page d'accueil</a>
-            <a href="home.html" style="display: none;">Page d'accueil</a>
+            <a href="formulaire/inscription formation.html">Inscription</a>
           </div>
         </div>
       </div>
+      <div id="formulaire">
+        <form>
+          <h1>Formulaire d'inscription</h1>
+          <p>Formation sur la programmation web, apprendre le html et le css sur android</p>
+          <div class="field">
+            <input type="text" id="name" placeholder="Enregistrer votre nom complet" required>
+            <input type="text" id="mail" placeholder="Enregistrer votre adresse mail" required>
+            <input type="text" id="number" placeholder="Enregistrer votre numéro Whatsapp" required>
+            <input type="date" id="date" placeholder="Quel age avez-vous ?" required>
+            <input type="text" id="adress" placeholder="Quel est votre adresse ?" required>
+            <div class="select">
+              <div>
+                <label>Je veux suivre le cours :</label>
+                <select id="cours">
+                  <option>En ligne</option>
+                  <option>Physique</option>
+                </select>
+              </div>
+              <div>
+                <label>je suis :</label>
+                <select id="suis">
+                  <option>Débutant</option>
+                  <option>Intermediare</option>
+                  <option>Avancé</option>
+                </select>
+              </div>
+            </div>
+            <div class="bt"><button onclick="annuler()">Anuller</button> <button id="send">Je m'inscris</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script>
+      function inscription(){
+        var video = document.getElementById('video_cover');
+        var formulaire = document.getElementById('formulaire');
+        if(video.style.display === "block"){
+          video.style.display = "none";
+          formulaire.style.display = "block";
+        }else{
+          video.style.display = "none";
+          formulaire.style.display = "block";
+        }
+      }
+
+      function annuler(){
+        var video = document.getElementById('video_cover');
+        var formulaire = document.getElementById('formulaire');
+        if(video.style.display === "none"){
+          video.style.display = "block";
+          formulaire.style.display = "none";
+        }else{
+          video.style.display = "block";
+          formulaire.style.display = "none";
+        }
+      }
+    </script>
   </body>
-</html
+</html>
