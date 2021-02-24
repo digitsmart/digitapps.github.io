@@ -8,35 +8,18 @@
     <link rel="stylesheet" href="popupform/stylepopupform.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Orbitron:700&display=swap" rel="stylesheet">
     <link rel="stylesheet"  href="popupform/stylepopupform.css"  type="text/css" media="screen"/>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
     <style>
       /* RESET : */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-image: 
-    linear-gradient(to bottom, rgba(10,10,10,0.2)0%, rgba(10,10,10,0.2)100%),
-    url('background.png');
-    height: 100vh;
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
+      body{
+        background-image:url('background.png');
+        align-items: center;
+      }
     .main{
+      width: 100%;
       position: relative;
-      top: 10%;
+      top: 15%;
       bottom: 50%;
+      margin: auto;
     }
       .imgs{
         width: 150px;
@@ -68,37 +51,14 @@ body{
         animation-duration: 3s;
       }
 
-
-     
-      .main video{
-        width: 100%;
-        height: 50%;
-      }
-      .main #video{
-        border: 2px solid gray;
-        width: 90%;
-        margin: auto;
-        padding: 2px;
-        margin-bottom: 1em;
-        box-shadow: 0px 3px 5px 4px rgba(0,0,0,0.75);
--webkit-box-shadow: 1px 3px 5px 4px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 3px 5px 4px rgba(0,0,0,0.75);
-      }
       #container{
+        background-image:url('background.png');
+        height: 100vh;
         width: 100%;
-        height: 100%;
-        background-image: url('images/backgift.gi');
+        justify-content: center;
+        align-items: center;
       }
-      #video_cover{
-        position: absolute;
-        top: 0%;
-        bottom: 50%;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url('images/backgift.gi');
-      }
+      
       @keyframes boutton{
         from {background-color: blue;}
         to {background-color: orangered;}
@@ -110,64 +70,6 @@ body{
       }
       .boutton a{
         margin: auto;
-      }
-
-      #formulaire{
-        display: none;
-        position: absolute;
-        top: 20%;
-        left: 1.80%;
-        background-color: black;
-        width: 96%;
-        margin: 3px auto;
-      }
-      #formulaire form{
-        width: 90%;
-        margin: 5px auto;
-        border: 1px solid;
-      }
-      #formulaire form h1{
-        color: white;
-        font-size: 27px;
-        text-align: center;
-      }
-      #formulaire form p{
-        color: white;
-        font-size: 16px;
-        text-align: center;
-      }
-
-      #formulaire form input{
-        width: 95%;
-        height: 30px;
-        margin: 5px;
-        border: 1px solid;
-      }
-      #formulaire form .select{
-        display: flex;
-      }
-      #formulaire form .select select{
-        width: 90%;
-        height: 30px;
-        margin: 5px;
-      }
-      #formulaire form .select label{
-        color: blue;
-        font-weight: bolder;
-        margin: 5px;
-      }
-      #formulaire form .bt button{
-        margin: 2px auto;
-        background-color: orangered;
-        border-radius: 10px;
-        border: 1px solid black;
-        color: white;
-      }
-
-      #formulaire form .bt{
-        margin: 3px auto;
-        display: flex;
-       
       }
       .akey{
         background-color: white;
@@ -197,10 +99,11 @@ body{
     align-items: center;
     color: #fff;
     text-shadow: 0 2px 50px rgba(10,10,10,0.5);
+    
 }
 
 .heures{
-    width: 500px;
+    width: 100%;
     text-align: center;
     font-size: 50px;
     font-family: 'Orbitron', sans-serif;
@@ -215,25 +118,13 @@ body{
     padding-top: 10px;
 }
     </style>
-
     <script src="https://use.typekit.net/nlq1kdt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
     <div id="container">
-      <div id="video_cover">
         <div class="main">
           <div class="imgs"><img src="images/mon logo.png"></div>
-          <div id="video" style="display: none;">
-            <h2 style="text-align: center; font-size: 16px; color: white; background-color: blue; padding: 3px;">Présentation Anwriter free : Episode 2</h2>
-            <video controls autoplay preload="auto" poster="images/astuces.png">
-              <source src="videos/e2.mp4" type="video/mp4">
-                Le fichier video ne peut pas etre lu sur ftech plus pour le moment...
-            </video>
-            <a href="videos/e2.mp4" download style="display: none;">
-            Télécrager
-            </a>
-          </div>
           <div class="horloge">
             <div class="heures"></div>
             <div class="date"></div>
@@ -242,7 +133,9 @@ body{
             <h1>Je vous souhaite la bien venue</h1>
             <p>
               <span>
-                Une formulaire d'inscription est disponible pour l'inscription des cours en ligne et physique
+                Une formulaire d'inscription est disponible pour l'inscription des cours 
+                en ligne et physique sur le <strong>HTML</strong> et <strong>CSS</strong>
+                gratuit
               </span>
             </p>
           </div>
@@ -251,42 +144,10 @@ body{
             <a href="formulaire/inscription formation.html">Inscription</a>
           </div>
         </div>
-      </div>
-      <div id="formulaire">
-        <form>
-          <h1>Formulaire d'inscription</h1>
-          <p>Formation sur la programmation web, apprendre le html et le css sur android</p>
-          <div class="field">
-            <input type="text" id="name" placeholder="Enregistrer votre nom complet" required>
-            <input type="text" id="mail" placeholder="Enregistrer votre adresse mail" required>
-            <input type="text" id="number" placeholder="Enregistrer votre numéro Whatsapp" required>
-            <input type="date" id="date" placeholder="Quel age avez-vous ?" required>
-            <input type="text" id="adress" placeholder="Quel est votre adresse ?" required>
-            <div class="select">
-              <div>
-                <label>Je veux suivre le cours :</label>
-                <select id="cours">
-                  <option>En ligne</option>
-                  <option>Physique</option>
-                </select>
-              </div>
-              <div>
-                <label>je suis :</label>
-                <select id="suis">
-                  <option>Débutant</option>
-                  <option>Intermediare</option>
-                  <option>Avancé</option>
-                </select>
-              </div>
-            </div>
-            <div class="bt"><button onclick="annuler()">Anuller</button> <button id="send">Je m'inscris</button></div>
-          </div>
-        </form>
-      </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
     <script>
       function inscription(){
         var video = document.getElementById('video_cover');
