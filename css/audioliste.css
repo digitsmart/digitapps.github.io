@@ -1,0 +1,39 @@
+.play-list,.play-list li{
+  padding:0;margin:0;
+  list-style:none;
+}
+.mise-en-page{
+  width: 100%;
+}
+.bloc-mise-en-page{
+  width: 100%;
+}
+.playwgd{display:inline-block;width:450px}
+.playwgd audio{
+    width:70%;
+}
+
+.play-list .material-icons,
+.play-list li span{
+    vertical-align:middle;
+}
+
+.play-list li span{line-height: 25px;}
+.play-list li{
+  display: block;
+  padding:5px;
+  cursor:pointer;
+  border-bottom:1px solid rgb(146, 146, 157);
+  cursor:pointer;
+  -khtml-user-select : none;
+  -webkit-user-select : none;
+  -moz-user-select : -moz-none;
+  -ms-user-select : none;
+  user-select : none;
+}
+.play-list li:hover{ 
+  background-color:#efeff2;
+}
+.play-list li.selected{ 
+  background-color: #c5dad5
+}

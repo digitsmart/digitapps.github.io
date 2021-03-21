@@ -74,6 +74,26 @@
   width: 90%;
   
 }
+.horloge{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 2px 50px rgba(10,10,10,0.5);
+  
+}
+
+.heures{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(10,10,10,0.2);
+}
+
 
 video{
 	width: 100%;
@@ -105,4 +125,348 @@ audio {
 #article p{
   font-size: 12px;
 
+}
+a:link,
+a:visited{
+ text-decoration: none;
+}
+
+.modal{
+ background-color: rgba(0,0,0, .8);
+ width:100%;
+ height: 100vh;
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 10;
+ opacity: 0;
+ visibility: hidden;
+ transition: all .5s;
+}
+
+.modal__content{
+ width: 75%;
+ height: 65%;
+ background-color: #fff;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ padding: 2em;
+ border-radius: 1em;
+ opacity: 0;
+ visibility: hidden;
+ transition: all .5s;
+}
+
+#modal:target{
+ opacity: 1;
+ visibility: visible;
+}
+
+#modal:target .modal__content{
+ opacity: 1;
+ visibility: visible;
+}
+
+.modal__close{
+ color: #363636;
+ font-size: 2em;
+ position: absolute;
+ top: .5em;
+ right: 1em;
+}
+
+.modal__heading{
+ color: dodgerblue;
+ margin-bottom: 1em;
+}
+
+.modal__paragraph ul li{
+  text-align: left;
+  display: block;
+}
+
+.modal-open{
+display: inline-block;
+color: dodgerblue;
+}
+
+// MODAL STARTS HERE //
+
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-contents {
+	height: 300px;
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+input {
+	margin: 15px auto;
+	display: block;
+	width: 50%;
+	padding: 8px;
+	border: 1px solid gray;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	&:hover {
+		color: #666;
+	}
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+  margin-top: -1.5em;
+  height: 85px;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #0602f8, #0380a7, #ebdc0f);
+  border-radius: 10px;
+  cursor: default;
+  animation: animate 1.5s linear infinite;
+}
+.wrapper .display,
+.wrapper span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper .display{
+  z-index: 999;
+  height: 70px;
+  width: 100%;
+  background: #1b1b1b;
+  border-radius: 6px;
+  text-align: center;
+}
+.display #time{
+  line-height: 37px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 1.5s linear infinite;
+}
+.date{
+  line-height: 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+.wrapper span{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: inherit;
+}
+.wrapper span:first-child{
+  filter: blur(7px);
+}
+.wrapper span:last-child{
+  filter: blur(20px);
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two:700|Poppins&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection{
+  color: white;
+  background: #48DBFB;
+}
+.center,.start-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-btn a{
+  font-size: 15px;
+  background: white;
+  color: #48DBFB;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,.1);
+}
+.modal-box{
+  margin:3em auto;
+  top: 40%;
+  opacity: 0;
+  visibility: hidden;
+  background: white;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #50dcfb;
+  box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+}
+.start-btn.show-modal{
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-box.show-modal{
+  top: 50%;
+  opacity: 1;
+  visibility: visible;
+  transition: .4s;
+}
+.modal-box .fa-times{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
+  height: 45px;
+  width: 50px;
+  line-height: 40px;
+  color: white;
+  font-size: 18px;
+  border-radius: 0 5px 0 50px;
+  padding-left: 13px;
+  cursor: pointer;
+}
+.fa-times:hover{
+  font-size: 22px;
+}
+.modal-box .icon1{
+  font-size: 60px;
+  background: #48DBFB;
+  height: 120px;
+  width: 120px;
+  color: white;
+  border-radius: 50%;
+  line-height: 120px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.modal-box header{
+  font-size: 31px;
+  font-family: 'Lobster Two';
+  margin-bottom: 10px;
+}
+.modal-box p{
+  /* margin-bottom: 10px; */
+  line-height: 20px;
+  color: grey;
+  text-align: center;
+}
+
+::selection{
+  color: white;
+  background: #48DBFB;
+}
+.center,.start-btn{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+form input{
+  padding: 2em;
+  height: 40px;
+  width: 100%;
+  margin-left: 0.1em;
+  margin-right: 2em;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  padding: 0 6px;
+  font-size: 14px;
+  outline: none;
+  border: 2px solid #1ed2fa;
+  caret-color: #48DBFB;
+}
+input::placeholder{
+  color: #8c8c8c;
+}
+form input:focus{
+  box-shadow: 0 0 15px #82e6fc,
+              0 0 25px #b4f0fd,
+              0 0 35px #ffffff;
+}
+form button{
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #48DBFB;
+  color: white;
+  font-size: 18px;
+  border: 1px solid #1ed2fa;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: .3s;
+}
+form button:hover{
+  background: #1ed2fa;
+  border: 1px solid #05cdfa;
+  letter-spacing: 2px;
+}
+.modal-box .icons{
+  margin-top: 2px;
+  border: 2px solid;
+  width: max-content;
+  margin: auto;
+}
+.icons i{
+  font-size: 22px;
+  margin: 0 7px;
+  color: #48DBFB;
+  cursor: pointer;
+}
+.icons i:hover{
+  transform: scale(1.1);
+  color: #05cdfa;
 }
