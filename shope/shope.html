@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/shope.css">
+    <script src="js/shopepaiment.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="content">
+          <a href="../home.html"><p class="back"><i class="fa fa-mail-reply" style="font-size:24px"></i></p></a>
+            <!--detail offre de mon site-->
+            <div class="offre" id="offre">
+                <img src="images/commen_creer _blog.png" alt="Denim Jeans" >
+                <div>
+                    <h1>Programmation web sur android</h1>
+                    <p>
+                        Apprendre la programmation web sur android par niveau, télécharger ce pack
+                    </p>
+                    <p><span>Prix packet</span><em>Rm 350</em></p>
+                    <div class="vote"><input type="number" id="vote" value="" disabled>
+                    <button id="like"><i class="fa fa-thumbs-up"></i></button></i></div>
+                    <a><input type="button" class="btn" value="Telecharger cet offre"></a>
+                </div>
+            </div>
+            <!--Fin detail offre de mon site-->
+
+            
+
+          <!--Tous les produit qui son poster sur l'application  -->
+         <div id="sectioncard" style="background-color: blue; height: 200px;">
+          <section id="card">
+            <div class="card" id="1">
+                <img src="images/crack mot de pass.png" alt="Denim Jeans" >
+                <h1>password windows</h1>
+                <p class="price"><em style="color: orangered;">Rm</em> 200</p>
+                <p>Comment cracker mot de pass windows 10</p>
+                <p><button class="btn" onclick="window.location.href='details/crackPass.html';">Télécharger</button></p>
+              </div>
+
+              <div class="card" id="2">
+                <img src="images/monetizer_lien.png" alt="Denim Jeans" >
+                <h1>Monetizer un lien</h1>
+                <p class="price"><em style="color: orangered;">Rm</em> 260</p>
+                <p>gagner de l'argent avec des liens, sur le réseaux sociaux</p>
+                <p><button class="btn" onclick="window.location.href='details/lien.html';">Télécharger</button></p>
+              </div>
+
+              <div class="card" id="2">
+                <img src="images/utilisateur.JPG" alt="Denim Jeans" >
+                <h1>Créer nom d'utilisateur</h1>
+                <p class="price"><em style="color: orangered;">Rm</em> 50</p>
+                <p>gagner de l'argent avec des liens, sur le réseaux sociaux</p>
+                <p><button class="btn" onclick="window.location.href='details/utilisateur.html';">Télécharger</button></p>
+              </div>
+          </section>
+         </div>
+        </div>
+    </div>
+</body>
+</html>

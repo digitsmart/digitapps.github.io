@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/shopepaiment.js"></script>
+    <link rel="stylesheet" href="../css/shope.css">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script>
+</head>
+<body>
+    <article id="utilisateur">
+      <p class="back" onclick="window.location.href='../shope.html';"><i class="fa fa-mail-reply" style="font-size:24px"></i></p>
+        <div id="bar">
+            <center>
+            <span class="bar" style="background-color: blue;"></span>
+            <span class="bar" style="font-size: 16px; font-weight: bold;">Details sur le produit</span>
+            <span class="bar" style="background-color: blue;"></span>
+            </center>
+        </div>
+        <div id="textutilisateur">
+          <div id="bar">
+            <center>
+            <span class="bar" style="background-color: blue;"></span>
+            <span class="bar" style="font-size: 16px; font-weight: bold;">Details sur le produit</span>
+            <span class="bar" style="background-color: blue;"></span>
+            </center>
+        </div>
+          <img src="../images/utilisateur.JPG">
+          <h1>Comment creer un nom d'utilisateur</h1>
+          <p>
+            Comment creer un nom d'utilisateur sur windows 10 tres simple, ca vous aide
+            a bien gerer et bien proteger votre ordinateur et devinir administrateur de votre
+            ordinateur
+          </p>
+          <center><button class="btn" onclick="acheterUtilisateur()">Acheter ce produit</button></center>
+        </div>
+        <div class="form" id="formUtilisateur">
+          <h1>Créer nom d'utilisateur</h1>
+          <div class="prix">
+            <p>Payer</p><input id="prix" value="568905"><p>Rm</p>
+          </div>
+          <hr/>
+          <p id="msg"></p>
+         <div class="g">
+          <center>
+            <input type="text" class="input"  id="number" placeholder="Entrer votre pin ici">
+          </center>
+         </div>
+          <div id="myProgress">
+              <div id="myBar"></div>
+          </div>
+              <div class="groupe">
+                <p>Vous avec</p>
+                <input type="montant" id="montant" disabled>
+                <p>Rm dispo</p>
+              </div>
+         <div class="bar-btn">
+          <button id="select" class="w3-btn w3-blue">balance</button>
+          <button id="payer" class="w3-btn w3-blue">Payer</button>
+         </div>
+  </div>
+    </article>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+      apiKey: "AIzaSyDVjzbTqXNzNsteN9FtUnLzG7J9G1h-Pkg",
+      authDomain: "signup-de54d.firebaseapp.com",
+      databaseURL: "https://signup-de54d.firebaseio.com",
+      projectId: "signup-de54d",
+      storageBucket: "signup-de54d.appspot.com",
+      messagingSenderId: "313335894880",
+      appId: "1:313335894880:web:367bf0a26531cbd0f1c405",
+      measurementId: "G-TX374HDPKS"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      
+      // Database reference 
+      var numberV, montantV, prix;
+      
+      function Ready(){
+      numberV = document.getElementById('number').value;
+      montantV = document.getElementById('montant').value;
+      }
+      //...........................select data.........................
+      document.getElementById('select').onclick = function(){
+      if(numberV ==""){
+      document.getElementById('msg').innerHTML="Veuillez entrer votre pin";
+      }else{
+      
+      Ready();
+      firebase.database().ref(numberV).on('value',function(snapshot){;
+      document.getElementById('montant').value= snapshot.val().BALANCE;
+      document.getElementById("select").disabled = true;
+      document.getElementById("insert").disabled = false;
+      });
+      }
+      }
+      
+      document.getElementById('payer').addEventListener('click', function(){
+      numberV = document.getElementById('number').value;
+      montantV = document.getElementById('montant').value;
+      var prix = document.getElementById('prix').value;
+      var i = 0;
+      if(montantV > prix){
+        firebase.database().ref(numberV).update({
+        NUMBER: numberV,
+        BALANCE: montantV - prix,
+      })
+      if (i == 0) {
+          i = 1;
+          var elem = document.getElementById("myBar");
+          var width = 1;
+          var id = setInterval(frame, 10);
+          function frame() {
+          if (width >= 100) {
+          clearInterval(id);
+          document.getElementById('montant').value = '';
+          document.getElementById('number').value = '';
+          window.location.assign("https://drive.google.com/uc?export=download&id=164VaiwQCD-QGT3jUAf8nsed98w9EXmFg");
+          i = 0;
+          } else {
+          width++;
+          elem.style.width = width + "%";
+          }
+          }
+          }
+      } else{
+        document.getElementById('msg').innerHTML = "Vous n'avez pas assez de Rm"; 
+      
+      }
+      
+      });
+      // The click Event
+    
+    </script>
+</body>
+</body>
+</html>
