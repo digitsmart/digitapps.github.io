@@ -91,3 +91,26 @@ function acheterUtilisateur() {
     utilisateur.style.display = "block";
   }
 }
+
+
+function acheterblog() {
+  var passWindows = document.getElementById("passWindows");
+  var lien = document.getElementById("lien");
+  var utilisateur =document.getElementById('utilisateur');
+  var formPass = document.getElementById('formPass');
+  var text= document.getElementById('text');
+  if (formPass.style.display === "none") {
+    form.style.display = "block";
+    sectioncard.style.display = "none";
+    text.style.display = "none";
+    passWindows.style.display = "block";
+    lien.style.display = "none";
+    utilisateur.style.display = "none";
+  } else {
+    formPass.style.display = "block";
+    text.style.display = "none";
+    passWindows.style.display = "block";
+    lien.style.display = "none";
+    utilisateur.style.display = "none";
+  }
+}
