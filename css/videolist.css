@@ -16,6 +16,7 @@
 #card{
     overflow-y: auto;
     border: 2px solid red;
+    height: auto;
 }
 #playlist li{
     cursor:pointer;
