@@ -1,17 +1,18 @@
 .home{
-    overflow: hidden;
+    overflow: auto;
     height: 100%;
 }
 .main{
     border: 2px solid blue;
     width: 100%;
     margin-bottom: 2em;
-    overflow: auto;
+    overflow: hidden;
 }
 #playlist {
     width: 100%;
     height: 450px;
     overflow-y: auto;
+    scroll-behavior: unset;
 }
 #card{
     overflow-y: auto;
