@@ -6,7 +6,7 @@
     border: 2px solid blue;
     width: 100%;
     margin-bottom: 2em;
-    overflow:hidden;
+    overflow: auto;
 }
 #playlist {
     width: 100%;
@@ -14,7 +14,8 @@
     overflow-y: auto;
 }
 #card{
-    overflow-y: hidden;
+    overflow-y: auto;
+    border: 2px solid red;
 }
 #playlist li{
     cursor:pointer;
