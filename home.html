@@ -5,16 +5,61 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="demo.css">
+     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <title>Document</title>
   </head>
   <body>
     <div class="container">
         <header>
-            <div class="slide">
+            <div class="slide" style="display: none;">
                 <div class="mySlides"><img src="images/univers.gif">bonjour</div>
                 <div class="mySlides" ><img src="images/conection internet.jpg" >salut</div>     
             </div>
+            <audio id="audio" preload="auto" tabindex="0" controls="" style="display: none;">
+              <source src="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/01%20-%20Crusader%20Prelude.mp3">
+            </audio>
+            <video id="video" controls="controls" poster="https://res.cloudinary.com/ftechplus/image/upload/v1621870768/formation%20drive/images/Slide1_n2odwh.jpg" src="">
+              
+            </video>
+            <div>
+              <button class="open" onclick="w3_open()">☰</button>
+            </div>
+            <!-- Sidebar -->
+                <div class="sidebar" style="display:none; width: 100px;" id="mySidebar">
+                              <ul id="playlist">
+                                <li class="active" onclick="w3_close()">
+                                  <h1>formation drive Saison 1 - Episode 1</h1>
+                                  <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826355/formation%20drive/formation_drive.1_gesemj.mp4">
+                                    Drive S.1 E.1
+                                  </a>
+                                </li>
+                                <li onclick="w3_close()">
+                                  <h1>formation drive Saison 2 - Episode 2</h1>
+                                  <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826361/formation%20drive/Formation_drive.2_j4fkqj.mp4">
+                                    Drive S.2 E.2
+                                  </a>
+                                </li>
+                                <li onclick="w3_close()">
+                                  <h1>formation drive Saison 3 - Episode 3</h1>
+                                  <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826321/formation%20drive/formation_drive.3_fnqjbg.mp4">
+                                    Drive S.3 E.3
+                                  </a>
+                                </li>
+                                <li onclick="w3_close()">
+                                  <h1>formation drive Saison 4 - Episode 4</h1>
+                                  <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826308/formation%20drive/formation_drive.4_j5jn19.mp4">
+                                    Drive S.4 E.4
+                                  </a>
+                                </li>
+                                <li onclick="w3_close()">
+                                  <h1>formation drive Saison 5 - Episode 5</h1>
+                                  <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826343/formation%20drive/formation_drive.5_eoklvf.mp4">
+                                    Drive S.5 E.5
+                                  </a>
+                                </li>
+                              </ul>
+                </div>
         </header>
         <main>
             <section id="card" class="card-bar" style="margin: auto;">
@@ -100,6 +145,85 @@
           x[myIndex-1].style.display = "block";  
           setTimeout(carousel, 2000); // Change image every 2 seconds
         }
+    </script>
+    <script type="text/javascript">
+      WebFontConfig = {
+      google: { families: [ 'Signika'] }
+      };
+      (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.0.31/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+      })();
+  </script>
+  <script type="text/javascript">
+    init();
+
+function init(){
+    var video = document.getElementById('video');
+    var playlist = document.getElementById('playlist');
+    var tracks = playlist.getElementsByTagName('a');
+    video.volume = 0.10;
+    video.play();
+    
+    for(var track in tracks) {
+      var link = tracks[track];
+      if(typeof link === "function" || typeof link === "number") continue;
+      
+			link.addEventListener('click', function(e) {
+      	e.preventDefault();
+        var song = this.getAttribute('href');
+       	run(song, video, this);
+      });
+    }
+    
+    audio.addEventListener('ended',function(e) {
+        for(var track in tracks) {
+					var link = tracks[track];
+          var nextTrack = parseInt(track) + 1;
+        	if(typeof link === "function" || typeof link === "number") continue;
+          if(!this.src) this.src = tracks[0];
+          if(track == (tracks.length - 1)) nextTrack = 0;
+                                	console.log(nextTrack);
+        	if(link.getAttribute('href') === this.src) {
+          	var nextLink = tracks[nextTrack];
+          	run(nextLink.getAttribute('href'), video, nextLink);
+            break;
+          }
+        }
+    });
+}
+
+function run(song, video, link){
+				var parent = link.parentElement;
+
+				//quitar el active de todos los elementos de la lista
+				var items = parent.parentElement.getElementsByTagName('li');
+        for(var item in items) {
+					if(items[item].classList)
+        		items[item].classList.remove("active");
+        }
+        
+        //agregar active a este elemento
+        parent.classList.add("active");
+        
+        //tocar la cancion
+        video.src = song;
+        video.load();
+        video.play();
+}
+  </script>
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
     </script>
   </body>
   </html>
