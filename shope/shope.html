@@ -10,10 +10,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script>
+    <style>
+      .search-bar {
+	position: fixed;
+    margin: 0 auto;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    align-items: center;
+    width: 100%;
+    max-width: 344px;
+    height: 40px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+input {
+    position: absolute;
+    left: 0%;
+    transform: translateX(-50%);
+    width: 99%;
+    height: 40px;
+    left: 172px;
+    margin: 4px 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+}
+    </style>
 </head>
 <body>
     
     <div class="container">
+      <div class="search-bar">
+        <input type="text" name="search" value="" autocomplete="off" id="myinput" onkeyup="searchFunction()" placeholder="Search">
+
+    </div>
         <div class="content">
           <a href="../home.html"><p class="back"><i class="fa fa-mail-reply" style="font-size:24px"></i></p></a>
             <!--detail offre de mon site-->
@@ -32,8 +69,6 @@
                 </div>
             </div>
             <!--Fin detail offre de mon site-->
-
-            
 
           <!--Tous les produit qui son poster sur l'application nouveau  -->
          <div id="sectioncard" style="background-color: blue; height: 200px;">
@@ -64,25 +99,51 @@
           </section>
 
           <!--des produits sur l'application-->
-          <section id="card" style="overflow: hidden;">
-            <div class="card" id="1">
-                <img src="images/commen_creer _blog.png" alt="Denim Jeans" >
-                <h1>Créer un blog</h1>
-                <p class="price"><em style="color: orangered;">Rm</em> 200</p>
-                <p>Comment Créer un blog gratuit et sans de la publicitée</p>
-                <p><button class="btn" onclick="window.location.href='details/creerBlog.html';">Télécharger</button></p>
-              </div>
-
-              <div class="card" id="2">
-                <img src="images/programmation.png" alt="Denim Jeans" >
-                <h1>Programmation web</h1>
-                <p class="price"><em style="color: orangered;">Rm</em> 260</p>
-                <p>Apprendre la programmation web sur votre android</p>
-                <p><button class="btn" onclick="window.location.href='details/programmation.html';">Télécharger</button></p>
-              </div>
-          </section>
+          <ul id="wrapper">
+            <section id="card" id="sectioncard">
+              <li>
+                 <div class="card" id="1">
+                    <img src="images/commen_creer _blog.png" alt="Denim Jeans" ><br>
+                      <a href="#">Créer un blog</a>
+                    <p class="price"><em style="color: orangered;">Rm</em> 200</p>
+                    <p>Comment Créer un blog gratuit et sans de la publicitée</p>
+                    <p><button class="btn" onclick="window.location.href='details/creerBlog.html';">Télécharger</button></p>
+                  </div>
+              </li>
+  
+                <li>
+                  <div class="card" id="2">
+                    <img src="images/programmation.png" alt="Denim Jeans" ><br>
+                    <a href="#">Programmation web</a>
+                    <p class="price"><em style="color: orangered;">Rm</em> 260</p>
+                    <p>Apprendre la programmation web sur votre android</p>
+                    <p><button class="btn" onclick="window.location.href='details/programmation.html';">Télécharger</button></p>
+                  </div>
+                </li>
+            </section>
+          </ul>
          </div>
         </div>
     </div>
+    <script>
+        function searchFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myinput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('wrapper');
+    li = ul.getElementsByTagName('li');
+
+    for(i=0 ; i< li.length; i++){
+        a = li[i].getElementsByTagName('a')[0];
+        if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+            li[i].style.display = "";
+        }
+
+        else{
+            li[i].style.display = 'none';
+        }
+    }
+}
+    </script>
 </body>
 </html>
