@@ -12,7 +12,7 @@ body{
     scroll-snap-align: start;
     overflow-x: auto;
     scroll-behavior: smooth;
-    margin-top: 2em;
+    margin-top: 3px;
 }
     
 .card {
@@ -73,7 +73,7 @@ body{
   .offre{
       display: flex;
       width: 100%;
-      margin-bottom: -1em;
+      margin-bottom: 5px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   .offre img{
@@ -310,27 +310,28 @@ article img{
 
     }
     ul li{
-        margin: 0.5em;
+        margin: 1px;
         flex-shrink: 0;
         background-color: white;
         max-width: 250px;
         max-height: auto;
-        margin: 0.3em;
         text-align: center;
         font-family: arial;
         justify-content: center;
         overflow-y: auto;
         overflow-x: hidden;
     }
+    ul li a{
+        text-decoration: none;
+    }
         
     .card {
-        margin: 0.5em;
         flex-shrink: 0;
         background-color: white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 150px;
+        max-width: 165px;
         max-height: auto;
-        margin: 0.3em;
+        margin: 1px;
         text-align: center;
         font-family: arial;
         justify-content: center;
