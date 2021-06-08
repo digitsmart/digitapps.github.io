@@ -313,7 +313,6 @@ article img{
         margin: 0.5em;
         flex-shrink: 0;
         background-color: white;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         max-width: 250px;
         max-height: auto;
         margin: 0.3em;
