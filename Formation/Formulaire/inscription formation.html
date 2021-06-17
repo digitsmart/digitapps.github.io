@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>inscription ftechplus</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Zsolitude</span> Design</h1>
+    <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+         <!--Update the URL for thank you page on form submit -->
+         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
+         onload="if(submitted) {window.location='../login/index.html';}"></iframe> 
+
+        <h3>Ftech Plus</h3>
+       <P style="text-align: center;">Si vous avez deja inscrit, cliquer sur le boutton</P>
+       <a href="../login/index.html" class="btn" style="border: 1px solid blue;background-color: gray; padding: 0.2em;text-decoration: none; width: 90%;text-align: center;">Me connecter</a>
+      </div>
+      <div class="contact">
+        <h3>Formulaire d'inscription</h3>
+        <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe0R1Aw9tPFFCrDg4obicotlMGxlWxI_J1kObeirSZoRRuVMA/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+          <p>
+            <label class="firstlabel">Prenom</label>
+            <input class="firstname" id="prenom" type="text" name="entry.443469359"><br>
+          </p>
+          <p>
+            <label class="lastlabel">Nom</label>
+            <input class="lastname" id="nam" type="text" name="entry.1301297089"><br>
+            
+          </p>
+          <p>
+            <label>Email</label>
+            <input class="email" id="email" type="email" name="entry.1282806183">
+          </p>
+          <p>
+            <label>Adresse (Rue, Ville)</label>
+            <input class="company" id="adresse" type="text" name="entry.1499002025">
+          </p>
+          <p>
+            <label class="area-code">Area Code (EX: +509)</label>
+            <input class="Code" type="text" id="code" name="entry.572165021">
+
+          </p>
+          <p>
+            <label class="phone-number">Phone Number</label>
+            <input class="number" type="text" name="entry.279125013">
+           
+          </p>
+          <p>
+            <label>Vous etes</label>
+            <select class="option" name="entry.1636330171">
+              <option disabled="disabled" selected="selected">--Choose option--</option>
+              <option>Dédutant</option>
+              <option>Intermediaire</option>
+              <option>Avancé</option>
+          </select>
+          </p>
+          <p>
+            <label>Utilisez-vous l'app ftechplus :</label>
+            <select class="option" name="entry.2119998051">
+              <option disabled="disabled" selected="selected">--Choose option--</option>
+              <option>Oui</option>
+              <option>Non</option>
+              <option>Je l'ai desinstalllé</option>
+             
+          </select>
+          </p>
+          <p class="full">
+            <button>Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    function validateEmail () {
+ 
+     var email = document.getElementById('email').value;
+     if(email.length == 0) {
+       alert("Email can't be blank") ;//Validation Message
+       return false;
+ 
+     }
+ 
+     if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+       alert("Please enter a correct email address") ;//Validation Message
+       return false;
+ 
+     }
+ 
+     return true;
+ 
+   }
+ 
+ 
+ 
+ 
+   function validateForm() {
+     if (!validateEmail()) {
+ 
+       alert("Form not submitted");//Validation Message
+       return false;
+     }
+     else {
+       submitted=true;
+       return true;
+     }
+   }
+   </script>
+</body>
+</html>
