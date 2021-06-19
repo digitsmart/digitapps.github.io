@@ -40,6 +40,7 @@ iframe{
 }
 section{
     background-color: white;
+    overflow: hidden;
 }
 .w3-container{
     height: max-content;
@@ -54,7 +55,7 @@ section{
     width: 100%;
     border: 1px solid blue;
 }
-#home{
+#first{
     display: none;
 }
 #home video{
