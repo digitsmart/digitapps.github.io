@@ -55,7 +55,7 @@ section{
     width: 100%;
     border: 1px solid blue;
 }
-#first{
+#home{
     display: none;
 }
 #home video{
@@ -98,8 +98,9 @@ video{
 }
 .w3-container{
     position: absolute;
-    width: 90%;
+    width: 99%;
     margin: auto;
-    margin-top: 1.5em;
+    margin-top: 0.4em;
     border: 1px solid green;
 }
+
