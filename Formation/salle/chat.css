@@ -16,6 +16,14 @@ header {
     scroll-behavior: auto;
     padding: 0px;
 }
+#messages{
+    padding-bottom: 10%;
+    height: 250px;
+    overflow-y: scroll;
+    overflow-y: auto;
+    scroll-behavior: auto;
+    padding: 0px;
+}
 
 ul{
     margin-left: -2em;
