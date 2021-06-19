@@ -113,20 +113,18 @@
             </p>
         </div>
         <div id="chat">
-            <!-- messages will display here -->
-                <ul id="messages" class="swiper-container"></ul>
-           
              <!--modal popup chat input-->
                 <div class="w3-container">
                     <button id="open" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Poser votre question ici</button>
                     <div id="id01" class="w3-modal">
-                    <div class="w3-modal-content" id="modal">
+                    <div class="w3-modal-content" id="modal" style="width: 100%;">
                         <div class="w3-container">
                         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          <!-- messages will display here -->
+                <ul id="messages" class="swiper-container"></ul>
                              <!-- form to send message -->
                              <input type="text" id="username" placeholder="Votre nom ici">
                         <form id="message-form">
-                            
                         <textarea id="message-input" type="text" ></textarea>
                         <button id="message-btn" type="submit">Send</button>
                         </form>
