@@ -111,14 +111,29 @@
         <div id="chat">
             <!-- messages will display here -->
             <ul id="messages"></ul>
-      
-            <!-- form to send message -->
-            <form id="message-form">
-              <textarea id="message-input" type="text" ></textarea>
-              <button id="message-btn" type="submit">Send</button>
-            </form>
+           
+             <!--modal popup chat input-->
+                <div class="w3-container">
+                    <button id="open" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Poser votre question ici</button>
+                    <div id="id01" class="w3-modal">
+                    <div class="w3-modal-content" id="modal">
+                        <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                             <!-- form to send message -->
+                             <input type="text" id="username" placeholder="Votre nom ici">
+                        <form id="message-form">
+                            
+                        <textarea id="message-input" type="text" ></textarea>
+                        <button id="message-btn" type="submit">Send</button>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!--fin modal popup chat input-->
         </div>
     </section>
+   
      <!-- scripts -->
      <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
      <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>

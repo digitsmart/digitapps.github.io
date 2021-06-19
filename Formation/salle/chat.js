@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 // get user's data
-const username = prompt("Please Tell Us Your Name");
+const username = document.getElementById ('username').value;
 
 // submit form
 // listen for submit event on the form and call the postChat function
@@ -28,12 +28,12 @@ function sendMessage(e) {
 
   // get values to be submitted
   const timestamp = Date.now();
+  const username = document.getElementById ('username').value;
   const messageInput = document.getElementById("message-input");
   const message = messageInput.value;
 
   // clear the input box
   messageInput.value = "";
-
   //auto scroll to bottom
   document
     .getElementById("messages")
