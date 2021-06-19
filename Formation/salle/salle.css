@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+}
+h1{
+    font-size: 18px;
+    text-align: center;
+    color: blue;
+}
+h2{
+    font-size: 16px;
+    text-align: center;
+    color: orange;
+}
+p{
+    font-size: 12px;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 2px;
+
+}
+h3{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: cornflowerblue;
+    margin-bottom: 0px;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+ul li{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+}
+iframe{
+    background-color: gray;
+}
+section{
+    background-color: white;
+    border: 1px solid blue;
+}
+#first{
+    display: none;
+}
+#home video{
+    border: 1px solid blue;
+    background-color: blue;
+    background-image: url('images/formation.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#home .btn{
+    width: 90%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding: 0.5em;
+    margin: 0.4em;
+    border: 1px solid orangered;
+    background-color: rgba(0, 80, 184, 0.412);
+}
+video{
+    border: 1px solid blue;
+    background-color: blue;
+    background-image: url('images/formation.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.infos{
+    border: 1px solid orange;
+    margin: 0px;
+}
+.bar-back{
+    background-color: blue;
+    height: fit-content;
+}
+.bar-back a{
+    border: 1px solid red;
+    border-radius: 25px;
+    padding: 0.2em;
+    background-color: white;
+}

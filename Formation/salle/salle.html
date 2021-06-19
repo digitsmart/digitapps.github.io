@@ -1,31 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>W3.CSS</title>
+    <title>salle de formation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-    <style>
-        h1{
-            font-size: 18px;
-            text-align: center;
-            color: blue;
-        }
-        h2{
-            font-size: 16px;
-            text-align: center;
-            color: orange;
-        }
-        p{
-            font-size: 14px;
-            text-align: justify;
-        }
-    </style>
+    <link rel="stylesheet" href="salle.css">
+    <link rel="stylesheet" href="chat.css">
 </head>
 <body>
-    <section>
-        <iframe width="100%" height="250px" src="https://www.youtube.com/embed/evguzpO8exk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
+    <section id="home">
+        <video>
+            <iframe width="100%" height="250px" src="https://www.youtube.com/embed/evguzpO8exk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </video>
         <div class="cours" style="background-color: white;">
             <h1>Je vous souhaite la bienvenue dans la formation</h1>
             <h2>Vous apprendre avec nous le html et css sur android</h2>
@@ -49,8 +37,91 @@
 
             </p>
         </div>
+        <div>
+                <button class="btn" onclick="aller()">Entrer dans la formation</button>
+        </div>
     </section>
-<footer class="w3-container w3-bottom w3-theme w3-margin-top">
-  <h3>Ftech Plus</h3>
-</footer>
+    <section id="first">
+        <video>
+
+        </video>
+        <div class="infos">
+            <p>Debut du cours</p>
+        </div>
+        <div>
+            <h3>C’est quoi un dossier</h3>
+            <p>
+                Un dossier est une boite qui vous permet de stocker un ensemble 
+            de fichier informatique, tells que :
+            </p>
+            <ul style="display: flex;">
+                <div style="width:max-content;">
+                    <li>Images</li>
+                    <li>Audio</li>
+                    <li>Vidéos</li>
+                    <li>Etc. ..</li>
+                </div>
+                <div style="width: 100%;">
+                    <a href="images/dossier.png"><img src="images/dossier.png"></a>
+                </div>
+            </ul>
+            <h3>C’est quoi un fichier</h3>
+            <p>
+                Un fichier est une suite d'informations binaires, c'est-à-dire une suite de 0 et de 1. <br>
+            Ce fichier peut être stocké pour garder une trace de ces informations. 
+            Un fichier texte est un fichier composé de caractères stockés sous 
+            la forme d'octets.
+            </p>
+
+            <h3>C’est quoi une extension</h3>
+            <p>
+                Désignée comme étant une suite de deux à quatre caractères derrière
+             un nom de fichier, séparée par un point, l'extension de fichier ne
+              doit pas être confondue avec le format. L'extension sert
+               précisément à déterminer la nature du fichier.
+            </p>
+            <img src="images/extension.jpg">
+            <h3>Créer un dossier sur Android</h3>
+            <p>
+                Pour créer un dossier sur Android, c’est très simple, aller dans le menu de 
+            votre téléphone :<br><br>
+
+            cliquer sur “dossier” ou “Mes fichier” ou “filles”
+            Cliquer sur le bouton “plus (+)” ou “Add”
+            Entrer un nom pour votre dossier et cliquer sur “OK”<br><br>
+
+            . Vous venez de créer votre premier dossier sur votre Android en quelque second 
+            seulement<br><br>
+
+            Sache que a l’intérieur d’un dossier on peux créer aussi d’autre dossier, 
+            qu’on peut appeler sous-dossier, pourquoi ? c’est parce qu’il se place 
+            a l’intérieur d’un dossier.<br><br>
+
+            Les dossiers sont la pour gérer des différentes project, par exemple ; 
+            si vous créer plusieurs projet, il est important de créer un dossier 
+            pour chaque project avec leur nom.<br><br>
+            </p>
+            <p>
+                Les sous dossier sont la pour bien organiser vos fichier, si vous un site
+                web avec différent fichier, alors il aut des sous dossier pour ces fichiers, 
+                par exemple vous pouvez creer un sous-dossier pour : images, audio ,vidéo, 
+                vos pages ,etc..
+            </p>
+        </div>
+        <div id="chat">
+            <!-- messages will display here -->
+            <ul id="messages"></ul>
+      
+            <!-- form to send message -->
+            <form id="message-form">
+              <textarea id="message-input" type="text" ></textarea>
+              <button id="message-btn" type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+     <!-- scripts -->
+     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+     <script src="chat.js"></script>
+     <script src="salle.js"></script>
 </body>
