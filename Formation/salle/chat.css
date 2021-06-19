@@ -13,20 +13,17 @@ header {
     height: 250px;
     overflow-y: scroll;
     overflow-y: auto;
-    scroll-behavior: auto;
-    padding: 0px;
+    scroll-behavior: smooth;
+    padding: 3px;
 }
 #messages{
     padding-bottom: 10%;
     height: 250px;
-    overflow-y: scroll;
-    overflow-y: auto;
-    scroll-behavior: auto;
     padding: 0px;
 }
 
 ul{
-    margin-left: -2em;
+    margin-left: -0.3em;
 }
 #chat li {
     list-style-type: none;
