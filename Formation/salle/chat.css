@@ -12,6 +12,7 @@ header {
     padding-bottom: 10%;
     height: 150px;
     overflow-y: scroll;
+    scroll-behavior: auto;
     padding: 1px;
 }
 
