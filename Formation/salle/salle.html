@@ -46,8 +46,8 @@
         </div>
     </section>
     <section id="first">
-        <video>
-
+        <video controls>
+            <source src="https://res.cloudinary.com/ftechplus/video/upload/v1624329075/html%20et%20css/Formation_1_E.1-1_uzayfn.mp4" type=video/mp4 poster="images/formation.jpg">
         </video>
         <div class="infos">
             <p>Debut du cours</p>
@@ -119,7 +119,57 @@
                     <div id="id01" class="w3-modal">
                     <div class="w3-modal-content" id="modal" style="width: 100%;">
                         <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <span onclick="document.getElementById('id01').style.display='none'" id="close" class="w3-button w3-display-topright">&times;</span>
+                          <!-- messages will display here -->
+                <ul id="messages" class="swiper-container"></ul>
+                             <!-- form to send message -->
+                             <input type="text" id="username" placeholder="Votre nom ici">
+                        <form id="message-form">
+                        <textarea id="message-input" type="text" ></textarea>
+                        <button id="message-btn" type="submit">Send</button>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!--fin modal popup chat input-->
+        </div>
+    </section>
+
+    <section id="second" style="display: none;">
+        <video>
+
+        </video>
+        <div class="infos">
+            <p>Debut du cours</p>
+        </div>
+        <div>
+            <h3>C’est quoi un dossier</h3>
+            <p>
+                Un dossier est une boite qui vous permet de stocker un ensemble 
+            de fichier informatique, tells que :
+            </p>
+            <ul style="display: flex;">
+                <div style="width:max-content;">
+                    <li>Images</li>
+                    <li>Audio</li>
+                    <li>Vidéos</li>
+                    <li>Etc. ..</li>
+                </div>
+                <div style="width: 100%;">
+                    <a href="images/dossier.png"><img src="images/dossier.png"></a>
+                </div>
+            </ul>
+           
+        </div>
+        <div id="chat">
+             <!--modal popup chat input-->
+                <div class="w3-container">
+                    <button id="open" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Poser votre question ici</button>
+                    <div id="id01" class="w3-modal">
+                    <div class="w3-modal-content" id="modal" style="width: 100%;">
+                        <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" id="close" class="w3-button w3-display-topright">&times;</span>
                           <!-- messages will display here -->
                 <ul id="messages" class="swiper-container"></ul>
                              <!-- form to send message -->
