@@ -45,12 +45,14 @@
                 <button class="btn" onclick="aller()">Entrer dans la formation</button>
         </div>
     </section>
+
     <section id="first">
         <video controls>
             <source src="https://res.cloudinary.com/ftechplus/video/upload/v1624329075/html%20et%20css/Formation_1_E.1-1_uzayfn.mp4" type=video/mp4 poster="images/formation.jpg">
         </video>
         <div class="infos">
-            <p>Debut du cours</p>
+            <p class="chapitre">1</p>
+            <p>Savoir organiser votre project web</p>
         </div>
         <div>
             <h3>C’est quoi un dossier</h3>
@@ -66,7 +68,7 @@
                     <li>Etc. ..</li>
                 </div>
                 <div style="width: 100%;">
-                    <a href="images/dossier.png"><img src="images/dossier.png"></a>
+                    <img src="images/dossier.png">
                 </div>
             </ul>
             <h3>C’est quoi un fichier</h3>
@@ -115,13 +117,12 @@
         <div id="chat">
              <!--modal popup chat input-->
                 <div class="w3-container">
-                    <button id="open" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Poser votre question ici</button>
                     <div id="id01" class="w3-modal">
                     <div class="w3-modal-content" id="modal" style="width: 100%;">
                         <div class="w3-container">
                         <span onclick="document.getElementById('id01').style.display='none'" id="close" class="w3-button w3-display-topright">&times;</span>
                           <!-- messages will display here -->
-                <ul id="messages" class="swiper-container"></ul>
+                 <ul id="messages" class="swiper-container"></ul>
                              <!-- form to send message -->
                              <input type="text" id="username" placeholder="Votre nom ici">
                         <form id="message-form">
@@ -134,38 +135,71 @@
                 </div>
                 <!--fin modal popup chat input-->
         </div>
+        <div class="navig">
+            <button id="open" onclick="document.getElementById('id01').style.display='block'" class="btn">Poser votre question ici</button>
+            <button class="btn" onclick="first()">Chaplitre suivant</button>
+        </div>
     </section>
 
-    <section id="second" style="display: none;">
+    <section id="second">
         <video>
 
         </video>
         <div class="infos">
-            <p>Debut du cours</p>
+            <p class="chapitre">2</p>
+            <p>Deuxièmes chapitre de la formation :<strong>les applications</strong></p>
         </div>
         <div>
-            <h3>C’est quoi un dossier</h3>
             <p>
-                Un dossier est une boite qui vous permet de stocker un ensemble 
-            de fichier informatique, tells que :
+                Et aujourd’hui mous allons voire dans ce chapitre les application a 
+                installe pour commencer a coder en html et du css sur votre android.<br><br>
+
+                Lorsque vous allez coder en html et du css , vous aurez besoin des 
+                applications, pour être plus a laise sur votre Android, pour cela 
+                nous allons vous présenter quelques applications qui sont très 
+                important pour vous.<br><br>
+
+                Pour commencer a écrire vos code , vous allez besoin un éditeur de 
+                texte, une application est capable de recevoir vos codes et un
+                navigateur pour visualiser votre travail en local<br><br>
+
+                Les applications que vous aurez besoin sur votre android :
+
             </p>
             <ul style="display: flex;">
                 <div style="width:max-content;">
-                    <li>Images</li>
-                    <li>Audio</li>
-                    <li>Vidéos</li>
+                    <li>Acode ou An writer free html</li>
+                    <li>Firefox ( Ancien navigateur)</li>
+                    <li>Hackers keyboard ( clavier)</li>
                     <li>Etc. ..</li>
                 </div>
-                <div style="width: 100%;">
+                <div style="width: 100%; display: none;">
                     <a href="images/dossier.png"><img src="images/dossier.png"></a>
                 </div>
             </ul>
-           
+           <p>
+            <strong style="color: rgb(0, 100, 208); font-size: 18px;">Editeur de texte</strong><br>
+            Logiciel permettant de rédiger des fichiers au format texte brut, 
+            sans mise en forme. Les éditeurs de texte sont notamment utilisés par 
+            les programmeurs. Mais sur android on utilise des application comme : 
+            acode et  An writer free html .<br><br>
+            
+            <strong style="color: rgb(0, 100, 208); font-size: 18px;">Navigateur</strong><br>
+            Un navigateur est un logiciel conçu pour consulter et afficher le World 
+            Wide Web.Un navigateur n’est pas un moteur de recherche. Les navigateurs
+             le plus connu sont : Google chrome, firefox, mais nous, on va utiliser 
+             firefox pour android<br><br>
+            
+            <strong style="color: rgb(0, 100, 208); font-size: 18px;">A quoi sert le clavier Hackers keyboard ?</strong><br>
+            Ce clavier va vous aider beaucoup dans vos code, grâce a ce clavier, 
+            vous trouvez tous les fonctions d’un clavier d’ordinateur , EX: Ctrl+a, 
+            Tabullation<br><br>
+            
+           </p>
         </div>
         <div id="chat">
              <!--modal popup chat input-->
                 <div class="w3-container">
-                    <button id="open" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Poser votre question ici</button>
                     <div id="id01" class="w3-modal">
                     <div class="w3-modal-content" id="modal" style="width: 100%;">
                         <div class="w3-container">
@@ -183,6 +217,11 @@
                     </div>
                 </div>
                 <!--fin modal popup chat input-->
+        </div>
+        <div class="navig">
+            <button class="btn" onclick="pre()">Pré</button>
+            <button id="open" onclick="document.getElementById('id01').style.display='block'" class="btn">?</button>
+            <button class="btn" onclick="second()">Suiv>></button>
         </div>
     </section>
    

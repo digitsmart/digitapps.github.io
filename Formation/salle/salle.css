@@ -40,7 +40,11 @@ iframe{
 }
 section{
     background-color: white;
+    border: 1px solid gray;
     overflow: hidden;
+    padding: 3px;
+    margin: 2px;
+    box-shadow: 0px 1px 0px 1px black;
 }
 .w3-container{
     height: max-content;
@@ -56,7 +60,7 @@ section{
     width: 100%;
     border: 1px solid blue;
 }
-#first{
+#home, #second{
     display: none;
 }
 #home video{
@@ -76,6 +80,18 @@ section{
     border: 1px solid orangered;
     background-color: rgba(0, 80, 184, 0.412);
 }
+.navig{
+    display: flex;
+    width: 100%;
+}
+.navig .btn{
+   border: 1px solid blue;
+   width: 100%;
+   font-size: 12px;
+   padding: 3px;
+   color: blue;
+   height: 25px;
+}
 video{
     border: 1px solid blue;
     background-color: blue;
@@ -85,8 +101,23 @@ video{
     width: 100%;
 }
 .infos{
+    display: flex;
     border: 1px solid orange;
     margin: 0px;
+}
+.infos .chapitre{
+    background-color: blue;
+    width: 20px;
+    margin: 0px;
+    text-align: center;
+    align-items: center;
+    padding: 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
+.infos p{
+    color: black;
+    font-weight: bold;
 }
 .bar-back{
     background-color: blue;
