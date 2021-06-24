@@ -64,6 +64,7 @@ section{
 }
 #home, #second{
     display: none;
+    height: 100vh;
 }
 #home video{
     border: 1px solid blue;
