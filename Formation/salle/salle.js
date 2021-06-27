@@ -1,3 +1,12 @@
+function myform(){  
+  var number = document.getElementById('number').value;
+
+  if (number.length < 6){  
+    alert("Password must be at least 6 characters long.");  
+    return false;  
+    }  
+  }  
+
 function aller() {
     var home = document.getElementById("home");
     var first = document.getElementById("first");

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="salle.css">
-    <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
     <div class="container">
@@ -24,13 +23,13 @@
                      <!--Update the URL for thank you page on form submit -->
          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
          onload="if(submitted) {window.location='../login/index.html';}"></iframe> 
-                    <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe0R1Aw9tPFFCrDg4obicotlMGxlWxI_J1kObeirSZoRRuVMA/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+                    <form name="myform" action="https://docs.google.com/forms/u/4/d/e/1FAIpQLScpz2W6pZMKoJVZtNWyrhvEd9e6WK0Qp8Z4NQ2c7eOpynoKRQ/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
                         <div>
                             <label>Qui vous a référé?</label>
-                            <input type="number" name="entry." id="email" placeholder="Entrer le numero de référence ici">
+                            <input type="number" name="entry.1161288550" id="email" placeholder="Entrer le numero de référence ici" required> 
                         </div>
                         <div>
-                            <button class="btn">Envoyer</button>
+                            <input type="submit" id="submit" class="btn" onclick="myform()">
                         </div>
                     </form>
                     <div class="homebtn">
@@ -216,5 +215,19 @@
     </div>
     <script src="chat.js"></script>
     <script src="salle.js"></script>
+    <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+          
+        if (name==null || name==""){  
+          alert("Name can't be blank");  
+          return false;  
+        }else if(password.length<6){  
+          alert("Password must be at least 6 characters long.");  
+          return false;  
+          }  
+        }  
+        </script>  
 </body>
 </html>
