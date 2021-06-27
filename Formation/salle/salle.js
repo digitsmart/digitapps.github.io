@@ -79,7 +79,7 @@ function aller() {
     }
   }
 
-  function three() {
+  function thre() {
     var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
