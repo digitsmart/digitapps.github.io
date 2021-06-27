@@ -72,6 +72,10 @@
     }
     #first, #second, #three{
         display: none;
+        height: max-content;
+        box-shadow: -1px 1px 10px 5px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -1px 1px 10px 5px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 1px 10px 5px rgba(0,0,0,0.75);
     }
     #home{
         background-image: url('images/background.jpg');
@@ -123,10 +127,10 @@
     }
     #home form{
         border: 1px solid yellow;
-        width: 70%;
+        width: 90%;
         background-color: rgba(255, 255, 255, 0.289);
         align-items: center;
-        padding: 1em;
+        padding: 0.2em;
         margin: auto;
     }
     #home form input{
