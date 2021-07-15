@@ -38,7 +38,7 @@ main section{
   margin: 0;
 }
 section .card{
-  margin: 3px;
+  margin: 1px;
   border: solid 1px blue;
 }
 section .card .item img{
@@ -59,16 +59,6 @@ section .card .item p{
   text-align: center;
 }
 
-
-@media screen and (max-width: 401px){
-  .card{
-    min-width: 180px;
-    height: 100%;
-    margin: auto;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-}
 @media screen and (max-width: 600px) {
   .bar{
     background-color: blue;
@@ -110,7 +100,7 @@ section .card .item p{
     padding-bottom: 1em;
   }
   .card{
-    max-width: 125px;
+    width: 125px;
     height: 100%;
     margin: auto;
     overflow: hidden;
@@ -187,7 +177,7 @@ section .card .item p{
     padding-bottom: 1em;
   }
   .card{
-    max-width: 239px;
+    width: 239px;
     height: 100%;
     margin: auto;
     overflow: hidden;
