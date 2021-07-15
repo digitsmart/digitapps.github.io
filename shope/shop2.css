@@ -28,6 +28,7 @@ ul li a{
 #wrapper{
   width: 100%;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 main{
@@ -36,6 +37,13 @@ main{
 main section{
   width: 100%;
   margin: 0;
+}
+.g-card{
+  width: 99%;
+  display: flex;
+  scroll-snap-align: start;
+  overflow-x: auto;
+  margin: auto;
 }
 section .card{
   margin: 1px;
