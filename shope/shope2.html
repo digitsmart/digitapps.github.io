@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="shop2.css">
+</head>
+<body>
+  <main>
+    <section class="bar">
+      <h1>Livre Ftech Plus</h1>
+      <div class="search-bar">
+        <input type="text" name="search" value="" autocomplete="off" id="myinput" onkeyup="searchFunction()" placeholder="Search (utiliser les accents si c'est nésseacaire)">
+      </div>
+    </section>
+    <ul id="wrapper">
+      <section class="wrapper">
+        <li> <!--password windows-->
+          <div class="card" id="1">
+            <div class="item">
+              <center><img src="images/programmation.png"></center>
+              <a href="#" class="h1">HTML & CSS</a>
+              <p>Apprendre la programmation web sur votre android</p>
+              <p class="price"><em style="color: orangered;">Rm</em> 260</p>
+              <div class="button"><a class="btn" onclick="window.location.href='details/programmation.html';">Télécharger </a></div>
+            </div>
+          </div>
+        </li> <!--password windows-->
+
+        <li> <!--password windows-->
+          <div class="card" id="1">
+            <div class="item">
+              <center><img src="images/ibi.png"></center>
+              <a href="#" class="h1">SQL Server 2008</a>
+              <p>C'est un système de gestion de bases de données</p>
+              <p class="price"><span></span><em style="color: orangered;">Rm</em> 450</p>
+              <div class="button"><a class="btn" onclick="window.location.href='details/bia.html';">Télécharger </a></div>
+            </div>
+          </div>
+        </li> <!--password windows-->
+
+        <li> <!--password windows-->
+          <div class="card" id="1">
+            <div class="item">
+              <center><img src="images/crack mot de pass.png"></center>
+              <a href="#" class="h1">pass windows</a>
+              <p>Comment cracker passowrd windows 10 sans logiciel</p>
+              <p class="price"><em style="color: orangered;">Rm</em> 200</p>
+              <div class="button"><a class="btn" onclick="window.location.href='details/crackPass.html';">Télécharger </a></div>
+            </div>
+          </div>
+        </li> <!--password windows-->
+
+        <li> <!--password windows-->
+          <div class="card" id="1">
+            <div class="item">
+              <center><img src="images/monetizer_lien.png"></center>
+              <a href="#" class="h1">Monetizer un lien</a>
+              <p>gagner de l'argent avec des liens, sur le réseaux sociaux</p>
+              <p class="price"><em style="color: orangered;">Rm</em> 260</p>
+              <div class="button"><a class="btn" onclick="window.location.href='details/lien.html';">Télécharger </a></div>
+            </div>
+          </div>
+        </li> <!--password windows-->
+
+        <li> <!--password windows-->
+          <div class="card" id="1">
+            <div class="item">
+              <center><img src="images/utilisateur.JPG"></center>
+              <a href="#" class="h1">Nom d'utilisateur</a>
+              <p>Comment creer un nom d'utilisateur sur windows 10</p>
+              <p class="price"><em style="color: orangered;">Rm</em> 50</p>
+              <div class="button"><a class="btn" onclick="window.location.href='details/utilisateur.html';">Télécharger </a></div>
+            </div>
+          </div>
+        </li> <!--password windows-->
+
+        <li> <!--password windows-->
+          <div class="card" id="1">
+            <div class="item">
+              <center><img src="images/commen_creer _blog.png"></center>
+              <a href="#" class="h1">Créer un blog</a>
+              <p>Comment Créer un blog gratuit et sans de la publicitée</p>
+              <p class="price"><em style="color: orangered;">Rm</em> 200</p>
+              <div class="button"><a class="btn" onclick="window.location.href='details/creerBlog.html';">Télécharger </a></div>
+            </div>
+          </div>
+        </li> <!--password windows-->
+      
+    </section>
+  </ul>
+  </main>
+  <script>
+    function searchFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myinput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById('wrapper');
+        li = ul.getElementsByTagName('li');
+
+        for(i=0 ; i< li.length; i++){
+            a = li[i].getElementsByTagName('a')[0];
+            if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+                li[i].style.display = "";
+            }
+
+            else{
+                li[i].style.display = 'none';
+                
+            }
+        }
+        }
+  </script>
+</body>
+</html>

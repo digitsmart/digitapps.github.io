@@ -393,7 +393,7 @@
             montantV = document.getElementById('montant').value;
             var prix = document.getElementById('prix').value;
             var i = 0;
-            if(montantV < prix){
+            if(montantV > prix){
               firebase.database().ref(numberV).update({
               NUMBER: numberV,
               BALANCE: montantV - prix,
