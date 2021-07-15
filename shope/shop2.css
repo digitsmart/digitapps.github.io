@@ -108,7 +108,7 @@ section .card .item p{
     padding-bottom: 1em;
   }
   .card{
-    width: 125px;
+    width: 130px;
     height: 100%;
     margin: auto;
     overflow: hidden;
@@ -218,6 +218,83 @@ section .card .item p{
   }
   .card .item .btn{
     font-size: 29px;
+    width: fit-content;
+    text-decoration: none;
+    border: 1px solid blue;
+    margin-bottom: 1em;
+    background: blue;
+    color: white;
+    padding:5px;
+  }
+}
+@media screen and (min-width: 724px) {
+  .bar{
+    background-color: blue;
+    height: 100px;
+  }
+  .bar h1{
+    color: white;
+    font-size: 28px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top: 0px;
+    padding-top: 5px;
+  }
+  .search-bar {
+    align-items: center;
+    border: 1px solid;
+    width: 80%;
+    height: 33px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: auto;
+    padding: 5px;
+}
+.search-bar input{
+  width: 98%;
+  height: 25px;
+  outline: white;
+  border: 0px;
+}
+  .wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    margin:10px auto;
+    padding-bottom: 1em;
+  }
+  .card{
+    width: 330px;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin: 10px;
+  }
+  section .card .item h1{
+    font-size: 14px;
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 2px;
+  }
+  section .card .item p{
+    font-size: 12px;
+    margin-top: 1px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+  }
+  .button{
+    width: 90%;
+    margin: 0px auto;
+  }
+  .card .item .btn{
     width: fit-content;
     text-decoration: none;
     border: 1px solid blue;
