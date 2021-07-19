@@ -85,14 +85,14 @@ img{
     background: white;
     padding: 1em;
 }
-form input{
+.form input{
     width: 100%;
     padding: 0.5em;
     background: black;
     color: white;
     margin: auto;
 }
-form .prix{
+.form .prix{
     display: flex;
     border: 1px solid blue;
     height: 30px;
@@ -143,7 +143,7 @@ form .prix{
     width: 1%;
     height: 9px;
 }
-form .groupe{
+.form .groupe{
     display: flex;
     border: 1px solid blue;
     height: 30px;
@@ -245,32 +245,33 @@ form .groupe{
     .h1{
         background: red;
         width: 100%;
-        height: 130px;
+        height: 100px;
         margin-top: 0px;
-        padding: 1em;
+        padding: 0.2em;
         color: white;
     }
     .h1 h1{
         text-align: center;
-        font-size: 36px;
+        font-size: 26px;
     }
     #formPass .form form{
         background: white;
         padding: 1em;
     }
-    form input{
+    .form input{
         width: 100%;
-        height: 60px;
+        height: 30px;
         padding: 1em;
         background: black;
-        font-size: 30px;
+        font-size: 20px;
         color: white;
         margin: auto;
     }
-    form .prix{
+    .form .prix{
         display: flex;
         border: 1px solid blue;
-        height: 60px;
+        height: 40px;
+        font-size: 20px;
         padding: 0px;
     }
     .prix #prix{
@@ -278,15 +279,15 @@ form .groupe{
         width: 100px;
         margin: 0;
         color: white;
-        font-size: 30px;
+        font-size: 18px;
         font-weight: bolder;
         text-align: center;
     }
     #msg{
-        border: 1px solid orange;
+        border: 1px solid rgb(255, 0, 0);
         margin: 0px;
         padding: 0.2em;
-        font-size: 30px;
+        font-size: 20px;
     }
     .prix p{
         background: blue;
@@ -294,7 +295,7 @@ form .groupe{
         margin: 0;
         padding: 0.5em;
         color: white;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: bolder;
         text-align: center;
     }
@@ -305,7 +306,7 @@ form .groupe{
     }
     .balance button{
         width: 120px;
-        font-size: 30px;
+        font-size: 20px;
         color: white;
         border: 0;
         background: orange;
@@ -324,10 +325,10 @@ form .groupe{
         width: 1%;
         height: 19px;
     }
-    form .groupe{
+    .form .groupe{
         display: flex;
         border: 1px solid blue;
-        height: 50px;
+        height: 40px;
         padding: 0px;
     }
     .groupe #montant{
@@ -336,6 +337,7 @@ form .groupe{
         margin: 0;
         color: white;
         font-weight: bolder;
+        font-size: 17px;
         text-align: center;
     }
     .g label{
@@ -348,6 +350,7 @@ form .groupe{
         background: blue;
         width: 100%;
         margin: 0;
+        font-size: 17px;
         padding: 0.5em;
         color: white;
         font-weight: bolder;
@@ -359,7 +362,7 @@ form .groupe{
         background: gray;
         color: white;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 20px;
         border: 0;
     }    
 }
@@ -442,7 +445,7 @@ form .groupe{
         background: white;
         padding: 1em;
     }
-    form input{
+    .form input{
         width: 100%;
         height: 60px;
         padding: 1em;
@@ -451,7 +454,7 @@ form .groupe{
         color: white;
         margin: auto;
     }
-    form .prix{
+    .form .prix{
         display: flex;
         border: 1px solid blue;
         height: 60px;
@@ -508,7 +511,7 @@ form .groupe{
         width: 1%;
         height: 19px;
     }
-    form .groupe{
+    .form .groupe{
         display: flex;
         border: 1px solid blue;
         height: 50px;

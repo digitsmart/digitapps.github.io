@@ -31,10 +31,9 @@
         <section id="formPass">
           <div class="form" >
             <div class="h1"><h1>Programmation sur android </h1></div>
-           <form>
               <center>
                 <div class="prix">
-                  <p>Payer</p><input id="prix" value="260" disabled><p>Rm</p>
+                  <p>Payer</p><input id="prix" value="260.0" disabled><p>Rm</p>
                 </div>
                 <hr/>
                 <p id="msg">
@@ -58,7 +57,6 @@
                   <button type="submit" id="payer" class="w3-btn w3-blue">Payer votre produit</button>
                 </div>
               </center>
-           </form>
           </div>
         </section> <!--section de paiment-->
       </main>
@@ -103,11 +101,12 @@
             numberV = document.getElementById('number').value;
             montantV = document.getElementById('montant').value;
             var prix = document.getElementById('prix').value;
+            var price = 260;
             var i = 0;
-            if(montantV > prix){
+            if(montantV > price){
               firebase.database().ref(numberV).update({
               NUMBER: numberV,
-              BALANCE: montantV - prix,
+              BALANCE: montantV - price,
             })
             if (i == 0) {
                 i = 1;
