@@ -257,3 +257,39 @@ li a:hover{
   border: 1px solid blue;
   border-radius: 50px;
 }
+.nav {
+  border: 1px solid blue;
+  padding: 5px;
+  width: fit-content;
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  transform: translate(25%,0%);
+}
+.navbar{
+  margin: auto;
+  display: flex;
+  width: max-content;
+}
+.navbar i{
+  margin: 1px 5px 1px 5px;
+  padding: 2px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+}
+.navbar .fa-home{
+  background-color: white;
+  padding: 1px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+  border: 0px;
+  padding: 2px;
+  position: relative;
+  bottom: 20%;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
