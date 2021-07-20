@@ -1,6 +1,9 @@
 body{
   margin: 0px;
 }
+*{
+  box-shadow: border-box;
+}
 /* page home de l'application*/
 header{
     width: 100%;
@@ -24,10 +27,12 @@ header img{
 .container{
   background-color: white;
   margin: 0px;
+  height: 100vh;
+  
 }
 main{
   width: 100%;
-  height: 100%;
+  height: max-content;
   margin: 0px;
   background-color: white;
 }
@@ -258,12 +263,13 @@ li a:hover{
   border-radius: 50px;
 }
 .nav {
-  height: 40px;
-	background: white;
-	width: 100%;
-	z-index: 10;
-	position: fixed;
+  overflow: hidden;
+  background-color: #FFF;
+  position: fixed;
+  bottom: 0;
+  width: 99%;
   border: 1px solid blue;
+  box-shadow: 5px 0px 0px 1px rgba(0,0,0,0.75);
 }
 .navbar{
   margin: auto;
@@ -282,16 +288,24 @@ li a:hover{
 .navbar .fa-home{
   background-color: white;
   padding: 4px;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   border-radius: 50px;
   border: 0px;
-  padding: 2px;
+  padding: 7px;
   position: relative;
-  bottom: 25%;
+  bottom: 5%;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.navbar .fa-home:hover{
+  width: 35px;
+  height: 35px;
+  transform: scaleY(1);
+  padding: 10px;
+  color: orange;
+  background-color: blue;
 }
 /*popup css*/
 #my_modal .card {
@@ -311,11 +325,11 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 #my_modal{
   width: 90%;
   height: 300px;
-  border: 1px solid #333;
+  border: 1px solid blue;
   box-sizing: border-box;
   padding: 20px;
   text-align: center;
-  background: #f1f1f1;
+  background: #FFF;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
   /*// making modal center*/
