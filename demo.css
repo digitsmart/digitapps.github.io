@@ -258,13 +258,11 @@ li a:hover{
   border-radius: 50px;
 }
 .nav {
-  border: 1px solid blue;
-  padding: 5px;
-  width: fit-content;
-  position: fixed;
-  bottom: 0%;
-  left: 0%;
-  transform: translate(25%,0%);
+  height: 50px;
+	background: white;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
 }
 .navbar{
   margin: auto;
@@ -292,4 +290,32 @@ li a:hover{
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+/*popup css*/
+#my_modal{
+  width: 500px;
+  height: 300px;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background: #f1f1f1;
+
+  /*// making modal center*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+  /*// hide for the first time */
+
+  display: none;
+}
+#my_modal h2{
+  margin: 0px;
+}
+#show_time{
+  font-size: 18px;
+  color: red;
 }

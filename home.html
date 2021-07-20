@@ -62,6 +62,12 @@
                 </div>
         </header>
         <main>
+          <!--popup automatique-->
+          <div id="my_modal">
+            <span id="show_time">0.00</span>
+            <h2>popup modal with time countdown</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, hic, excepturi laudantium labore debitis suscipit! Hic quae sint placeat quod. Laborum rem facere, harum sapiente libero delectus ipsam quidem natus voluptatibus nam nulla vel. Porro harum beatae est vitae adipisci nesciunt doloremque facilis in officia maxime, odio atque velit, aperiam.</p>
+          </div>
             <section id="card" class="card-bar" style="margin: auto;">
                 <a href="videos/videoliste.html"><button><i class="fa fa-video-camera"></i>Videos astuces</button></a>
                 <a href="Cours html/login/index.html"><button><i class="fa fa-hand-o-right" style="color: red;"></i>En cours ici</button></a>
@@ -235,6 +241,41 @@ function run(song, video, link){
     function w3_close() {
       document.getElementById("mySidebar").style.display = "none";
     }
+    </script>
+
+    <script>
+      var my_modal = document.getElementById('my_modal');
+      var span_tag = document.getElementById('show_time');
+      var countdown_call = '';
+      var time_count = 0;
+
+      function showModal(){
+        my_modal.style.display = "block";
+        // countdown after show
+        countdown_call = setInterval(updateTime, 1000); // call for every 1s
+      }
+      // now show automatically after 1s
+      // working
+      setTimeout(showModal,1000) // 1000ms
+
+
+      // now close 
+      function closeModal(){
+        my_modal.style.display = "none";
+      }
+      // setTimeout(closeModal,3000) // 1000ms
+      // no need
+
+      // now countdown time
+      function updateTime(){
+        time_count++;  
+        span_tag.innerHTML = time_count;
+        if(time_count == 10){
+          clearInterval(countdown_call);
+          closeModal();
+        }
+
+      }
     </script>
   </body>
   </html>
