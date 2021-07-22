@@ -26,19 +26,22 @@ function aller() {
     var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
-    var three = document.getElementById("three");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
     var navig = document.getElementById('navig');
     if (home.style.display === "none") {
       home.style.display = "block";
       first.style.display = "none";
       second.style.display = "none";
-      three.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
       navig.style.display = "none";
     } else {
       home.style.display = "block";
       first.style.display = "none";
       second.style.display = "none";
-      three.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
       navig.style.display = "none";
     }
   }
@@ -46,18 +49,21 @@ function aller() {
   function first() {
     var home = document.getElementById("home");
     var first = document.getElementById("first");
-    var second = document.getElementById("second");
-    var three = document.getElementById("three");
+    var second = document.getElementById("second1");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
     if (first.style.display === "none") {
       home.style.display = "none";
       first.style.display = "block";
       second.style.display = "none";
-      three.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
     } else {
       home.style.display = "none";
       first.style.display = "block";
       second.style.display = "none";
-      three.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
     }
   }
 
@@ -65,35 +71,61 @@ function aller() {
     var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
-    var three = document.getElementById("three");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
     if (second.style.display === "none") {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "block";
-      three.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
     } else {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "block";
-      three.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
     }
   }
 
-  function thre() {
+  function second1() {
     var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
-    var three = document.getElementById("three");
-    if (three.style.display === "none") {
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
+    if (second1.style.display === "none") {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
-      three.style.display = "block";
+      second1.style.display = "block";
+      second2.style.display = "none";
     } else {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
-      three.style.display = "block";
+      second1.style.display = "block";
+      second2.style.display = "none";
+    }
+  }
+  function second2() {
+    var home = document.getElementById("home");
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
+    if (second2.style.display === "none") {
+      home.style.display = "none";
+      first.style.display = "none";
+      second.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "block";
+    } else {
+      home.style.display = "none";
+      first.style.display = "none";
+      second.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "block";
     }
   }
   

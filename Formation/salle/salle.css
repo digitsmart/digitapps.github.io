@@ -68,7 +68,7 @@ video{
     background-size: cover;
     width: 100%;
 }
-#first, #second, #three{
+#first, #second, #second1, #second2{
     display: none;
 }
 #home{
@@ -158,7 +158,7 @@ margin: 0px;
 }
 .infos .chapitre{
 background-color: blue;
-width: 20px;
+width: 30px;
 margin: 0px;
 text-align: center;
 align-items: center;
