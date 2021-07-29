@@ -34,7 +34,7 @@ main{
   width: 100%;
   height: max-content;
   margin: 0px;
-  margin-bottom: 36px;
+  margin-bottom: 50px;
   background-color: white;
 }
 section{
@@ -264,7 +264,7 @@ li a:hover{
   border-radius: 50px;
 }
 .nav {
-  margin-top: 36px;
+  margin-top: 46px;
   overflow: hidden;
   background-color: #FFF;
   position: fixed;
