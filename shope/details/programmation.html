@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/shope.css">
+    <link rel="stylesheet" href="../shop2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="../js/shopepaiment.js"></script>
+
 </head>
     <body>
       <main>
@@ -27,13 +30,59 @@
           </p>
           <center><button class="btn" onclick="acheterPass()">Acheter ce produit</button></center>
         </section> <!--section de detail-->
-    
-        <section id="formPass">
+        <!--FORMULAIRE DE FORMATION OPERSONELLE-->
+        <div class="formpers" id="formpers">
+          <div class="pers">
+            <h2>Create Account</h2>
+          </div>
+          <!-- Static- Please don't do anything here-->
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='https://www.google.com/';}"></iframe>
+          <form id="f" class="f" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd7jhjwtYjtzYjcoqDvGqIeX392LNA2gHG82Ye6v4t6swT-OQ/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true">
+            <div class="form-control">
+              <label for="username">Username</label>
+              <input type="text" name="entry." placeholder="ftechplus" id="username" required />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="username">Email</label>
+              <input type="email" name="entry." placeholder="ftechplus.ht@gmail.com" id="email" required />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="username">Numéro de téléphone</label>
+              <input type="number" name="entry." placeholder="Numéro" id="password" required/>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="username">Le Dodcument a télécharger</label>
+              <input name="entry." placeholder="Programmation sur android" id="docs" disabled/>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <button><input type="submit" value="Submit"></button>
+          </form>
+        </div>
+        <!-- SOCIAL PANEL HTML -->
+        <button class="floating-btn">
+          <a href="creer/pin.html" style="text-decoration: none; color: white;">Créer votre pin ici</a>
+        </button>
+        
+
+        <!--FORMULAIRE DE FORMATION OPERSONELLE-->
+        <section id="formPass"> <!--FORMULAIRE DE MAIMENT-->
           <div class="form" >
             <div class="h1"><h1>Programmation sur android </h1></div>
               <center>
                 <div class="prix">
-                  <p>Payer</p><input id="prix" value="260.0" disabled><p>Rm</p>
+                  <p>Payer</p><input id="prix" value="260" disabled><p>Rm</p>
                 </div>
                 <hr/>
                 <p id="msg">
@@ -60,6 +109,12 @@
           </div>
         </section> <!--section de paiment-->
       </main>
+      <div class="navbar">
+        <a href="../newshop.html" class="active"><i class="material-icons">navigate_before</i></a>
+        <div class="espace" style="width: 100%;"></div>
+        <a href="#news"><i class="material-icons" style=" display:none; color: blue; font-weight: bold; padding: 2px; border: 1px solid;">navigate_before</i></a>
+        <a href="#contact"><i class="fas fa-home"></i></a>
+      </div>
           <script>
             // Your web app's Firebase configuration
             var firebaseConfig = {

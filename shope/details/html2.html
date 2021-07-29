@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/shope.css">
-    <link rel="stylesheet" href="../shop2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="../js/shopepaiment.js"></script>
 </head>
     <body>
@@ -22,22 +20,28 @@
             <div class="bar" style="background-color: blue;"></div>
             </center>
           </div><!--bar de titre de detaills-->
-          <img src="../images/commen_creer _blog.png">
-          <h1>Comment Créer un blog</h1>
-          <p>
-            Dans ce document nous allons vous montrer comment creer un blog, sans avoire
-             une carte de credit et sans de la publicitée
-          </p>
-          <center><button class="btn" onclick="acheterPass()">Acheter ce produit</button></center>
-        </div>
+          <img src="../images/ibi.png">
+                      <h1>Introduction à la B.I. 
+                        Avec SQL Server 2008</h1>
+                      <p>
+                        <strong>Sommaire</strong><br>
+                        1 Présentation de la B.I. et SQL Server 2008<br>
+                        1.1 Présentation rapide de SQL Server 2008<br>
+                        1.2 La B.I. : définition et apport à l’entreprise<br>
+                        2 Le datawarehouse<br>
+                        2.1 Définition du datawarehouse<br>
+                        2.2 Conception du datawarehouse<br>
+                        3 Premières notions d’Integration Services
+                      </p>
+                      <center><button class="btn" onclick="acheterPass()">Acheter ce produit</button></center>
         </section> <!--section de detail-->
-    
+
         <section id="formPass">
           <div class="form" >
-            <div class="h1"><h1>Comment Créer un blog</h1></div>
+            <div class="h1"><h1>Introduction à la B.I. </h1></div>
               <center>
                 <div class="prix">
-                  <p>Payer</p><input id="prix" value="200" disabled><p>Rm</p>
+                  <p>Payer</p><input id="prix" value="450" disabled><p>Rm</p>
                 </div>
                 <hr/>
                 <p id="msg">
@@ -64,16 +68,6 @@
           </div>
         </section> <!--section de paiment-->
       </main>
-       <!-- SOCIAL PANEL HTML -->
-       <button class="floating-btn">
-        <a href="creer/pin.html" style="text-decoration: none; color: white;">Créer votre pin ici</a>
-      </button>
-      <div class="navbar">
-        <a href="../newshop.html" class="active"><i class="material-icons">navigate_before</i></a>
-        <div class="espace" style="width: 100%;"></div>
-        <a href="#news"><i class="material-icons" style=" display:none; color: blue; font-weight: bold; padding: 2px; border: 1px solid;">navigate_before</i></a>
-        <a href="#contact"><i class="fas fa-home"></i></a>
-      </div>
           <script>
             // Your web app's Firebase configuration
             var firebaseConfig = {
@@ -85,6 +79,7 @@
               messagingSenderId: "313335894880",
               appId: "1:313335894880:web:367bf0a26531cbd0f1c405",
               measurementId: "G-TX374HDPKS"
+
             };
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
@@ -115,7 +110,7 @@
             numberV = document.getElementById('number').value;
             montantV = document.getElementById('montant').value;
             var prix = document.getElementById('prix').value;
-            var price = 200;
+            var price = 450;
             var i = 0;
             if(montantV > price){
               firebase.database().ref(numberV).update({
@@ -132,7 +127,7 @@
                 clearInterval(id);
                 document.getElementById('montant').value = '';
                 document.getElementById('number').value = '';
-                window.location.assign("https://drive.google.com/uc?export=download&id=1NXA6OvxXcz7a3LDjwyCNMHaW-zkPNpXV");
+                window.location.assign("https://drive.google.com/uc?export=download&id=1t1wsN3z_BG_WkaImKn-Kz1XXf7I_vqze");
                 i = 0;
                 } else {
                 width++;
