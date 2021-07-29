@@ -1,313 +1,220 @@
-body{
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+* {
+box-sizing: border-box;
+}
+
+#docs{
+  color: white;
+  font-size: 18px;
+  background-color: black;
+}
+#formpers{
+  display: none;
+}
+.formpers {
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+overflow: hidden;
+height: 100vh;
+width: 400px;
+max-width: 100%;
+margin: 5px auto;
+border: 1px solid orange;
+}
+
+.pers {
+border-bottom: 1px solid #f0f0f0;
+background-color: gray;
+padding: 20px 40px;
+display: none;
+}
+
+.header h2 {
+margin: 0;
+}
+
+.f {
+padding: 10px 10px;	
+border: 1px solid blue;
+width: 95%;
+margin: auto;
+position: absolute;
+top: 20%;
+left: 0;
+right: 0;
+margin: auto
+}
+
+.form-control {
+margin-bottom: 10px;
+padding-bottom: 2px;
+position: relative;
+}
+
+.form-control label {
+display: inline-block;
+margin-bottom: 5px;
+}
+
+.form-control input {
+border: 2px solid blue;
+border-radius: 4px;
+display: block;
+font-family: inherit;
+font-size: 14px;
+padding: 10px;
+width: 100%;
+}
+
+.form-control input:focus {
+outline: 0;
+border-color: #777;
+}
+
+.form-control.success input {
+border-color: #2ecc71;
+}
+
+.form-control.error input {
+border-color: #e74c3c;
+}
+
+.form-control i {
+visibility: hidden;
+position: absolute;
+top: 40px;
+right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+color: #2ecc71;
+visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+color: #e74c3c;
+visibility: visible;
+}
+
+.f .form-control small {
+color: #e74c3c;
+position: absolute;
+bottom: 0;
+left: 0;
+visibility: hidden;
+}
+
+.f .form-control.error small {
+visibility: visible;
+}
+
+.f button {
+background-color: #0004ee;
+border: 2px solid #c7a900;
+border-radius: 4px;
+color: #fff;
+display: block;
+font-family: inherit;
+font-size: 16px;
+padding: 10px;
+margin-top: 2px;
+width: 100%;
 }
 
 
-ul{
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  scroll-snap-align: start;
-  overflow-x: auto;
 
+
+
+
+
+
+
+
+
+
+.floating-btn {
+border-radius: 26.5px;
+background-color: #001F61;
+border: 1px solid #001F61;
+box-shadow: 0 16px 22px -17px #03153B;
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+line-height: 20px;
+padding: 12px 20px;
+position: fixed;
+bottom: 3px;
+right: 15px;
+z-index: 999;
 }
-ul li{
-  margin: 1px;
-  margin: auto;
-  flex-shrink: 0;
+
+.floating-btn:hover {
+background-color: #ffffff;
+color: black;
+}
+
+.floating-btn:focus {
+outline: none;
+color: black;
+}
+
+.floating-text {
+background-color: #001F61;
+border-radius: 10px 10px 0 0;
+color: #fff;
+font-family: 'Muli';
+padding: 7px 15px;
+position: fixed;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+z-index: 998;
+}
+
+.floating-text a {
+color: #FF7500;
+text-decoration: none;
+}
+.navbar {
+  overflow: hidden;
   background-color: white;
-  text-align: center;
-  font-family: arial;
-  justify-content: center;
-  list-style: none;
+  border: 1px solid blue;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
-ul li a{
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px 7px;
   text-decoration: none;
-}
-#wrapper{
-  width: 100%;
-  margin: 0px;
-  overflow-x: hidden;
+  font-size: 17px;
 }
 
-main{
-  width: 100%;
-}
-main section{
-  width: 100%;
-  margin: 0;
-}
-.g-card{
-  width: 99%;
-  display: flex;
-  scroll-snap-align: start;
-  overflow-x: auto;
-  margin: auto;
-}
-section .card{
-  margin: 5px;
-  box-shadow: 0px 1px 0px 2px rgba(0, 0, 0, 0.534);
-}
-section .card .item img{
-  width: 90px;
-  height: 100px;
-  margin:4px auto;
-}
-section .g-card .card .item h1{
-  font-size: 14px;
-  color: blue;
-  font-weight: bold;
-  text-align: center;
-}
-section .g-card .card .item p{
-  font-size: 12px;
+.navbar a:hover {
+  background: #f1f1f1;
   color: black;
-  font-weight: bold;
-  text-align: center;
-
-}
-.item center{
-  background-image: url('images/back.jpg');
-  background-color: blue;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-@media screen and (max-width: 600px) {
-  .bar{
-    background-color: blue;
-    height: 100px;
-  }
-  .bar h1{
-    color: white;
-    font-size: 28px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2px;
-    margin-top: 0px;
-    padding-top: 5px;
-  }
-  .search-bar {
-    align-items: center;
-    border: 1px solid;
-    width: 80%;
-    height: 33px;
-    background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    margin: auto;
-    padding: 5px;
+.navbar a.active {
+  background-color: #0011ff;
+  color: white;
 }
-.search-bar input{
-  width: 98%;
-  height: 25px;
-  outline: white;
-  border: 0px;
-}
-  .wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    width: 99%;
-    margin:10px auto;
-    padding-bottom: 1em;
-  }
-  .card{
-    width: 140px;
-    height: 100%;
-    margin: auto;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  section .card .item a{
-    font-size: 12px;
-    color: blue;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 1px;
-    margin-bottom: 2px;
-  }
-  section .g-card .card .item p{
-    font-size: 10px;
-    margin-top: 1px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-  }
-  .button{
-    width: 90%;
-    margin: 0px auto;
-  }
-  .card .item .btn{
-    width: fit-content;
-    text-decoration: none;
-    border: 1px solid blue;
-    margin-bottom: 1em;
-    background: orange;
-    color: white;
-    padding:5px;
-  }
-}
-@media screen and (min-width: 601px) {
-  .bar{
-    background-color: blue;
-    height: 200px;
-  }
-  .bar h1{
-    color: white;
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2px;
-    margin-top: 0px;
-    padding-top: 5px;
-  }
-  .search-bar {
-    align-items: center;
-    border: 1px solid;
-    width: 80%;
-    height: 66px;
-    background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    margin: auto;
-    padding: 5px;
-}
-.search-bar input{
-  width: 98%;
-  height: 50px;
-  outline: white;
-  border: 0px;
-  font-size: 27px;
-}
-  .wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    width: 99%;
-    margin:10px auto;
-    padding-bottom: 1em;
-  }
-  .card{
-    width: 250px;
-    height: 100%;
-    margin: auto;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
 
-  section .card .item img{
-    width: 149px;
-    height: 200px;
-    margin:4px auto;
-  }
-  section .card .item .h1{
-    font-size: 26px;
-    color: blue;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 1px;
-    margin-bottom: 2px;
-  }
-  section .card .item p{
-    font-size: 18px;
-    margin-top: 1px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-  }
-  .button{
-    width: 90%;
-    margin: 0px auto;
-  }
-  .card .item .btn{
-    font-size: 29px;
-    width: fit-content;
-    text-decoration: none;
-    border: 1px solid blue;
-    margin-bottom: 1em;
-    background: blue;
-    color: white;
-    padding:5px;
-  }
+@media screen and (max-width: 480px) {
+
+.social-panel-container.visible {
+transform: translateX(0px);
 }
-@media screen and (min-width: 700px) {
-  .bar{
-    background-color: blue;
-    height: 100px;
-  }
-  .bar h1{
-    color: white;
-    font-size: 28px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2px;
-    margin-top: 0px;
-    padding-top: 5px;
-  }
-  .search-bar {
-    align-items: center;
-    border: 1px solid;
-    width: 80%;
-    height: 33px;
-    background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    margin: auto;
-    padding: 5px;
+
+.floating-btn {
+right: 10px;
 }
-.search-bar input{
-  width: 98%;
-  height: 25px;
-  outline: white;
-  border: 0px;
-}
-  .wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    width: 99%;
-    margin:10px auto;
-    padding-bottom: 1em;
-  }
-  .card{
-    width: 330px;
-    height: 100%;
-    margin: auto;
-    overflow: hidden;
-    margin-bottom: 10px;
-    margin: 10px;
-  }
-  section .card .item h1{
-    font-size: 14px;
-    color: blue;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 1px;
-    margin-bottom: 2px;
-  }
-  section .card .item p{
-    font-size: 12px;
-    margin-top: 1px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-  }
-  .button{
-    width: 90%;
-    margin: 0px auto;
-  }
-  .card .item .btn{
-    width: fit-content;
-    text-decoration: none;
-    border: 1px solid blue;
-    margin-bottom: 1em;
-    background: blue;
-    color: white;
-    padding:5px;
-  }
 }
