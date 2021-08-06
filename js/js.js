@@ -37,66 +37,91 @@ var myIndex = 0;
 
         // boutton bar en bas
         function home(){
-          var f = document.getElementById('facebook');
-          var h = document.getElementById('home');
-          var w = document.getElementById('whatsapp');
+          var v = document.getElementById('videoPage');
+          var h = document.getElementById('homePage');
+          var p = document.getElementById('profilePage');
           var slide = document.getElementById('slide');
           var not = document.getElementById('not');
          
           if(h.style.display === "none"){
             h.style.display = "block";
-            f.style.display = "none";
-            w.style.display = "none";
+            v.style.display = "none";
+            p.style.display = "none";
             slide.style.display = "block";
             not.style.display = "block";
           } else{
             h.style.display = "block";
-            f.style.display = "none";
-            w.style.display = "none";
+            v.style.display = "none";
+            p.style.display = "none";
             slide.style.display = "block";
             not.style.display = "block";
           }
         }
 
-        function facebook(){
+        function profilepage(){
           var f = document.getElementById('facebook');
-          var h = document.getElementById('home');
+          var h = document.getElementById('homePage');
           var w = document.getElementById('whatsapp');
+          var p = document.getElementById('profilePage');
+          var slide = document.getElementById('slide');
+          var not = document.getElementById('not');
+         
+          if(h.style.display === "none"){
+            h.style.display = "none";
+            f.style.display = "none";
+            w.style.display = "none";
+            w.style.display = "block";
+            slide.style.display = "block";
+            not.style.display = "block";
+          } else{
+            h.style.display = "none";
+            f.style.display = "none";
+            w.style.display = "none";
+            w.style.display = "block";
+            slide.style.display = "block";
+            not.style.display = "block";
+          }
+        }
+
+        function video(){
+          var h = document.getElementById('homePage');
+          var p = document.getElementById('profilePage');
+          var v =document.getElementById('videoPage');
           var slide = document.getElementById('slide');
           var not = document.getElementById('not');
          
           if(h.style.display === "block"){
             h.style.display = "none";
-            f.style.display = "block";
-            w.style.display = "none";
+            p.style.display = "none";
+            v.style.display = "block";
             slide.style.display = "none";
             not.style.display = "none";
           } else{
             h.style.display = "none";
-            f.style.display = "block";
-            w.style.display = "none";
+            p.style.display = "none";
+            v.style.display = "block";
             slide.style.display = "none";
             not.style.display = "none";
           }
         }
 
-        function whatsapp(){
-          var f = document.getElementById('facebook');
-          var h = document.getElementById('home');
-          var w = document.getElementById('whatsapp');
+        function profilepage(){
+          var h = document.getElementById('homePage');
+          var p = document.getElementById('profilePage');
+          var v =document.getElementById('videoPage');
           var slide = document.getElementById('slide');
           var not = document.getElementById('not');
          
           if(h.style.display === "block"){
             h.style.display = "none";
-            f.style.display = "none";
-            w.style.display = "block";
+            v.style.display = "none";
+            p.style.display = "block";
             slide.style.display = "none";
             not.style.display = "none";
           } else{
             h.style.display = "none";
-            f.style.display = "none";
-            w.style.display = "block";
+            v.style.display = "none";
+            p.style.display = "block";
             slide.style.display = "none";
             not.style.display = "none";
           }
