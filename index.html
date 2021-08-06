@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+rel="stylesheet"
+id="bootstrap-css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dispo">
+    <h1>Pas disponible dans ce format</h1>
+  </div>
+  <div class="body">
+    <div id="splash">
+      <img class="logo" src="images/mon logo.png" alt="" />
+    </div>
+    <!--video liste a l'entete de mon application-->
+    <header id="slide">
+      <div class="slide" >
+          <div class="mySlides"><img src="images/slide1.jpg"></div>
+          <div class="mySlides" ><img src="images/slide2.jpg" ></div>     
+      </div>
+      <audio id="audio" preload="auto" tabindex="0" controls="" style="display: none;">
+        <source src="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/01%20-%20Crusader%20Prelude.mp3">
+      </audio>
+    </header>
+    <div class="not" id="not">
+      <h1>Bienvenue sur Ftech Plus</h1>
+      <div>
+        <h3>Cour disponible (En cour) y compris livre et audio</h3>
+        <img src="icons/baseline_notifications_black_24dp.png">
+      </div>
+    </div>
+    <main id="home">
+      <section>
+        <div class="card">
+          <div><img src="images/formation-methode.png" alt="Denim Jeans"></div>
+          <h1>cours html et css</h1>
+          <p>Apprendre la programmation web en utilisant votre android</p>
+          <a href="cours/salle.html"><button>Suivez le cours</button></a>
+        </div>
+        <div class="card">
+          <div><img src="images/formation-methode.png" alt="Denim Jeans"></div>
+          <h1>Video Astuces</h1>
+          <p>Devenir le mettre de votre android en regardant nos videos</p>
+          <a href=""><button>Regarder nos videos</button></a>
+        </div>
+      </section>
+      <section>
+        <div class="card">
+          <div><img src="images/formation-methode.png" alt="Denim Jeans"></div>
+          <h1>Article recent</h1>
+          <p>Tous nos articles sur votre smartphone son disponible ici</p>
+          <a href=""><button>Nos articles</button></a>
+        </div>
+        <div class="card">
+          <div><img src="images/formation-methode.png" alt="Denim Jeans"></div>
+          <h1>Ebook Shop</h1>
+          <p>Télécharger des documents informatique préparer pour vous</p>
+          <a href="shope/newshop.html"><button>Télécharger livre</button></a>
+        </div>
+      </section>
+    </main>
+
+    <main id="facebook">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v11.0&appId=276058937298363&autoLogAppEvents=1" nonce="R9O535xY">
+      </script>
+      <div class="fb">
+        <img src="images/banner fb.jpg">
+        <div class="fb-like" data-href="https://m.facebook.com/ftechplus" data-width="100px" data-layout="button_count" data-action="like" data-size="large" data-share="facebook">
+        </div>
+      </div>
+      <h1>Bienvenue sur ma page</h1>
+      <h3>cliquer sur le boutton en haut, pour vous abonner</h3>
+      <div class="container">
+        <img src="images/img1.png" alt="Avatar" style="width:90px">
+        <p>Recevez tous nos coutenus sur les cours gratuit sur html et css sur votre android.</p>
+      </div>
+      
+      <div class="container">
+        <img src="images/img2.png" alt="Avatar" style="width:90px">
+        <p>Rester connecter avec nous, seulement en vous abonnant a notre page facebook.</p>
+      </div>
+    </main>
+    <main id="whatsapp">
+      <video controls></video>
+      <div>
+        <h1>Devenir membre de notre groupe</h1>
+        <p>Apprendre le langage html et css sur votre android</p>
+        <p>si vous voulez apprendre avec nous il suffit de cliquer sur le boutton en bas, des sont disponible pour vous si vous etes debutant</p>
+        <p>Nos formation sont gratuit sur whatsapp</p>
+        <center><p class="btn"><a href="https://chat.whatsapp.com/CVB6zWvvw96IrrANQOP73s">Integrer dans le groupe</a></p></center>
+      </div>
+    </main>
+  </div><!--grand corp de l'application-->
+
+   <!--Menu en bas de la page-->
+   <nav class="nav">
+    <a onclick="person()" class="nav__link">
+      <i class="material-icons nav__icon" style="color: rgb(55, 0, 253);">person</i>
+      <span class="nav__text" style="color: rgb(55, 0, 253);">Admin</span>
+    </a>
+    <a onclick="whatsapp()" class="nav__link nav__link--active">
+      <i class="material-icons nav__icon">whatsapp</i>
+      <span class="nav__text">Whatsapp</span>
+    </a>
+    <a onclick="home()" class="nav__link">
+      <i class="material-icons nav__icon" style="color: orange;">home</i>
+      <span class="nav__text" style="color: orange;">Accueil</span>
+    </a>
+    <a onclick="facebook()" class="nav__link">
+      <i class="material-icons nav__icon" style="color: rgb(0, 99, 212);">facebook</i>
+      <span class="nav__text" style="color: rgb(0, 99, 212);">facebook</span>
+    </a>
+    <a onclick="youtube()" class="nav__link">
+      <i class="material-icons nav__icon" style="color: rgb(243, 7, 7);">smart_display</i>
+      <span class="nav__text" style="color: rgb(243, 7, 7);">youtube</span>
+    </a>
+    </nav>
+  <script src="js/js.js"></script>
+ 
+  </script>
+</body>
+</html>
