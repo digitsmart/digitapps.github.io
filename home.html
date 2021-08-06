@@ -14,7 +14,7 @@ id="bootstrap-css"/>
   <div class="dispo">
     <h1>Pas disponible dans ce format</h1>
   </div>
-  <div class="body">
+  <div class="body" id="homePage">
     <div id="splash">
       <img class="logo" src="images/mon logo.png" alt="" />
     </div>
@@ -35,7 +35,7 @@ id="bootstrap-css"/>
         <img src="icons/baseline_notifications_black_24dp.png">
       </div>
     </div>
-    <main id="home">
+    <main id="home" >
       <section>
         <div class="card">
           <div><img src="images/formation-methode.png" alt="Denim Jeans"></div>
@@ -66,7 +66,7 @@ id="bootstrap-css"/>
       </section>
     </main>
 
-    <main id="facebook">
+    <main id="video" style="display: none;">
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v11.0&appId=276058937298363&autoLogAppEvents=1" nonce="R9O535xY">
       </script>
@@ -87,7 +87,7 @@ id="bootstrap-css"/>
         <p>Rester connecter avec nous, seulement en vous abonnant a notre page facebook.</p>
       </div>
     </main>
-    <main id="whatsapp">
+    <main id="profile" style="display: none;">
       <video controls></video>
       <div>
         <h1>Devenir membre de notre groupe</h1>
@@ -99,29 +99,104 @@ id="bootstrap-css"/>
     </main>
   </div><!--grand corp de l'application-->
 
+  <!--videos astuces de mon application web-->
+  <div id="videoPage" >
+    <figure id="video_player">
+      <video controls poster="https://res.cloudinary.com/ftechplus/image/upload/v1621870768/formation%20drive/images/Slide1_n2odwh.jpg">
+        <source src="https://res.cloudinary.com/ftechplus/video/upload/v1621826355/formation%20drive/formation_drive.1_gesemj.mp4" type="video/mp4">
+        <source src="nambia1.webm" type="video/webm">
+      </video>
+      <figcaption>
+        <div class="vid">
+          <div class="image"><img src="https://res.cloudinary.com/ftechplus/image/upload/v1621870768/formation%20drive/images/Slide1_n2odwh.jpg"></div>
+          <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826355/formation%20drive/formation_drive.1_gesemj.mp4" type="video/mp4">
+            <div>
+              <h1>Formation google drive #1</h1>
+              <p>Cours sur la programmation en html et css sur android gratuiite, en tulisant l'applicaton ftech plus</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="vid">
+          <div class="image"><img src="https://res.cloudinary.com/ftechplus/image/upload/v1621870768/formation%20drive/images/Slide2_c8doey.jpg"></div>
+          <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826361/formation%20drive/Formation_drive.2_j4fkqj.mp4">
+            <div>
+              <h1>Formation google drive #2</h1>
+              <p>Cours sur la programmation en html et css sur android gratuiite, en tulisant l'applicaton ftech plus</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="vid">
+          <div class="image"><img src="https://res.cloudinary.com/ftechplus/image/upload/v1621870769/formation%20drive/images/Slide3_f8uofm.jpg"></div>
+          <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826321/formation%20drive/formation_drive.3_fnqjbg.mp4">
+            <div>
+              <h1>Formation google drive #3</h1>
+              <p>Cours sur la programmation en html et css sur android gratuiite, en tulisant l'applicaton ftech plus</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="vid">
+          <div class="image"><img src="https://res.cloudinary.com/ftechplus/image/upload/v1621870768/formation%20drive/images/Slide4_tazly6.jpg"></div>
+          <a href="https://res.cloudinary.com/ftechplus/video/upload/v1621826308/formation%20drive/formation_drive.4_j5jn19.mp4">
+            <div>
+              <h1>Formation google drive #4</h1>
+              <p>Cours sur la programmation en html et css sur android gratuiite, en tulisant l'applicaton ftech plus</p>
+            </div>
+          </a>
+        </div>
+        
+      </figcaption>
+    </figure>
+  </div>
+  <!--fin de la video astuces de mon application mobile-->
+
+  <!--Utilisation de l'application-->
+
+  <!--utilisation de l'application-->
+    <div id="profilePage">
+      <h2 style="text-align:center">Profile de l'appliaction</h2>
+
+    <div class="profile">
+      <img src="images/mon logo.png" alt="John" style="width:100%">
+      <h1>Ftech Plus</h1>
+      <p class="title">Formation et astuces</p>
+      <p>Partager cette application a vos amis</p>
+      <div style="margin: 24px 0;">
+        <a href="#"><i class="fa fa-dribbble"></i></a> 
+        <a href="#"><i class="fa fa-twitter"></i></a>  
+        <a href="#"><i class="fa fa-linkedin"></i></a>  
+        <a href="#"><i class="fa fa-facebook"></i></a> 
+      </div>
+      <p><button>Contact</button></p>
+    </div>
+    </div>
    <!--Menu en bas de la page-->
-   <nav class="nav">
-    <a onclick="person()" class="nav__link">
-      <i class="material-icons nav__icon" style="color: rgb(55, 0, 253);">person</i>
-      <span class="nav__text" style="color: rgb(55, 0, 253);">Admin</span>
-    </a>
-    <a onclick="whatsapp()" class="nav__link nav__link--active">
-      <i class="material-icons nav__icon">whatsapp</i>
-      <span class="nav__text">Whatsapp</span>
-    </a>
-    <a onclick="home()" class="nav__link">
-      <i class="material-icons nav__icon" style="color: orange;">home</i>
-      <span class="nav__text" style="color: orange;">Accueil</span>
-    </a>
-    <a onclick="facebook()" class="nav__link">
-      <i class="material-icons nav__icon" style="color: rgb(0, 99, 212);">facebook</i>
-      <span class="nav__text" style="color: rgb(0, 99, 212);">facebook</span>
-    </a>
-    <a href="videos/astuces.html" class="nav__link">
-      <i class="material-icons nav__icon" style="color: rgb(243, 7, 7);">smart_display</i>
-      <span class="nav__text" style="color: rgb(243, 7, 7);">Astuces</span>
-    </a>
-    </nav>
+    <div id="nav">
+      <nav class="nav">
+        <a onclick="profilepage()" class="nav__link">
+          <i class="material-icons nav__icon" style="color: rgb(55, 0, 253);">person</i>
+          <span class="nav__text" style="color: rgb(55, 0, 253);">Admin</span>
+        </a>
+        <a onclick="whatsapp()" class="nav__link nav__link--active">
+          <i class="material-icons nav__icon">whatsapp</i>
+          <span class="nav__text">Whatsapp</span>
+        </a>
+        <a onclick="home()" class="nav__link">
+          <i class="material-icons nav__icon" style="color: orange;">home</i>
+          <span class="nav__text" style="color: orange;">Accueil</span>
+        </a>
+        <a onclick="video()" class="nav__link">
+          <i class="material-icons nav__icon" style="color: rgb(212, 0, 0);">smart_display</i>
+          <span class="nav__text" style="color: rgb(0, 99, 212);">Videos</span>
+        </a>
+        <a  class="nav__link" style="display: none;">
+          <i class="material-icons nav__icon" style="color: rgb(243, 7, 7); display: none;">smart_display</i>
+          <span class="nav__text" style="color: rgb(243, 7, 7);">Astuces</span>
+        </a>
+        </nav>
+    </div>
   <script src="js/js.js"></script>
  
   </script>
