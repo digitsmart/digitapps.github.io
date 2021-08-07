@@ -16,11 +16,10 @@ function myform(){
     }
   }  
 
-
   
 
 function aller() {
-    var home = document.getElementById("home");
+  var home = document.getElementById("home");
     var first = document.getElementById("first");
     var navig = document.getElementById('navig');
     if (home.style.display === "block") {
@@ -28,9 +27,28 @@ function aller() {
       navig.style.display = "block";
       first.style.display = "block";
     } else {
-      first.style.display = "block";
       home.style.display = "none";
+      first.style.display = "block";
       navig.style.display = "block";
+    }
+  }
+
+  function firstn() {
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
+
+    if (first.style.display === "block") {
+      first.style.display = "none";
+      second.style.display = "block";
+      second1.style.display = "none";
+      second2.style.display = "none";
+    } else {
+      first.style.display = "none";
+      second.style.display = "block";
+      second1.style.display = "none";
+      second2.style.display = "none";
     }
   }
 
@@ -40,49 +58,23 @@ function aller() {
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
     var second2 = document.getElementById("second2");
-    var navig = document.getElementById('navig');
 
-    if (home.style.display === "none") {
-      home.style.display = "block";
-      first.style.display = "none";
-      second.style.display = "none";
-      second1.style.display = "none";
-      second2.style.display = "none";
-      navig.style.display = "none";
-    } else {
-      home.style.display = "block";
-      first.style.display = "none";
-      second.style.display = "none";
-      second1.style.display = "none";
-      second2.style.display = "none";
-      navig.style.display = "none";
-    }
-  }
-
-  function firstn() {
-    var home = document.getElementById("home");
-    var first = document.getElementById("first");
-    var second = document.getElementById("second");
-    var second1 = document.getElementById("second1");
-    var second2 = document.getElementById("second2");
     if (first.style.display === "block") {
-      home.style.display = "none";
+      home.style.display = "block";
       first.style.display = "none";
-      second.style.display = "block";
+      second.style.display = "none";
       second1.style.display = "none";
       second2.style.display = "none";
-      
     } else {
-      home.style.display = "none";
+      home.style.display = "block";
       first.style.display = "none";
-      second.style.display = "block";
+      second.style.display = "none";
       second1.style.display = "none";
       second2.style.display = "none";
     }
   }
 
   function secondn() {
-    var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
@@ -93,19 +85,16 @@ function aller() {
       second.style.display = "none";
       second1.style.display = "block";
       second2.style.display = "none";
-      a.stop();
     } else {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
       second1.style.display = "block";
       second2.style.display = "none";
-      a.stop();
     }
   }
 
   function secondp() {
-    var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
@@ -118,7 +107,6 @@ function aller() {
       second2.style.display = "none";
       a.stop();
     } else {
-      home.style.display = "none";
       first.style.display = "block";
       second.style.display = "none";
       second1.style.display = "none";
@@ -128,11 +116,10 @@ function aller() {
   }
 
   function second1n() {
-    var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
-    var second2 = document.getElementById("second2");  
+    var second2 = document.getElementById("second2"); 
     if (second1.style.display === "block") {
       home.style.display = "none";
       first.style.display = "none";
@@ -140,7 +127,6 @@ function aller() {
       second1.style.display = "none";
       second2.style.display = "block";
     } else {
-      home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
       second1.style.display = "none";
@@ -149,11 +135,10 @@ function aller() {
   }
 
   function second1p() {
-    var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
-    var second2 = document.getElementById("second2");  
+    var second2 = document.getElementById("second2"); 
     if (second1.style.display === "block") {
       home.style.display = "none";
       first.style.display = "none";
@@ -169,7 +154,6 @@ function aller() {
     }
   }
   function second2() {
-    var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
@@ -190,11 +174,10 @@ function aller() {
   }
 
   function second2p() {
-    var home = document.getElementById("home");
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
-    var second2 = document.getElementById("second2"); 
+    var second2 = document.getElementById("second2");
     if (second2.style.display === "block") {
       home.style.display = "none";
       first.style.display = "none";

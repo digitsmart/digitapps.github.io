@@ -65,28 +65,30 @@
     </figure>
   </div>
   <!--Menu en bas de la page-->
-  <nav class="nav">
-    <a onclick="person()" class="nav__link">
-      <i class="material-icons nav__icon" style="color: rgb(55, 0, 253);">person</i>
-      <span class="nav__text" style="color: rgb(55, 0, 253);">Admin</span>
-    </a>
-    <a onclick="whatsapp()" class="nav__link nav__link--active">
-      <i class="material-icons nav__icon">whatsapp</i>
-      <span class="nav__text">Whatsapp</span>
-    </a>
-    <a href="../index.html" class="nav__link">
-      <i class="material-icons nav__icon" style="color: orange;">home</i>
-      <span class="nav__text" style="color: orange;">Accueil</span>
-    </a>
-    <a onclick="facebook()" class="nav__link">
-      <i class="material-icons nav__icon" style="color: rgb(0, 99, 212);">facebook</i>
-      <span class="nav__text" style="color: rgb(0, 99, 212);">facebook</span>
-    </a>
-    <a href="videos/astuces.html" class="nav__link">
-      <i class="material-icons nav__icon" style="color: rgb(243, 7, 7);">smart_display</i>
-      <span class="nav__text" style="color: rgb(243, 7, 7);">Astuces</span>
-    </a>
-    </nav>
+  <div id="nav">
+    <nav class="nav">
+      <a onclick="person()" class="nav__link">
+        <i class="material-icons nav__icon" style="color: rgb(55, 0, 253);">person</i>
+        <span class="nav__text" style="color: rgb(55, 0, 253);">Admin</span>
+      </a>
+      <a onclick="whatsapp()" class="nav__link nav__link--active">
+        <i class="material-icons nav__icon">whatsapp</i>
+        <span class="nav__text">Whatsapp</span>
+      </a>
+      <a href="../home.html" class="nav__link">
+        <i class="material-icons nav__icon" style="color: orange;">home</i>
+        <span class="nav__text" style="color: orange;">Accueil</span>
+      </a>
+      <a onclick="facebook()" class="nav__link">
+        <i class="material-icons nav__icon" style="color: rgb(0, 99, 212);">facebook</i>
+        <span class="nav__text" style="color: rgb(0, 99, 212);">facebook</span>
+      </a>
+      <a href="videos/astuces.html" class="nav__link" style="display: none;">
+        <i class="material-icons nav__icon" style="color: rgb(243, 7, 7);">smart_display</i>
+        <span class="nav__text" style="color: rgb(243, 7, 7);">Astuces</span>
+      </a>
+      </nav>
+  </div>
 
   <script>
     var video_player = document.getElementById("video_player"),
