@@ -1,20 +1,4 @@
-
-function myform(){  
-  var numberV = document.getElementById('number').value;
-  var referV = document.getElementById('refer').value;
-  var i = 1;
-  if (numberV.length < 6 ){  
-    alert("Password must be at least 6 characters long.");  
-    return false;  
-    } if (referV.length < 6){  
-      alert("Refer must be at least 6 characters long.");  
-      return false;  
-      } else{
-      firebase.database().ref('Cours/'+numberV).set({
-        Refer: referV,
-      })
-    }
-  }  
+ 
 
   
 

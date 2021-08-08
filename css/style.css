@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color: tan;
+  background-color: #fff;
   margin: 0;
   padding: 0;
 
@@ -79,18 +79,53 @@ img{
 }
   /* Ma bar de nitification*/
 @media only screen and (max-width: 800px){
-
-  /* Ma bar de nitification*/
-  .not{
-    width: 97%;
-    background-color: white;
+  .header{
+    width: 95%;
+    border-radius: 20px;
+    height: 170px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding-top: 10px;
     margin: auto;
+    margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.75);
   }
-  .not h1{
-    font-size: 1.8rem;
+  .header .not h1{
+    font-size: 7.3vw;
+    font-family: 'Fantasy';
+    font-weight: bolder;
+    justify-content: center;
+  }
+  .header h2{
+    font-size: 67w;
     text-align: center;
+    font-family: 'Fantasy';
+    font-weight: bolder;
+    margin: 1px;
+  }
+  .header p{
+    font-size: 5vw;
+    text-align: center;
+    margin: 1px;
+    font-family: 'Times New Roman', serif;
+    font-weight: bolder;
+  }
+  /* Ma bar de nitification*/
+  .not{
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(4, 15, 80);
+    margin:10px auto;
+    margin-bottom: 2px;
+    
+  }
+  .not h1{
+    font-size: 1.7rem;
+    text-align: center;
+    color: #fff;
   }
   .not h3{
     font-size: 1.1rem;
@@ -158,7 +193,7 @@ section{
   width: 100%;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.75);
   width: 100%;
   min-width: 160px;
   margin: 5px;
@@ -169,38 +204,43 @@ section{
 }
 .card h1{
   font-size: 5vw;
+  margin: 2px;
 }
 .card p{
   font-size: 3.4vw;
+  margin: 2px;
+  font-style: normal;
+  line-height: normal;
 }
 .card div{
-  background-image: url("../images/slide1.jpg");
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 70px;
-  margin-bottom: 20px;
+  height: 50px;
+  margin-bottom: 2px;
 }
 .card div img{
   width: 50px;
   height: 50px;
   border: 1px solid orange;
   border-radius: 50%;
-  margin-top: 40px;
+  margin-top: 4px;
   background: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .card button {
-  font-size: 4vw;
+  font-size: 3.6vw;
   border: none;
+  border-radius: 5px;
   outline: 0;
-  padding: 5px;
+  padding: 3px;
   color: white;
   background-color: blue;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
+  margin: 4px;
 }
 
 .card button:hover {
@@ -316,8 +356,15 @@ figure video{
   figcaption{
     border: 1px solid orange;
     overflow-y: scroll;
-    height: 100%;
+    height: 310px;
     margin-bottom: 50px;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+    color: gray;
   }
   figcaption .vid{
     display: flex;
@@ -347,6 +394,7 @@ figure video{
 
 }
 
+/*profile page de mon application*/
 @media only screen and (max-width: 800px) {
   #profilePage{
     background: #fff;
