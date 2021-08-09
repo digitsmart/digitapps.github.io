@@ -209,6 +209,7 @@ section{
 .card p{
   font-size: 2vw;
   margin: 1px;
+  color: blue;
   font-style: normal;
   line-height: normal;
 }
