@@ -357,7 +357,7 @@ figure video{
   figcaption{
     border: 1px solid orange;
     overflow-y: scroll;
-    height: 310px;
+    height: 330px;
     margin-bottom: 50px;
   }
   a{
