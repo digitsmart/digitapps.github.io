@@ -209,27 +209,130 @@ img{
   box-shadow: 0px 1px 6px 0px gray;
 }
 .msg{
-  width: 90%;
-    padding: 10px;
+  width: 95%;
     border-radius: 20px;
-    background-color: rgb(4, 15, 80);
-  margin: auto;
-  margin-bottom: 1px;
-  margin-top: 0px;
-  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.75);
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding-top: 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.75);
 }
 .msg h2{
   font-size: 5.6vw;
   font-weight: bold;
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-})
-#formMail{
-  width: 90%;
-  margin: auto;
-  padding: 0.5em;
-  
+}
+.msg p{
+    font-size: 1.1rem;
+    text-align: center;
 
+}
+#formMail{
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  padding: 1px;
+}
+#formMail div{
+  margin: auto;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+.input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 1px;
+}
+form select{
+   width: 30%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  margin-left: auto;
+  border: 1px solid blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: ffffff;
+}
+hr{
+  margin: 1px;
+}
+#formMail input[type=number], [type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+   margin-right: auto;
+  margin-left: auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#formMail #myBtn{
+  width: 70%;
+  background-color: blue;
+  color: white;
+  padding: 7px 10px;
+  margin: auto;
+  border: 1px solid blue;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#formMail button{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 7px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background-color: #45a049;
+}
+#close{
+  width: 100%;
+  background: blue ;
+  padding: 10px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px;
+  
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal{
+  margin-top: 20px;
+}
+#message{
+  width: 90%;
+  padding: 5px;
+  margin:0px auto;
+  text-align: center;
+  align-items: center;
+  
 }
 
 main{
