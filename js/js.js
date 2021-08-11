@@ -18,22 +18,6 @@ var myIndex = 0;
           setTimeout(carousel, 6000); // Change image every 2 seconds
         }
 
-        // send message to whatsapp en tant que client
-        function gotowhatsapp() {
-    
-          var name = document.getElementById("name").value;
-          var phone = document.getElementById("phone").value;
-          var email = document.getElementById("email").value;
-          var service = document.getElementById("service").value;
-      
-          var url = "https://wa.me/918789529215?text=" 
-          + "Name: " + name + "%0a"
-          + "Phone: " + phone + "%0a"
-          + "Email: " + email  + "%0a"
-          + "Service: " + service; 
-      
-          window.open(url, '_blank').focus();
-      }
 
       // video playliste de la page home
       var video_player = document.getElementById("video_player"),
@@ -142,10 +126,62 @@ function handler(e) {
             h.style.display = "none";
             v.style.display = "none";
             p.style.display = "block";
-            slide.style.display = "none";
             not.style.display = "none";
           }
         }
         
-
         
+        
+    
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+        
+        
+        
+        
+      // Your web app's Firebase configuration
+
+     var codeV, nameV, numberV;
+
+function insert() {
+     nameV = document.getElementById('name').value;
+     codeV = document.getElementById('code').value;
+     numberV = document.getElementById('number').value;
+  if(nameV == ""){
+    document.getElementById('message').innerHTML ="Votre nom";
+    document.getElementById('message').style.color = '#fff';
+    document.getElementById('message').style.background ="red";
+  }else if (numberV == ""){
+    document.getElementById('message').innerHTML ="Votre numero";
+  }else if(codeV == ""){
+    document.getElementById('message').innerHTML ="Votre code pays";
+  }else{
+    firebase.database().ref('Abonnez ftechplus/' + nameV).set({
+        ANAME:  nameV,
+        NUMBER: (codeV) + numberV,
+    });
+  }
+ }
