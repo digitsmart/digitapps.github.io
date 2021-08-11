@@ -59,7 +59,7 @@ img{
   width: 100%;
 }
 .nav__icon {
-  font-size: 18px;
+  font-size: 35px;
 }
 #profilePage, #videoPage{
   display: none;
@@ -180,6 +180,32 @@ img{
 
 #splash.fade {
 	opacity: 0;
+}
+
+#profileUser{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+@keyframes profileUser{
+  from {background-color: blue;}
+  to {background-color: orange;}
+  box-shadow: 0px 1px 6px 0px red;
+}
+.profileUser{
+  width: 70px;
+  height: 70px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin: auto;
+  animation-name: profileUser;
+  background-color: red;
+  animation-duration: 4s;
+  animation: profileUser 5s infinite;
+  animation-delay: 2s;
+  transition: 2s;
+  box-shadow: 0px 1px 6px 0px gray;
 }
 
 main{
@@ -357,7 +383,7 @@ figure video{
   figcaption{
     border: 1px solid orange;
     overflow-y: scroll;
-    height: 330px;
+    height: 310px;
     margin-bottom: 50px;
   }
   a{
