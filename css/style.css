@@ -154,6 +154,7 @@ img{
   .body{
     display: block;
     transition: 1s;
+    margin-bottom: 17%;
   }
   .dispo{
     display: none;
@@ -207,12 +208,35 @@ img{
   transition: 2s;
   box-shadow: 0px 1px 6px 0px gray;
 }
+.msg{
+  width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(4, 15, 80);
+  margin: auto;
+  margin-bottom: 1px;
+  margin-top: 0px;
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.75);
+}
+.msg h2{
+  font-size: 5.6vw;
+  font-weight: bold;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+})
+#formMail{
+  width: 90%;
+  margin: auto;
+  padding: 0.5em;
+  
+
+}
 
 main{
   width: 100%;
   height: 100%;
   background: white;
-  margin-bottom: 50px ;
+  margin-bottom: 0px ;
 }
 section{
   display: flex;
@@ -383,7 +407,7 @@ figure video{
   figcaption{
     border: 1px solid orange;
     overflow-y: scroll;
-    height: 330px;
+    height: 350px;
     margin-bottom: 50px;
   }
   a{
