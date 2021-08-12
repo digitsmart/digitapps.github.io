@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <main id="home">
+        <main id="home" style="display: none;">
             <div class="center">
                 <h1>Bienvenue</h1>
                 <form method="post">
@@ -34,7 +34,7 @@
               </div>
         </main>
 
-        <main  id="first">
+        <main  id="first" style="display: block;">
             <video controls>
                 <source src="https://res.cloudinary.com/ftechplus/video/upload/v1624329075/html%20et%20css/Formation_1_E.1-1_uzayfn.mp4" type=video/mp4 poster="images/formation.jpg">
             </video>
@@ -105,7 +105,7 @@
                 <button id="open" onclick="firstp()"class="btn">Pré</button>
                 <button class="btn" onclick="firstn()">Suivant1</button>
             </div>
-        </main>
+        </main><!--premier cour-->
 
         <main id="second">
             <video controls>
@@ -166,7 +166,7 @@
                 <button id="open" onclick="secondp()"class="btn">Pré</button>
                 <button class="btn" onclick="secondn()">Suiv>></button>
             </div>
-        </main>
+        </main><!--deuxiemes cour-->
 
         <main id="second1">
             <video controls>
@@ -233,7 +233,7 @@
                 <button id="open" onclick="second1p()"class="btn">Pré</button>
                 <button class="btn" onclick="second1n()">Suiv>></button>
             </div>
-        </main>
+        </main> <!--deuxiemes 1 cour-->
 
         <main  id="second2">
             <video controls>
@@ -285,7 +285,89 @@
                 <button id="open" onclick="second2p()"class="btn">Pré</button>
                 <button class="btn" onclick="second2n()">Suiv>>></button>
             </div>
-        </main>
+        </main> <!--deuxiemes2 cour-->
+
+        <main  id="troixiemes">
+            <video controls>
+        
+            </video>
+            <audio controls style="display: none;">
+                <source id="audio" src="media/cours html 2-2.3gp" type="audio/mpeg">
+            </audio>
+            <div class="div">
+                <h2>Les paragraphes</h2>
+               <p>
+                La plupart du temps, lorsqu'on écrit du texte dans une page web, 
+                on le fait à l'intérieur de paragraphes. Le langage HTML propose 
+                justement la balise &lt;p&gt;  pour délimiter les paragraphes.
+                </p>
+                
+                <p>
+                    Dans une page html , lorsqu’on ecrit du texte, on le fait a l’interieur 
+                    de paragraphe,le balise html propose justement la  balise <p> pour determiner 
+                    les paragraphes.
+                </p>
+                
+                <strong>Exemple: </strong><br> 
+                &lt;p&gt;Je suis un paragraphe sur cette page&lt;/p&gt;<br>
+                
+                <ul>
+                    <li>&lt;p&gt;  signifie « Début du paragraphe » ;</li>
+                    <li>&lt;/p&gt;  signifie « Fin du paragraphe ».</li>
+                </ul>
+                
+                <p>
+                    Pour le faire afficher sur votre page html, il doit placer a l’interieur 
+                    de la balise &lt;body&gt;.
+                </p>
+                
+                <strong>Exemple :</strong> <br>
+                <img src="../images/c.p.png">
+               <p>
+                Mais ne nous arrêtons pas en si bon chemin. Nous allons voir maintenant quelque 
+                chose d'un peu particulier en HTML : le saut de ligne. <br><br>
+                Cela paraît simple et pourtant, cela ne fonctionne pas vraiment 
+                comme dans un traitement de texte habituel…<br><br>
+                Sauter une ligne. En HTML, si vous appuyez sur la touche Entrée  , cela 
+                ne crée pas une nouvelle ligne comme vous en avez l'habitude, dans 
+                un paragraphe, meme si vous appuyer sur le boutton Entrer de votre
+                 clavier ca ne va pa creer un saut de ligne.
+               </p>
+                
+               <p>
+                Comme vous devez vous en douter, il y a pourtant bien un moyen de faire 
+                des sauts de ligne en HTML.<br><br>
+                En fait, si vous voulez écrire un deuxième paragraphe, il vous suffit 
+                d'utiliser une deuxième balise &lt;p&gt>; .<br><br>
+                Exemple :
+                &lt;p&gt; je suis le premier paragraphe de cette page&lt;/p&gt;
+                &lt;p&gt; Je suis le deuxieme paragraphe de cette page&lt;/p&gt;
+               </p>
+                
+                En utilisant la balise &lt;p&gt; pour faire des sauts de ligne, votre page devrait remplir de balise,nous allons utiliser la moyenne le plus simple ave la balise <br>
+                La balise &lt;br&gt; est une balise orpheline qui sert juste à indiquer qu'on doit aller à la ligne : <br />  . Vous devez obligatoirement la mettre à l'intérieur d'un paragraphe.
+                Voici comment l'utiliser dans un code :<br><br>
+                
+                <p>
+                    &lt;p&gt; salut je suis le premier paragraphe de cette page 
+                    et je vous montre un saut de ligne &lt;br&gt; on utilize cette palise 
+                    pour faire un saut de ligne dans le paragraphe de ma page.&lt;/p&gt;<br><br>
+                Vous pouvez théoriquement mettre plusieurs balises &lt;br&gt;  d'affilée pour faire 
+                plusieurs sauts de lignes, mais on considère que c'est une mauvaise pratique qui
+                 rend le code délicat à maintenir.
+                </p>
+                <p>
+                Pour décaler un texte avec plus de précision, on utilisera le CSS, ce langage qui vient compléter le HTML et dont je vous parlerai un peu plus loin.
+                Donc c'est compris ?
+                •	&lt;p&gt; &lt;/p&gt;  : pour organiser son texte en paragraphes ;
+                •	&lt;br&gt;  : pour aller à la ligne.
+               </p>
+            </div>
+            <div class="navig">
+                <button id="open" onclick="troisp()"class="btn">Pré</button>
+                <button class="btn" onclick="troisn()">Suiv>></button>
+            </div>
+        </main> <!--deuxiemes2 cour-->
           <!--bar menu en bas de la page-->
     <div id="nav">
         <nav class="nav">
