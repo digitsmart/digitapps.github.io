@@ -137,23 +137,26 @@ function aller() {
       second2.style.display = "none";
     }
   }
-  function second2() {
+  function second2n() {
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
     var second2 = document.getElementById("second2"); 
+    var troixiemes = document.getElementById("troixiemes"); 
     if (second2.style.display === "none") {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
       second1.style.display = "none";
-      second2.style.display = "block";
+      second2.style.display = "none";
+      troixiemes.style.display = "block";
     } else {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
       second1.style.display = "none";
-      second2.style.display = "block";
+      second2.style.display = "none";
+      troixiemes.style.display = "block";
     }
   }
 
@@ -162,17 +165,66 @@ function aller() {
     var second = document.getElementById("second");
     var second1 = document.getElementById("second1");
     var second2 = document.getElementById("second2");
+    var troixiemes = document.getElementById("troixiemes"); 
     if (second2.style.display === "block") {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
       second1.style.display = "block";
       second2.style.display = "none";
+      troixiemes.style.display = "none";
     } else {
       home.style.display = "none";
       first.style.display = "none";
       second.style.display = "none";
       second1.style.display = "block";
       second2.style.display = "none";
+      troixiemes.style.display = "none";
+    }
+  }
+
+  function troisn() {
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
+    var troixiemes = document.getElementById("troixiemes"); 
+    if (second2.style.display === "none") {
+      home.style.display = "none";
+      first.style.display = "none";
+      second.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
+      troixiemes.style.display = "block";
+    } else {
+      home.style.display = "none";
+      first.style.display = "none";
+      second.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "none";
+      troixiemes.style.display = "block";
+    }
+  }
+
+  function troisp() {
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+    var second1 = document.getElementById("second1");
+    var second2 = document.getElementById("second2");
+    var troixiemes = document.getElementById("troixiemes");
+    if (second2.style.display === "block") {
+      home.style.display = "none";
+      first.style.display = "none";
+      second.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "block";
+      troixiemes.style.display = "none";
+    } else {
+      home.style.display = "none";
+      first.style.display = "none";
+      second.style.display = "none";
+      second1.style.display = "none";
+      second2.style.display = "block";
+      troixiemes.style.display = "none";
     }
   }

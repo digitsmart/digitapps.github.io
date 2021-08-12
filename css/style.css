@@ -192,7 +192,6 @@ img{
 @keyframes profileUser{
   from {background-color: blue;}
   to {background-color: orange;}
-  box-shadow: 0px 1px 6px 0px red;
 }
 .profileUser{
   width: 70px;
