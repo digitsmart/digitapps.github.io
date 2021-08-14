@@ -183,5 +183,10 @@ function insert() {
         ANAME:  nameV,
         NUMBER: (codeV) + numberV,
     });
+    document.getElementById('message').innerHTML ="Vous etes maimtenant abonnée";
+    document.getElementById('message').style.color = '#fff';
+    document.getElementById('message').style.background ="blue";
+    document.getElementById('name').value = '';
+    document.getElementById('number').value = '';
   }
  }
