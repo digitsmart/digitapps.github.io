@@ -23,19 +23,27 @@ id="bootstrap-css"/>
             <div class="card-item">
                <center>
                 <li class="item">
+                  <a href="#"><h1>Comment eviter des arnaques et gagner de l'argent ?</h1></a>
                     <div  id="a">
                       <div class="img">
                         <img src="../images/hack.jpg">
                       </div>
-                      <a href="#"><h1>Comment eviter des arnaques et gagner de l'argent ?</h1></a>
+                      <div>
+                       
                       <p>quand t-on parle de arnaque on voit arnaqueur, 
                         une personne qui est la pour vous donner de 
-                        <br>
-                        <a class="btn" onclick="a()">
-                          <span >Lire la suite</span>
-                        </a>
                       </p>
-                       
+
+                      
+                      </div>
+                    </div>
+                    <div class="click">
+                      <div class="click-root">
+                        <i class="material-icons nav__icon">visibility</i><p id="root"></p>
+                      </div>
+                      <a class="bt" onclick="a()">
+                        <span >Lire la suite</span>
+                      </a>
                     </div>
                 </li> <!--html et css-->
                </center>
@@ -89,6 +97,8 @@ id="bootstrap-css"/>
   
       </ul>
       <p>100.000 clap coins $1 us, vous pouvez faire votre premier a partie de $O.IO us par PayPal, pour voire que l'application paie vraiment.</p>
+      <center><a class="btn" href="https://h5.cc.lerjin.com/propaganda/#/community?clapcode=8162712476">Télécharger ClapCoins ici</a></center>
+      
     </main>
     
    <!--Menu en bas de la page-->
@@ -117,6 +127,33 @@ id="bootstrap-css"/>
         </nav>
     </div>
   <script src="../js/article.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+<script>
+var firebaseConfig = {
+  apiKey: "AIzaSyA7xvnxxWkMhBonpj5AiZ5Hkkdv-jZAqDk",
+  authDomain: "maliste-d4c03.firebaseapp.com",
+  databaseURL: "https://maliste-d4c03.firebaseio.com",
+  projectId: "maliste-d4c03",
+  storageBucket: "maliste-d4c03.appspot.com",
+  messagingSenderId: "552655235785",
+  appId: "1:552655235785:web:a4b660caf5882e4be57b18",
+  measurementId: "G-V6R9FPCSG1"
+
+};
+// Initialize Firebase
+     firebase.initializeApp(firebaseConfig);
+     var firebaseRef = firebase.database().ref('emails');
+     firebaseRef.once('value' , function(snapshot){
+      snapshot.forEach(function(element){
+        document.querySelector('#root').innerHTML +=`
+        <div>${element.val()}</div>
+        `
+        
+      });
+     })
+   </script>
 
 </body>
 </html>

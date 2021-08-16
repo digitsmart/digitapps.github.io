@@ -127,6 +127,14 @@ img{
 a{
     text-decoration: none;
 }
+#a{
+  display: flex;
+  border: 1px solid orange;
+}
+#a img{
+  width: 100px;
+  height: 100%;
+}
 .card-item{
   display: flex;
   border: 1px solid blue;
@@ -137,30 +145,75 @@ a{
 }
 .card-item .item h1{
   color: blue;
-  font-size: 6vw;
+  font-size: 4vw;
+  background-color: rgba(255, 255, 255, 0.589);
 }
 .card-item .item p{
   color: rgb(56, 56, 61);
-  font-size: 4vw;
+  font-size: 3.5vw;
+  text-align: justify;
 }
-.btn{
-  background-color: #4CAF50; /* Green */
+.card-item .item .btn, #aa .btn{
+background-color: #4CAF50; /* Green */
 border: none;
 color: white;
 padding: 5px 10px;
 text-align: center;
+justify-content: center;
 text-decoration: none;
 display: inline-block;
 font-size: 16px;
-margin: 4px 2px;
+margin-bottom: 5px;
 cursor: pointer;
 -webkit-transition-duration: 0.4s; /* Safari */
 transition-duration: 0.4s;
 }
-.btn:hover {
+.btn span{
+  color: white;
+  font-style: italic;
+}
+.card-item .item .btn:hover {
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 background: orange;
 }
+#aa .btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  background: orange;
+  }
+  .click{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+  }
+  .click #root{
+    font-size: 4vw;
+    margin: auto;
+
+  }
+  .click-root{
+    display: flex;
+    border: 1px solid blue;
+    padding: 1px;
+    
+  }
+  .click-root i{
+    color: black;
+    margin: auto;
+    margin-right: 5px;
+    padding-right: 5px;
+    font-size: 7vw;
+    border-right: 2px solid black;
+  }
+
+  .click .bt{
+    background-color: white;
+    border: 1px solid blue;
+    padding: 1px 5px 1px 5px;
+  }
+  .click .bt:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  
+  }
 
 
 }
@@ -185,7 +238,7 @@ background: orange;
   }
   #aa p{
     font-size: 3vw;
-    color: blue;
+    color: black;
     text-align: justify;
   }
   #aa ul li{
