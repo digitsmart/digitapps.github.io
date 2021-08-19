@@ -37,19 +37,19 @@ id="bootstrap-css"/>
     </header>
     <div id="profileUser">
       <div class="profileUser">
-        <img src="">
+        <center><p id="d"></p>
       </div>
       
       <div class="profileUser">
-        <img src="">
+        <center><p id="h"></p></center>
       </div>
       
       <div class="profileUser">
-        <img src="">
+        <center><p id="m"></p></center>
       </div>
       
        <div class="profileUser">
-        <img src="">
+        <center><p id="s"></p></center>
       </div>
     </div>
     
@@ -493,6 +493,38 @@ id="bootstrap-css"/>
      // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 </script>
+
+<script type="text/javascript">
+var dd =document.getElementById('dd');
+  function updateTimer() {
+      future = Date.parse("august 19, 2021 01:00:00");
+      now = new Date();
+      diff = future - now;
+  
+      days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      hours = Math.floor(diff / (1000 * 60 * 60));
+      mins = Math.floor(diff / (1000 * 60));
+      secs = Math.floor(diff / 1000);
+  
+      d = days;
+      h = hours - days * 24;
+      m = mins - hours * 60;
+      s = secs - mins * 60;
+  
+      document.getElementById("d")
+          .innerHTML = d ;
+          document.getElementById("h")
+          .innerHTML = h  ;
+          document.getElementById("m")
+          .innerHTML = m ;
+          document.getElementById("s")
+          .innerHTML = s ;
+          
+  }
+
+  setInterval('updateTimer()', 1000);
+  alert('je suis ariver ici');
+  </script>
 
 </body>
 </html>
