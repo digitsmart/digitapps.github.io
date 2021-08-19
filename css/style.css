@@ -192,7 +192,6 @@ img{
 @keyframes profileUser{
   from {background-color: blue;}
   to {background-color: orange;}
-  box-shadow: 0px 1px 6px 0px red;
 }
 .profileUser{
   width: 50px;
@@ -200,6 +199,8 @@ img{
   border: 1px solid gray;
   border-radius: 50%;
   margin: auto;
+  padding: auto;
+  align-items: center;
   animation-name: profileUser;
   background-color: red;
   animation-duration: 4s;
@@ -207,6 +208,11 @@ img{
   animation-delay: 2s;
   transition: 2s;
   box-shadow: 0px 1px 6px 0px gray;
+}
+.profileUser p{
+  color: white;
+  margin: 12px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .msg{
   width: 95%;
