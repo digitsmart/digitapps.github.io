@@ -32,13 +32,30 @@ id="bootstrap-css"/>
           <h1>Bienvenue sur Ftech Plus</h1>
         </div>
         <h2>Formation en cours</h2>
-        <p>Apprendre le html et css sur votre android,télécharger nos ebook gratuitement, avec seulement de Rm.</p>
+        <p>Apprendre le html et css sur votre android,télécharger nos ebook 
+          gratuitement, avec seulement de Rm.</p>
       </div>
+     <center> <button class="open-button" id="inscrire" onclick="openForm()">Je veux m'inscrire</button></center>
     </header>
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
     <div id="profileUser">
-      <div class="profileUser">
-        <center><p id="d"></p>
-      </div>
+      <a href="call/receiver/receiver.html">
+        <div class="profileUser">
+          <center><p id="d"></p>
+        </div></a>
       
       <div class="profileUser">
         <center><p id="h"></p></center>
@@ -497,7 +514,7 @@ id="bootstrap-css"/>
 <script type="text/javascript">
 var dd =document.getElementById('dd');
   function updateTimer() {
-      future = Date.parse("august 23, 2021 01:00:00");
+      future = Date.parse("august 27, 2021 05:50:00");
       now = new Date();
       diff = future - now;
   
@@ -525,6 +542,46 @@ var dd =document.getElementById('dd');
   setInterval('updateTimer()', 1000);
   
   </script>
+ 
 
+ <script>
+   /*  ********** Online / Offline Detection **********  */
+
+// Request a small image at an interval to determine status
+// ** Get a 1x1 pixel image here: http://www.1x1px.me/
+// ** Use this code with an HTML element with id="status"
+
+const checkOnlineStatus = async () => {
+  try {
+    const online = await fetch("/1pixel.png");
+    return online.status >= 200 && online.status < 300; // either true or false
+  } catch (err) {
+    return false; // definitely offline
+  }
+};
+
+setInterval(async () => {
+  const result = await checkOnlineStatus();
+  const statusDisplay = document.getElementById("status");
+  statusDisplay.textContent = result ? "Online" : "OFFline";
+}, 3000); // probably too often, try 30000 for every 30 seconds
+
+// forgot to include async load event listener in the video! 
+window.addEventListener("load", async (event) => {
+  const statusDisplay = document.getElementById("status");
+  statusDisplay.textContent = (await checkOnlineStatus())
+    ? "Online"
+    : "OFFline";
+});
+ </script>
+ <script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  </script>
 </body>
 </html>
