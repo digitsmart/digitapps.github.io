@@ -39,20 +39,23 @@ id="bootstrap-css"/>
     </header>
     <div class="form-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
-        <h1>Login</h1>
+        <h1 style="font-size: 20px;">Formation Drive</h1> <hr />
     
+        <label for="email"><b>Nom complet</b></label>
+        <input type="text" placeholder="Entrer votre nom complet" name="email" required>
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="text" placeholder="Entrer votre Email" name="email" required>
+        <label for="email"><b>Number</b></label>
+        <input type="text" placeholder="Entrer votre numéro" name="email" required>
+        <label for="psw"><b>votre choix</b></label>
+        <input type="text" placeholder="Enter Password" name="psw" required>
     
         <button type="submit" class="btn">Login</button>
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </form>
     </div>
     <div id="profileUser">
-      <a href="call/receiver/receiver.html">
+      <a href="cours/salleVideo.html">
         <div class="profileUser">
           <center><p id="d"></p>
         </div></a>
