@@ -1,4 +1,22 @@
- 
+var numberV, refV;
+
+ function envoyer() {
+      join = 1
+      numberV = document.getElementById('number').value;
+      refV = document.getElementById('ref').value;
+   if(numberV == ""){
+     document.getElementById('message').innerHTML ="*Entre votre numero de référence";
+     document.getElementById('message').style.color ='red';
+   }else{
+     firebase.database().ref('Référence/' + numberV).update({
+         NUMBER: numberV,
+     });
+     document.getElementById('h1').innerHTML ="Vous etes maimtenant abonnée";
+     document.getElementById('h1').style.color ='blue';
+     document.getElementById('number').value = '';
+
+   }
+  } 
 
   
 

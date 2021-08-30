@@ -13,24 +13,17 @@
     <div class="container">
         <main id="home">
             <div class="center">
-                <h1>Bienvenue</h1>
-                <form method="post">
+                <h1 id="h1">Bienvenue</h1>
                   <div class="txt_field">
-                    <input type="text" required>
+                    <input type="number" style="border-bottom: 1px solid orange;" id="number" required>
                     <span></span>
-                    <label>Username</label>
+                    <label id="message">Référence</label>
                   </div>
-                  <div class="txt_field">
-                    <input type="password" required>
-                    <span></span>
-                    <label>Password</label>
-                  </div>
-                  <div class="pass">Si pas de reference, laisser vide</div>
-                  <input type="submit" value="Login">
+                  <div class="pass"><p>Si pas de Réfrérence laisser vide</p></div>
+                  <center><button onclick="envoyer()">Envoyer Référence</button></center>
                   <div class="signup_link">
                     Cliquer sur <a onclick="aller()">Suiver le cours</a>
                   </div>
-                </form>
               </div>
         </main>
 
@@ -297,7 +290,7 @@
             <i class="material-icons nav__icon">whatsapp</i>
             <span class="nav__text">Whatsapp</span>
             </a>
-            <a href="../index.html" class="nav__link">
+            <a href="../home.html" class="nav__link">
             <i class="material-icons nav__icon" style="color: orange;">home</i>
             <span class="nav__text" style="color: orange;">Accueil</span>
             </a>
@@ -314,5 +307,23 @@
     </div>
     
 <script src="salle.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA7xvnxxWkMhBonpj5AiZ5Hkkdv-jZAqDk",
+    authDomain: "maliste-d4c03.firebaseapp.com",
+    databaseURL: "https://maliste-d4c03.firebaseio.com",
+    projectId: "maliste-d4c03",
+    storageBucket: "maliste-d4c03.appspot.com",
+    messagingSenderId: "552655235785",
+    appId: "1:552655235785:web:a4b660caf5882e4be57b18",
+    measurementId: "G-V6R9FPCSG1"
+
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 </html>
