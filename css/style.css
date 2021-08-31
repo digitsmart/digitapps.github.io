@@ -36,7 +36,7 @@ body{
 img{
   width: 100%;
 }
-#profile, #signup{
+#profile, #signup, #about{
   display: none;
 }
 /* Splash */
@@ -71,6 +71,13 @@ img{
   section{
     display: flex;
     width: 100%;
+  }
+  .apercu{
+    border: 1px solid blue;
+    padding: 5px;
+    color: #FFF;
+    font-size: 3vw;
+    margin: 5px;
   }
   #noti{
     width: 100%;
@@ -352,6 +359,13 @@ img{
   width: max-content;
   margin: auto;
 }
+}
+
+/*a propos de l'application*/
+@media only screen and (max-width: 600px){
+  #about video{
+    width: 100%;
+  }
 }
 
 /*navbar bottom fixed de l'application*/

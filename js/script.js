@@ -14,6 +14,23 @@ function inscription(){
 
 
 }
+
+function apercu(){
+  var home = document.getElementById('home');
+  var profile = document.getElementById('profile');
+  var signup = document.getElementById('signup');
+  var receive = document.getElementById('receive');
+  var about = document.getElementById('about');
+  if(about.style.display = 'none'){
+    home.style.display = 'none';
+    signup.style.display = 'none';
+    profile.style.display = 'none';
+    receive.style.display = 'none';
+    about.style.display = 'block';
+  }
+
+
+}
 function h(){
   var home = document.getElementById('home');
   var profile = document.getElementById('profile');
@@ -63,6 +80,8 @@ setTimeout(() => {
       numberV = document.getElementById('number').value;
       adressV = document.getElementById('adress').value;
       infosV = document.getElementById('infos').value;
+      var home = document.getElementById('home');
+      var signup = document.getElementById('signup');
    if(nameV == ""){
      document.getElementById('message').innerHTML ="Votre nom";
      document.getElementById('message').style.color = '#fff';
@@ -88,5 +107,7 @@ setTimeout(() => {
      document.getElementById('email').value = '';
      document.getElementById('number').value = '';
      document.getElementById('adress').value = '';
+     document.getElementById('home').style.display ='block';
+     document.getElementById('signup').style.display ='none';
    }
   }
