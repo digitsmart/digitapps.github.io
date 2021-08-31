@@ -2,18 +2,10 @@ html{
   padding: 0px;
 }
 body{
+  box-sizing: border-box;
   margin: 0px;
   background: gray;
   padding: 0px;
-}
-
-.content{
-  width: 100%;
-  margin: 0px;
-  background: blue;
-  padding: 0px;
-  overflow-y: scroll;
-  display: inline-block;
 }
 
 .header h1{
@@ -163,14 +155,12 @@ img{
 }
 /*header de on application icin*/
 @media only screen and (max-width: 600px){
-  body{
-    overflow-y: scroll;
-  }
+  
   .content{
-    border: 2px solid red;
     width: 100%;
     margin-bottom: 50px;
     height: 100%;
+    overflow: hidden;
     background: #fff;
     padding: 0px;
     display: inline-block;
