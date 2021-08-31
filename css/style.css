@@ -9,10 +9,10 @@ body{
 
 .content{
   width: 100%;
-  height: auto;
   margin: 0px;
   background: blue;
   padding: 0px;
+  overflow-y: scroll;
   display: inline-block;
 }
 
@@ -163,10 +163,14 @@ img{
 }
 /*header de on application icin*/
 @media only screen and (max-width: 600px){
-  
+  body{
+    overflow-y: scroll;
+  }
   .content{
+    border: 2px solid red;
     width: 100%;
-    margin: 0px;
+    margin-bottom: 50px;
+    height: 100%;
     background: #fff;
     padding: 0px;
     display: inline-block;
@@ -380,7 +384,7 @@ nav {
     background-color: #ffffff;
     display: flex;
     overflow-x: auto;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .nav__link {
