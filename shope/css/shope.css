@@ -183,7 +183,7 @@ img{
     font-weight: bold;
     border: 0;
 }
-@media screen and (min-width: 360px){
+@media screen and (max-width: 800px){
     #bar{
         width: 100%;
         margin: auto;
@@ -200,19 +200,24 @@ img{
         background-color: blue;
     }
     img{
-        width: 100%;
+        width: 50%;
+        display: block;
+        margin: auto;
     }
     #passWindows{
-        padding: 0;
         border: gray 2px solid;
     }
     #passWindows h1{
-        font-size: 16px;
-        margin: 0.2em;
+        font-size: 7vw;
+        margin: 20px;
+        text-align: center;
+        color: blue;
+        font-family: Arial, Helvetica, sans-serif;
     }
     #passWindows p{
-        font-size: 14px;
-        margin: 0.2em;
+        font-size: 4vw;
+        margin: 20px;
+        text-align: justify;
     }
     #passWindows button{
         font-size: 13px;
@@ -394,6 +399,7 @@ img{
         padding: 0;
         border: gray 2px solid;
     }
+    
     #passWindows h1{
         font-size: 16px;
         margin: 0.2em;
