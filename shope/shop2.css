@@ -182,9 +182,8 @@ text-decoration: none;
 }
 .navbar {
   overflow: hidden;
-  background-color: white;
-  border: 1px solid blue;
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }
 
