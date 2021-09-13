@@ -136,6 +136,7 @@ width: 100%;
 
 
 .floating-btn {
+  display: none;
 border-radius: 26.5px;
 background-color: #001F61;
 border: 1px solid #001F61;
@@ -183,8 +184,7 @@ text-decoration: none;
   overflow: hidden;
   background-color: white;
   border: 1px solid blue;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
 }
 
