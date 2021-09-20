@@ -264,6 +264,8 @@ img{
   }
   .form-container textarea{
     margin-right: 5px;
+    border-bottom: red 1px solid;
+    height: 30px;
     width: 100%;
     resize: none;
   }
