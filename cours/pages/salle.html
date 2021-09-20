@@ -29,7 +29,7 @@ section{
 }
 section button{
   width: 100%;
-  border: 0px;
+  border: 1px solid;
   border-radius: 15px;
   background: white;
   margin: 10px auto;
@@ -96,7 +96,7 @@ section .container .time{
 .time .time-colon .am_pm{
   position: absolute;
   top: 0;
-  right: -50px;
+  right: 50px;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -144,6 +144,123 @@ section.dark  .time .time-colon .text{
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 800px){
+  .center{
+    padding: 10px;
+    align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: max-content;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid blue;
+  margin-top: 10px;
+  position: relative;
+  }
+  .center h1{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+  }
+  .center #form{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  #form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  .txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+  }
+  .txt_field input:focus ~ label,
+  .txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+  }
+  .txt_field input:focus ~ span::before,
+  .txt_field input:valid ~ span::before{
+    width: 100%;
+  }
+  .pass{
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+  }
+  input[type=number], select {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button{
+  
+  width: 100%;
+  border: 1px solid blue;
+  color: blue;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: orangered;
+}
+
+
+}
+
+.icons .am_pm{
+  display: flex;
+  border: 1px solid red;
+  position: absolute;
+  right: 49px;
+  top: 17px;
+  height: 30px;
+  width: 30px;
+  background: #24292D;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+}
 
    </style>
   
@@ -180,6 +297,20 @@ section.dark  .time .time-colon .text{
         </div>
       </div>
     </div>
+     <div class="center">
+                <h1>Bienvenue</h1>
+                <div>
+                    <div>
+                      <label for="fname" id="message">Numéro de référence</label>
+                      <input type="number" id="number" name="firstname" placeholder="Numero ici">
+                      <button onclick="envoyer()">Envoyer cet infos</button>
+                    </div>
+                    <div class="signup_link">
+                        <p>Si vous n'avez pas de référence</p>
+                        Cliquer sur <a onclick="aller()">Suiver le cours</a>
+                      </div>
+                  </div>
+              </div>
     <div class="bar">
       <button onClick="window.location=('/home.html')">Retour en arrière</button>
       <button onClick="window.location=('html et css/premier_chapitre.html')">Suivez le cours</button>
@@ -220,6 +351,43 @@ section.dark  .time .time-colon .text{
 
   }, 1000); // 1000 milliseconds = 1s
 
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyA7xvnxxWkMhBonpj5AiZ5Hkkdv-jZAqDk",
+      authDomain: "maliste-d4c03.firebaseapp.com",
+      databaseURL: "https://maliste-d4c03.firebaseio.com",
+      projectId: "maliste-d4c03",
+      storageBucket: "maliste-d4c03.appspot.com",
+      messagingSenderId: "552655235785",
+      appId: "1:552655235785:web:a4b660caf5882e4be57b18",
+      measurementId: "G-V6R9FPCSG1"
+  
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var numberV;
+
+ function envoyer() {
+      join = 0
+      point = 1
+      numberV = document.getElementById('number').value;
+   if(numberV == ""){
+     document.getElementById('message').innerHTML ="*Entre votre numero de référence";
+     document.getElementById('message').style.color ='red';
+   }else{
+     firebase.database().ref('Référence/' + numberV).update({
+         NUMBER: numberV,
+         JOIN : ++ point,
+     });
+     document.getElementById('number').value = '';
+
+   }
+  } 
   </script>
 </body>
 </html>

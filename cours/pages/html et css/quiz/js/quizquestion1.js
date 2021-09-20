@@ -85,7 +85,11 @@ next.addEventListener('click',nextQuestion);
 
 //Back to Quiz button event
 function backToQuiz(){
-  location.reload();
+  var answerBank= document.getElementById('answerBank');
+  if(answerBank.style.display= 'block'){
+    answerBank.style.display= 'none';
+    scoreboard.style.display= 'block';
+  }
 }
 
 //function to check Answers
@@ -103,7 +107,9 @@ function checkAnswer(){
 }
 function suivant(){
   if(score >= 5){
-    document.getElementById('msg').innerHTML = 'D"autres cours seront disponible demain';
+    window.location.href = "../deuxiemes_chapitre.html";
+  }else{
+    document.getElementById('msg').innerHTML = 'Désolée vous n"avez pas reussi le test du premier chapitre';
   }
 }
 

@@ -13,7 +13,7 @@
 <body>
   <div class="content">
     <main>
-      <header>
+      <header style="display: none;">
         <audio controls>
           <source src="01 Pralines Et Bonbons.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -75,7 +75,7 @@
           <a href="https://drive.google.com/uc?export=download&id=1CxITDRHlTGV2RXplz6gGHJo-fLN8nTZd" download="premier chapitre">
             <button class="btn">Documents</button>
           </a>
-          <a href=""><button class="btn">Audio</button></a>
+          <a href="" style="display: none;"><button class="btn">Audio</button></a>
         </div>
       </section>
 
@@ -272,5 +272,14 @@ Il existe de nombreux navigateurs différents. Voici les principaux à connaîtr
   }
 </script>
 <script src="../js/pages.js"></script>
+<script>
+  function suivant(){
+  if(score >= 5){
+    window.open("deuxiemes chapitre.html")
+  }else{
+    document.getElementById('msg').innerHTML = 'Désolée vous n"avez pas reussi le test du premier chapitre';
+  }
+}
+</script>
 </body>
 </html>
